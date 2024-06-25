@@ -13,8 +13,10 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Ticket Book',
-      theme: ThemeData(scaffoldBackgroundColor: Color.fromRGBO(31, 31, 31, 1.0),),
-      home: HomePage(), 
+      theme: ThemeData(
+        scaffoldBackgroundColor: Color.fromRGBO(31, 31, 31, 1.0),
+      ),
+      home: HomePage(),
     );
   }
 }
