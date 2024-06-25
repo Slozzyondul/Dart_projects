@@ -1,4 +1,4 @@
-// ignore_for_file: unused_element, no_leading_underscores_for_local_identifiers, avoid_unnecessary_containers, must_be_immutable
+// ignore_for_file: unused_element, no_leading_underscores_for_local_identifiers, avoid_unnecessary_containers, must_be_immutable, sized_box_for_whitespace
 
 import 'package:book_ticket/widgets/custom_dropdown_button.dart';
 import 'package:flutter/material.dart';
@@ -24,8 +24,7 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _pageTitle(),
-              _destinatonDropDownWidget(),
-              _travellersInformationWidget(),
+              _bookRideWidget(),
             ],
           ),
         ),
@@ -55,6 +54,21 @@ class HomePage extends StatelessWidget {
     );
   }
 
+  Widget _bookRideWidget() {
+    return Container(
+      height: _deviceHeight * 0.25,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          _destinatonDropDownWidget(),
+          _travellersInformationWidget(),
+        ],
+      ),
+    );
+  }
+
   Widget _destinatonDropDownWidget() {
     return CustomDropdownButtonClass(
       values: const [
@@ -80,18 +94,35 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _travellersInformationWidget() {
-    return CustomDropdownButtonClass(
-      values: const [
-        'please select your destination here',
-        '1',
-        '2',
-        '3',
-        '4',
-        '5',
-        '6',
-        '7',
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisSize: MainAxisSize.max,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        CustomDropdownButtonClass(
+          values: const [
+            'how many tickets do you need discounts are available',
+            '1',
+            '2',
+            '3',
+            '4',
+            '5',
+            '6',
+            '7',
+          ],
+          width: _deviceWidth * 0.45,
+        ),
+        CustomDropdownButtonClass(
+          values: const [
+            'please select your class',
+            'economy',
+            'business',
+            'first',
+            'private',
+          ],
+          width: _deviceWidth * 0.40,
+        ),
       ],
-      width: _deviceWidth * 0.45,
     );
   }
 }
