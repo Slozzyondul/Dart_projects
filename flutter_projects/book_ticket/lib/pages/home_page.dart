@@ -54,25 +54,48 @@ class HomePage extends StatelessWidget{
   }
 
   Widget _destinatonDropDownWidget() {
-    List<DropdownMenuItem<String>> _items = [
+    List<String> _items = [
+      'please select your destination here',
       'Nairobi',
       'Kakamega',
       'Nakuru',
       'Busia',
       'Mombasa',
-      'Eldoret'
-    ].map(
+      'Eldoret',
+      'Lagos',
+      'London',
+      'Rome',
+      'Madrid',
+      'Paris',
+      'Riga',
+      'Stockholm',
+      'Vienna',
+      'Warsaw',
+    ];
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: _deviceWidth * 0.05),
+      width: _deviceWidth,
+      decoration: const BoxDecoration(color: Color.fromRGBO(53, 53, 53, 1.0),),
+      child: DropdownButton(        
+        value: _items.first,
+        onChanged: (_) {},
+        items: _items.map(
       (e) {
         return DropdownMenuItem<String>(
           value: e,
           child: Text(e),
         );
       },
-    ).toList();
-    return Container(
-      child: DropdownButton(
-        onChanged: (_) {},
-        items: _items
+    ).toList(),
+    underline: Container(),
+    dropdownColor: const Color.fromRGBO(
+      53, 
+      53, 
+      53, 
+      1.0,
+      ),
+      borderRadius: BorderRadius.circular(20,),
+      style: const TextStyle(color: Colors.white),
         ),
     );
   }
