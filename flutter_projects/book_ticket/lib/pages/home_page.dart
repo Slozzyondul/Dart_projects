@@ -1,4 +1,4 @@
-// ignore_for_file: unused_element, no_leading_underscores_for_local_identifiers, avoid_unnecessary_containers, must_be_immutable, sized_box_for_whitespace
+// ignore_for_file: unused_element, avoid_unnecessary_containers, must_be_immutable, sized_box_for_whitespace
 
 import 'package:book_ticket/widgets/custom_dropdown_button.dart';
 import 'package:flutter/material.dart';
@@ -18,13 +18,21 @@ class HomePage extends StatelessWidget {
           height: _deviceHeight,
           width: _deviceWidth,
           padding: EdgeInsets.symmetric(horizontal: _deviceWidth * 0.05),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Stack(
             children: [
-              _pageTitle(),
-              _bookRideWidget(),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _pageTitle(),
+                  _bookRideWidget(),
+                ],
+              ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: _mylogoImageWidget(),
+              ),
             ],
           ),
         ),
@@ -45,6 +53,8 @@ class HomePage extends StatelessWidget {
 
   Widget _mylogoImageWidget() {
     return Container(
+      height: _deviceHeight * 0.50,
+      width: _deviceWidth * 0.65,
       decoration: const BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.fill,
