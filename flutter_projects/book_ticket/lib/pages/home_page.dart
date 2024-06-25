@@ -64,6 +64,7 @@ class HomePage extends StatelessWidget {
         children: [
           _destinatonDropDownWidget(),
           _travellersInformationWidget(),
+          _rideButton(),
         ],
       ),
     );
@@ -123,6 +124,22 @@ class HomePage extends StatelessWidget {
           width: _deviceWidth * 0.40,
         ),
       ],
+    );
+  }
+
+  Widget _rideButton() {
+    return Container(
+      margin: EdgeInsets.only(bottom: _deviceHeight * 0.001),
+      width: _deviceHeight,
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(20)),
+      child: MaterialButton(
+        onPressed: () {},
+        child: const Text(
+          "Book Now!",
+          style: TextStyle(color: Colors.black),
+        ),
+      ),
     );
   }
 }
