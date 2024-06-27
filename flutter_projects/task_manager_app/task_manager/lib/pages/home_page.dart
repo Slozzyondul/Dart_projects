@@ -1,5 +1,8 @@
-// ignore_for_file: unused_field, avoid_print
+// ignore_for_file: unused_field, avoid_print, no_leading_underscores_for_local_identifiers
+
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:task_manager/models/task.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,8 +18,11 @@ class _HomePageState extends State<HomePage> {
 
   String? _newTaskContent;
 
-  //constructor for the homepage class
+  Box? _box;
+
+  // Constructor for the HomePage class
   _HomePageState();
+
   @override
   Widget build(BuildContext context) {
     _deviceHeight = MediaQuery.of(context).size.height;
@@ -33,37 +39,53 @@ class _HomePageState extends State<HomePage> {
         ),
         backgroundColor: Colors.yellow,
       ),
-      body: _tasksList(),
+      body: _tasksView(),
       floatingActionButton: _addTaskButton(),
     );
   }
 
+  Widget _tasksView() {
+    return FutureBuilder(
+      future: Hive.openBox('tasks'),
+      builder: (BuildContext _context, AsyncSnapshot<Box> _snapshot) {
+        if (_snapshot.connectionState == ConnectionState.done) {
+          if (_snapshot.hasError) {
+            return Center(child: Text('Error: ${_snapshot.error}'));
+          } else {
+            _box = _snapshot.data;
+            return _tasksList();
+          }
+        } else {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        }
+      },
+    );
+  }
+
   Widget _tasksList() {
-    return ListView(
-      children: [
-        ListTile(
-          title: const Text(
-            "Code",
-            style: TextStyle(decoration: TextDecoration.lineThrough),
+    List tasks = _box!.values.toList();
+    return ListView.builder(
+      itemCount: tasks.length,
+      itemBuilder: (BuildContext _context, int _index) {
+        var task = Task.fromMap(tasks[_index]);
+        return ListTile(
+          title: Text(
+            task.content,
+            style: TextStyle(
+              decoration: task.done ? TextDecoration.lineThrough : null,
+            ),
           ),
-          subtitle: Text(DateTime.now().toString()),
-          trailing: const Icon(
-            Icons.check_box_outline_blank_outlined,
+          subtitle: Text(
+            task.timestamp.toString(),
+          ),
+          trailing: Icon(
+            task.done ? Icons.check_box_outlined : Icons.check_box_outline_blank_outlined,
             color: Colors.black,
           ),
-        ),
-        ListTile(
-          title: const Text(
-            "Code again",
-            style: TextStyle(decoration: TextDecoration.lineThrough),
-          ),
-          subtitle: Text(DateTime.now().toString()),
-          trailing: const Icon(
-            Icons.check_box_outline_blank_outlined,
-            color: Colors.black,
-          ),
-        ),
-      ],
+        );
+      },
     );
   }
 
@@ -83,7 +105,13 @@ class _HomePageState extends State<HomePage> {
         return AlertDialog(
           title: const Text("Add Task"),
           content: TextField(
-            onSubmitted: (_value) {},
+            onSubmitted: (_value) {
+              setState(() {
+                _newTaskContent = _value;
+                _addTask();
+              });
+              Navigator.of(_context).pop();
+            },
             onChanged: (_value) {
               setState(() {
                 _newTaskContent = _value;
@@ -93,5 +121,16 @@ class _HomePageState extends State<HomePage> {
         );
       },
     );
+  }
+
+  void _addTask() {
+    if (_newTaskContent != null && _newTaskContent!.isNotEmpty) {
+      var task = Task(
+        content: _newTaskContent!,
+        timestamp: DateTime.now(),
+        done: false,
+      );
+      _box!.add(task.toMap());
+    }
   }
 }
