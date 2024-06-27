@@ -1,4 +1,4 @@
-// ignore_for_file: unused_field
+// ignore_for_file: unused_field, avoid_print
 
 import 'package:flutter/material.dart';
 
@@ -31,6 +31,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.yellow,
       ),
       body: _tasksList(),
+      floatingActionButton: _addTaskButton(),
     );
   }
 
@@ -48,7 +49,6 @@ class _HomePageState extends State<HomePage> {
             color: Colors.black,
           ),
         ),
-
         ListTile(
           title: const Text(
             "Code again",
@@ -61,6 +61,17 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _addTaskButton() {
+    return FloatingActionButton(
+      onPressed: () {
+        //print("button pressed");
+      },
+      child: const Icon(
+        Icons.add,
+      ),
     );
   }
 }
