@@ -106,11 +106,14 @@ class _HomePageState extends State<HomePage> {
           title: const Text("Add Task"),
           content: TextField(
             onSubmitted: (_value) {
+             if (_newTaskContent != null) {
+              var _task = Task(content: _newTaskContent!, timestamp: DateTime.now(), done: false);
+              _box!.add(_task.toMap());
               setState(() {
-                _newTaskContent = _value;
-                _addTask();
+                _newTaskContent = null;
+                Navigator.pop(context);
               });
-              Navigator.of(_context).pop();
+             }
             },
             onChanged: (_value) {
               setState(() {
