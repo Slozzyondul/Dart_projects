@@ -1,7 +1,9 @@
+// ignore_for_file: unused_field
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage();
+  const HomePage({super.key});
 
   @override
   State<StatefulWidget> createState() {
@@ -28,6 +30,37 @@ class _HomePageState extends State<HomePage> {
         ),
         backgroundColor: Colors.yellow,
       ),
+      body: _tasksList(),
+    );
+  }
+
+  Widget _tasksList() {
+    return ListView(
+      children: [
+        ListTile(
+          title: const Text(
+            "Code",
+            style: TextStyle(decoration: TextDecoration.lineThrough),
+          ),
+          subtitle: Text(DateTime.now().toString()),
+          trailing: const Icon(
+            Icons.check_box_outline_blank_outlined,
+            color: Colors.black,
+          ),
+        ),
+
+        ListTile(
+          title: const Text(
+            "Code again",
+            style: TextStyle(decoration: TextDecoration.lineThrough),
+          ),
+          subtitle: Text(DateTime.now().toString()),
+          trailing: const Icon(
+            Icons.check_box_outline_blank_outlined,
+            color: Colors.black,
+          ),
+        ),
+      ],
     );
   }
 }
