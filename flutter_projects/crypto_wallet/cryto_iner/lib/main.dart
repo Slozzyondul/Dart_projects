@@ -7,10 +7,12 @@ import 'package:cryto_iner/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get_it/get_it.dart';
+import 'package:cryto_iner/services/http_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await loadConfig();
+  registerHTTPService();
   runApp(const MyApp());
 }
 
@@ -21,11 +23,15 @@ Future<void> loadConfig() async {
   GetIt.instance.registerSingleton<AppConfig>(
     AppConfig(
       COIN_API_KEY: _configData["COIN_API_KEY"],
-      COIN_API_BASE_URL: _configData["COIN_API_BASE_URL"],
+
     ),
   );
+}
 
-  print(_configData);
+void registerHTTPService() {
+  GetIt.instance.registerSingleton<HTTPService>(
+    HTTPService(),
+  );
 }
 
 class MyApp extends StatelessWidget {
