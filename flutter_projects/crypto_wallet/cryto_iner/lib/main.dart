@@ -23,7 +23,7 @@ Future<void> loadConfig() async {
   GetIt.instance.registerSingleton<AppConfig>(
     AppConfig(
       COIN_API_KEY: _configData["COIN_API_KEY"],
-
+      COIN_API_BASE_URL: _configData["COIN_API_BASE_URL"]
     ),
   );
 }
