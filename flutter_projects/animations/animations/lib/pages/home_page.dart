@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: avoid_print, no_leading_underscores_for_local_identifiers
 
 import 'package:flutter/material.dart';
 
@@ -11,6 +11,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   double _buttonRadius = 100;
+
+  final Tween<double> _backgroundScale = Tween<double>(begin: 0.0, end: 1.0);
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +30,19 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _pageBackgroud() {
-    return Container(
-      color: Colors.yellow,
+    return TweenAnimationBuilder(
+      tween: _backgroundScale,
+      curve: Curves.easeInOutCubicEmphasized,
+      duration: const Duration(seconds: 1),
+      builder: (_context, double _scale, _child) {
+        return Transform.scale(
+          scale: _scale,
+          child: _child,
+        );
+      },
+      child: Container(
+        color: Colors.yellow,
+      ),
     );
   }
 
@@ -64,4 +77,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
- 
