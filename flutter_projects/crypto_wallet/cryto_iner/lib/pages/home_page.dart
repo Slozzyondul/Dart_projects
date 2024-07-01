@@ -101,6 +101,11 @@ class _HomePageState extends State<HomePage> {
           );
           num _usdPrice = _data["market_data"]["current_price"]["usd"];
           num _change24h = _data["market_data"]["price_change_percentage_24h"];
+
+          Map _exchangeRates = _data["market_data"]["current_price"];
+          // print(
+          //   _exchangeRates,
+          // );
           return Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             mainAxisSize: MainAxisSize.max,
@@ -112,7 +117,7 @@ class _HomePageState extends State<HomePage> {
                     context,
                     MaterialPageRoute(
                       builder: (BuildContext _context) {
-                        return DetailsPage();
+                        return DetailsPage(rates: _exchangeRates);
                       },
                     ),
                   );
