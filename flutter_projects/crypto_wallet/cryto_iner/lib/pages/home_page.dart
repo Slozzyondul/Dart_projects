@@ -1,5 +1,7 @@
 // ignore_for_file: no_leading_underscores_for_local_identifiers
 
+import 'dart:convert';
+
 import 'package:cryto_iner/services/http_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
@@ -34,7 +36,10 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
-            children: [_selectedCoinDropdown()],
+            children: [
+              _selectedCoinDropdown(),
+              _dataWidgets(),
+            ],
           ),
         ),
       ),
@@ -64,10 +69,34 @@ class _HomePageState extends State<HomePage> {
       dropdownColor: const Color.fromRGBO(255, 255, 255, 1.0),
       iconSize: 30,
       icon: const Icon(
-        Icons.arrow_circle_down_sharp,
+        Icons.arrow_drop_down,
         color: Colors.black,
       ),
       underline: Container(),
+    );
+  }
+
+  //data widget function for acessing data from the cypto API
+  Widget _dataWidgets() {
+    return FutureBuilder(
+      future: _http!.get("/coins/bitcoin"),
+      builder: (BuildContext _context, AsyncSnapshot _snapshot) {
+        if (_snapshot.hasData) {
+          Map _data = jsonDecode(
+            _snapshot.data.toString(),
+          );
+          num _usdPrice = _data["market_data"]["current_price"]["usd"];
+          return Text(
+            _usdPrice.toString(),
+          );
+        } else {
+          return const Center(
+            child: CircularProgressIndicator(
+              color: Colors.black,
+            ),
+          );
+        }
+      },
     );
   }
 }
