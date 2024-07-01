@@ -86,12 +86,14 @@ class _HomePageState extends State<HomePage> {
             _snapshot.data.toString(),
           );
           num _usdPrice = _data["market_data"]["current_price"]["usd"];
+          num _change24h = _data["market_data"]["price_change_percentage_24h"];
           return Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               _currentPriceWidget(_usdPrice),
+              _percentageChangeWidget(_change24h),
             ],
           );
         } else {
@@ -108,6 +110,17 @@ class _HomePageState extends State<HomePage> {
   Widget _currentPriceWidget(num _rate) {
     return Text(
       "${_rate.toStringAsFixed(2)} USD",
+      style: const TextStyle(
+        color: Colors.black,
+        fontSize: 15,
+        fontWeight: FontWeight.w500,
+      ),
+    );
+  }
+
+  Widget _percentageChangeWidget(num _change) {
+    return Text(
+      "${_change.toString()} %",
       style: const TextStyle(
         color: Colors.black,
         fontSize: 15,
