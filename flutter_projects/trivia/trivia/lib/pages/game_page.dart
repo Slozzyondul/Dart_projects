@@ -32,6 +32,15 @@ class GamePage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         _questionText(),
+        Column(
+          children: [
+            _trueButton(),
+            SizedBox(
+              height: _deviceHeight! * 0.05,
+            ),
+            _falseButton(),
+          ],
+        )
       ],
     );
   }
@@ -43,6 +52,40 @@ class GamePage extends StatelessWidget {
         color: Colors.black,
         fontSize: 25,
         fontWeight: FontWeight.w400,
+      ),
+    );
+  }
+
+  Widget _trueButton() {
+    return MaterialButton(
+      onPressed: () {},
+      color: Colors.green,
+      minWidth: _deviceWidth! * 0.8,
+      height: _deviceHeight! * 0.1,
+      child: const Text(
+        "true",
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 25,
+          fontWeight: FontWeight.w400,
+        ),
+      ),
+    );
+  }
+
+  Widget _falseButton() {
+    return MaterialButton(
+      onPressed: () {},
+      color: Colors.red,
+      minWidth: _deviceWidth! * 0.8,
+      height: _deviceHeight! * 0.1,
+      child: const Text(
+        "false",
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 25,
+          fontWeight: FontWeight.w400,
+        ),
       ),
     );
   }
