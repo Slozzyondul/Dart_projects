@@ -1,27 +1,38 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:trivia/providers/game_page_provider.dart';
 
 class GamePage extends StatelessWidget {
   double? _deviceHeight, _deviceWidth;
 
+  GamePageProvider? _pageProvider;
+
+ 
   @override
   Widget build(BuildContext context) {
     _deviceHeight = MediaQuery.of(context).size.height;
     _deviceWidth = MediaQuery.of(context).size.width;
-    return _buildUI();
+    return ChangeNotifierProvider(
+      create: (_contex) => GamePageProvider(context: context),
+      child: _buildUI(),
+    );
   }
 
   Widget _buildUI() {
-    return Scaffold(
-      body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.symmetric(
-            horizontal: _deviceHeight! * 0.05,
+    return Builder(
+      builder: (_context) {
+        _pageProvider = _context.watch<GamePageProvider>();
+        return Scaffold( 
+          body: SafeArea(
+            child: Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: _deviceHeight! * 0.05,
+              ),
+              child: _gameUI(),
+            ),
           ),
-          child: _gameUI(),
-        ),
-      ),
+        );
+      }
     );
   }
 
