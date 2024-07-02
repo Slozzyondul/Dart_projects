@@ -10,7 +10,11 @@
 analyzer:
   errors:
     avoid_print: ignore
+    must_be_immutable: ignore
     no_leading_underscores_for_local_identifiers: ignore
+    unused_element: ignore
+    unused_field: ignore
+    unused_local_variable: ignore
 include: package:flutter_lints/flutter.yaml
 
 linter:
