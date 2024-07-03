@@ -35,7 +35,7 @@ class GamePageProvider extends ChangeNotifier {
 
       questions = _data["results"];
       notifyListeners();
-      print(questions);
+      //print(questions);
 
       // Handle the data here
       if (_data['response_code'] == 0) {
@@ -51,5 +51,12 @@ class GamePageProvider extends ChangeNotifier {
 
   String getCurrentQuestionText() {
     return questions![_currentQuestionCount]["question"];
+  }
+
+  void answerQuestion(String _answer) async {
+    bool isCorrect = questions![_currentQuestionCount]["correct_answer"] == _answer;
+    _currentQuestionCount++;
+    print(isCorrect ? "correct" : "incorrect"); // print correct or incorrect
+    notifyListeners();
   }
 }
