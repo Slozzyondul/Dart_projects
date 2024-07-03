@@ -87,13 +87,17 @@ class _HomePageState extends State<HomePage> {
     return MaterialButton(
       onPressed: () {
         Navigator.push(
-          context, 
+          context,
           MaterialPageRoute(
             builder: (BuildContext _context) {
-              return GamePage();
+              return GamePage(
+                difficultyLevel:
+                    _difficultyTexts[_currentDifficultyLevel.toInt()]
+                        .toLowerCase(),
+              );
             },
-            ),
-          );
+          ),
+        );
       },
       color: Colors.black,
       minWidth: _deviceWidth! * 0.8,
