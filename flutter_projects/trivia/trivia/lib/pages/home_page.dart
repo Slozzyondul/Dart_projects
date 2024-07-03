@@ -11,6 +11,11 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   double? _deviceHeight, _deviceWidth;
+
+  double _currentDifficultyLevel = 0;
+
+  final List<String>_difficultyTexts = ["easy", "medium", "hard"];
+
   @override
   Widget build(BuildContext context) {
     _deviceHeight = MediaQuery.of(context).size.height;
@@ -26,6 +31,7 @@ class _HomePageState extends State<HomePage> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 _appTitle(),
+                _difficultySlider(),
               ],
             ),
           ),
@@ -35,9 +41,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _appTitle() {
-    return const Column(
+    return Column(
       children: [
-        Text(
+        const Text(
           "trivial",
           style: TextStyle(
             color: Colors.black,
@@ -45,7 +51,34 @@ class _HomePageState extends State<HomePage> {
             fontWeight: FontWeight.w500,
           ),
         ),
+        Text(
+          _difficultyTexts[_currentDifficultyLevel.toInt()],
+          style: const TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
       ],
+    );
+  }
+
+  Widget _difficultySlider() {
+    return Slider(
+      
+      label: "level",
+      min: 0,
+      max: 2,
+      divisions: 2,
+      value: _currentDifficultyLevel,
+      onChanged: (_value) {
+        setState(
+          () {
+            _currentDifficultyLevel = _value;
+            //print(_currentDifficultyLevel);
+          },
+        );
+      },
     );
   }
 }
