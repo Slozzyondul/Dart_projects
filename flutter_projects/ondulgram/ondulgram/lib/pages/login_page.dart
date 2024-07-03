@@ -11,6 +11,12 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   double? _deviceHeight, _deviceWidth;
+
+  final GlobalKey<FormState> _loginFormKey = GlobalKey<FormState>();
+
+  String? _email;
+  String? _password;
+
   @override
   Widget build(BuildContext context) {
     _deviceHeight = MediaQuery.of(context).size.height;
@@ -29,6 +35,7 @@ class _LoginPageState extends State<LoginPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 _titleWidget(),
+                _loginForm(),
                 _loginButton(),
               ],
             ),
@@ -49,6 +56,24 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  Widget _loginForm() {
+    return Container(
+      height: _deviceHeight! * 0.2,
+      child: Form(
+        key: _loginFormKey,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            _emailTextField(),
+            _passwordTextField(),
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget _loginButton() {
     return MaterialButton(
       onPressed: () {},
@@ -63,6 +88,42 @@ class _LoginPageState extends State<LoginPage> {
           fontWeight: FontWeight.w600,
         ),
       ),
+    );
+  }
+
+  Widget _emailTextField() {
+    return TextFormField(
+      decoration: const InputDecoration(hintText: "email..."),
+      onSaved: (_value) {
+        setState(
+          () {
+            _email = _value;
+          },
+        );
+      },
+      validator: (_value) {
+        bool _result = _value!.contains(
+          RegExp(
+              r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"),
+        );
+        _result ? null : "please use a valid email";
+      },
+    );
+  }
+
+  Widget _passwordTextField() {
+    return TextFormField(
+      obscureText: true,
+      decoration: const InputDecoration(hintText: "password..."),
+      onSaved: (_value) {
+        setState(
+          () {
+            _password = _value;
+          },
+        );
+      },
+      validator: (_value) =>
+          _value!.length > 6 ? null : "password must be at least 6 characters",
     );
   }
 }
