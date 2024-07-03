@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 
@@ -54,9 +53,26 @@ class GamePageProvider extends ChangeNotifier {
   }
 
   void answerQuestion(String _answer) async {
-    bool isCorrect = questions![_currentQuestionCount]["correct_answer"] == _answer;
+    bool isCorrect =
+        questions![_currentQuestionCount]["correct_answer"] == _answer;
     _currentQuestionCount++;
-    print(isCorrect ? "correct" : "incorrect"); // print correct or incorrect
+    //print(isCorrect ? "correct" : "incorrect"); // print correct or incorrect
+    showDialog(
+      context: context,
+      builder: (BuildContext _contex) {
+        return AlertDialog(
+          backgroundColor: isCorrect ? Colors.green : Colors.red,
+          title: Icon(
+            isCorrect ? Icons.check_circle : Icons.cancel_sharp,
+            color: Colors.black,
+          ),
+        );
+      },
+    );
+    await Future.delayed(
+      const Duration(seconds: 1),
+    );
+    Navigator.pop(context);
     notifyListeners();
   }
 }

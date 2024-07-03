@@ -7,6 +7,8 @@ class GamePage extends StatelessWidget {
 
   GamePageProvider? _pageProvider;
 
+  GamePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     _deviceHeight = MediaQuery.of(context).size.height;
