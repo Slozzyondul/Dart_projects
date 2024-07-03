@@ -7,7 +7,6 @@ class GamePage extends StatelessWidget {
 
   GamePageProvider? _pageProvider;
 
- 
   @override
   Widget build(BuildContext context) {
     _deviceHeight = MediaQuery.of(context).size.height;
@@ -19,10 +18,10 @@ class GamePage extends StatelessWidget {
   }
 
   Widget _buildUI() {
-    return Builder(
-      builder: (_context) {
-        _pageProvider = _context.watch<GamePageProvider>();
-        return Scaffold( 
+    return Builder(builder: (_context) {
+      _pageProvider = _context.watch<GamePageProvider>();
+      if (_pageProvider!.questions != null) {
+        return Scaffold(
           body: SafeArea(
             child: Container(
               padding: EdgeInsets.symmetric(
@@ -32,8 +31,14 @@ class GamePage extends StatelessWidget {
             ),
           ),
         );
+      } else {
+        return const Center(
+          child: CircularProgressIndicator(
+            color: Colors.yellow,
+          ),
+        );
       }
-    );
+    });
   }
 
   Widget _gameUI() {
@@ -57,9 +62,9 @@ class GamePage extends StatelessWidget {
   }
 
   Widget _questionText() {
-    return const Text(
-      "solo question sample 1",
-      style: TextStyle(
+    return  Text(
+      _pageProvider!.getCurrentQuestionText(),
+      style: const TextStyle(
         color: Colors.black,
         fontSize: 25,
         fontWeight: FontWeight.w400,
