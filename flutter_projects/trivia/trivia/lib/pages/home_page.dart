@@ -1,6 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
+import 'package:trivia/pages/game_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -14,7 +15,7 @@ class _HomePageState extends State<HomePage> {
 
   double _currentDifficultyLevel = 0;
 
-  final List<String>_difficultyTexts = ["easy", "medium", "hard"];
+  final List<String> _difficultyTexts = ["easy", "medium", "hard"];
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +33,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 _appTitle(),
                 _difficultySlider(),
+                _startGameButton(),
               ],
             ),
           ),
@@ -65,7 +67,6 @@ class _HomePageState extends State<HomePage> {
 
   Widget _difficultySlider() {
     return Slider(
-      
       label: "level",
       min: 0,
       max: 2,
@@ -79,6 +80,31 @@ class _HomePageState extends State<HomePage> {
           },
         );
       },
+    );
+  }
+
+  Widget _startGameButton() {
+    return MaterialButton(
+      onPressed: () {
+        Navigator.push(
+          context, 
+          MaterialPageRoute(
+            builder: (BuildContext _context) {
+              return GamePage();
+            },
+            ),
+          );
+      },
+      color: Colors.black,
+      minWidth: _deviceWidth! * 0.8,
+      height: _deviceHeight! * 0.15,
+      child: const Text(
+        "start",
+        style: TextStyle(
+          color: Colors.yellow,
+          fontSize: 25,
+        ),
+      ),
     );
   }
 }
