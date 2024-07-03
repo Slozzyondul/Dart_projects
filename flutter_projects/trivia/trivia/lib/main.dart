@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trivia/pages/game_page.dart';
+import 'package:trivia/pages/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.yellow,
         primarySwatch: Colors.yellow,
       ),
-      home: GamePage(),
+      home: HomePage(),
     );
   }
 }
