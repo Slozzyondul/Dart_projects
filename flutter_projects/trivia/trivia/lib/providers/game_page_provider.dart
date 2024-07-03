@@ -7,6 +7,7 @@ class GamePageProvider extends ChangeNotifier {
   final int _maxQuestions = 10;
 
   List? questions;
+  int _currentQuestionCount = 0;
 
   BuildContext context;
 
@@ -33,6 +34,7 @@ class GamePageProvider extends ChangeNotifier {
       //print(_data);
 
       questions = _data["results"];
+      notifyListeners();
       print(questions);
 
       // Handle the data here
@@ -45,5 +47,9 @@ class GamePageProvider extends ChangeNotifier {
     } catch (e) {
       print('Error fetching data from API: $e');
     }
+  }
+
+  String getCurrentQuestionText() {
+    return questions![_currentQuestionCount]["question"];
   }
 }
