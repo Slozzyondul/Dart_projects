@@ -14,7 +14,7 @@ class GamePage extends StatelessWidget {
     _deviceHeight = MediaQuery.of(context).size.height;
     _deviceWidth = MediaQuery.of(context).size.width;
     return ChangeNotifierProvider(
-      create: (_contex) => GamePageProvider(context: context),
+      create: (_context) => GamePageProvider(context: context),
       child: _buildUI(),
     );
   }

@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 
 class GamePageProvider extends ChangeNotifier {
   final Dio _dio = Dio();
-  final int _maxQuestions = 10;
+  final int _maxQuestions = 3;
 
   List? questions;
   int _currentQuestionCount = 0;
@@ -59,7 +59,7 @@ class GamePageProvider extends ChangeNotifier {
     //print(isCorrect ? "correct" : "incorrect"); // print correct or incorrect
     showDialog(
       context: context,
-      builder: (BuildContext _contex) {
+      builder: (BuildContext _context) {
         return AlertDialog(
           backgroundColor: isCorrect ? Colors.green : Colors.red,
           title: Icon(
@@ -73,6 +73,35 @@ class GamePageProvider extends ChangeNotifier {
       const Duration(seconds: 1),
     );
     Navigator.pop(context);
-    notifyListeners();
+
+    if (_currentQuestionCount == _maxQuestions) {
+      endGame();
+    } else {
+      notifyListeners();
+    }
+  }
+
+  Future<void> endGame() async {
+    showDialog(
+      context: context,
+      builder: (BuildContext _context) {
+        return const AlertDialog(
+          backgroundColor: Colors.yellow,
+          title: Text(
+            "the  end!",
+            style: TextStyle(
+              fontSize: 25,
+              color: Colors.black,
+            ),
+          ),
+          content: Text("score: 0/0"),
+        );
+      },
+    );
+    await Future.delayed(
+      const Duration(seconds: 3),
+    );
+    Navigator.pop(context);
+    Navigator.pop(context);
   }
 }
