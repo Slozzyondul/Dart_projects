@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ondulgram/pages/feed_page.dart';
+import 'package:ondulgram/pages/profile_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -12,12 +14,8 @@ class _HomePageState extends State<HomePage> {
   int _currentPage = 0;
 
   final List<Widget> _pages = [
-    Container(
-      color: Colors.green,
-    ),
-    Container(
-      color: Colors.blue,
-    ),
+    FeedPage(),
+    ProfilePage(),
   ];
 
   @override
