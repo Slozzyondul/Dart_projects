@@ -37,6 +37,7 @@ class _LoginPageState extends State<LoginPage> {
                 _titleWidget(),
                 _loginForm(),
                 _loginButton(),
+                _registerPageLink(),
               ],
             ),
           ),
@@ -127,10 +128,25 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  Widget _registerPageLink() {
+    return GestureDetector(
+      onTap: () => Navigator.pushNamed(context, 'register'),
+      child: const Text(
+        'dont have an account?',
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 15,
+          fontWeight: FontWeight.w400,
+        ),
+      ),
+    );
+  }
+
   void _loginUser() {
-    //print(_loginFormKey.currentState!.validate());     
+    //print(_loginFormKey.currentState!.validate());
     if (_loginFormKey.currentState!.validate()) {
-      _loginFormKey.currentState!.save(); // this will save the current information in the form
+      _loginFormKey.currentState!
+          .save(); // this will save the current information in the form
     }
   }
 }
