@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "420268089969",
+    "project_id": "ondulgram",
+    "storage_bucket": "ondulgram.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420268089969:android:d2425490c1d1df8d54b1d0",
+        "android_client_info": {
+          "package_name": "com.example.ondulgram"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0tSKrK4zFQh8K8f3lSxPfFHUbl_yx-4A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
