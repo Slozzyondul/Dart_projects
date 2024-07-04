@@ -57,7 +57,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _loginForm() {
-    return Container(
+    return SizedBox(
       height: _deviceHeight! * 0.2,
       child: Form(
         key: _loginFormKey,
@@ -76,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _loginButton() {
     return MaterialButton(
-      onPressed: () {},
+      onPressed: _loginUser,
       minWidth: _deviceWidth! * 0.7,
       height: _deviceHeight! * 0.06,
       color: Colors.black,
@@ -106,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
           RegExp(
               r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"),
         );
-        _result ? null : "please use a valid email";
+        return _result ? null : "please use a valid email";
       },
     );
   }
@@ -125,5 +125,12 @@ class _LoginPageState extends State<LoginPage> {
       validator: (_value) =>
           _value!.length > 6 ? null : "password must be at least 6 characters",
     );
+  }
+
+  void _loginUser() {
+    //print(_loginFormKey.currentState!.validate());     
+    if (_loginFormKey.currentState!.validate()) {
+      _loginFormKey.currentState!.save(); // this will save the current information in the form
+    }
   }
 }
