@@ -25,7 +25,7 @@ class _FeedPageState extends State<FeedPage> {
   Widget build(BuildContext context) {
     _deviceHeight = MediaQuery.of(context).size.height;
     _deviceWidth = MediaQuery.of(context).size.width;
-    return Container(
+    return SizedBox(
       height: _deviceHeight!,
       width: _deviceWidth!,
       child: _postsListView(),
