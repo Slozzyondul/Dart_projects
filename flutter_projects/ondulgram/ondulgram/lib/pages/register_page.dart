@@ -1,6 +1,9 @@
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:ondulgram/services/firebase_service.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -14,10 +17,18 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   double? _deviceHeight, _deviceWidth;
 
+  FirebaseService? _firebaseService;
+
   final GlobalKey<FormState> _registerFormKey = GlobalKey<FormState>();
 
   String? _name, _email, _password;
   File? _image;
+
+  @override
+  void initState() {
+    super.initState();
+    _firebaseService = GetIt.instance.get<FirebaseService>();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -79,20 +90,18 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
   Widget _profileImageWidget() {
-    var _imageProvider = _image != null
+    ImageProvider _imageProvider = _image != null
         ? FileImage(_image!)
         : const NetworkImage("https://i.pravatar.cc/300");
+    
     return GestureDetector(
-      onTap: () {
-        FilePicker.platform.pickFiles(type: FileType.image).then(
-          (_result) {
-            setState(
-              () {
-                _image = File(_result!.files.first.path!);
-              },
-            );
-          },
-        );
+      onTap: () async {
+        var result = await FilePicker.platform.pickFiles(type: FileType.image);
+        if (result != null && result.files.first.path != null) {
+          setState(() {
+            _image = File(result.files.first.path!);
+          });
+        }
       },
       child: Container(
         width: _deviceWidth! * 0.30,
@@ -100,7 +109,7 @@ class _RegisterPageState extends State<RegisterPage> {
         decoration: BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.cover,
-            image: _imageProvider as ImageProvider,
+            image: _imageProvider,
           ),
         ),
       ),
@@ -174,9 +183,16 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 
-  void _registerUser() {
+  void _registerUser() async {
     if (_registerFormKey.currentState!.validate() && _image != null) {
       _registerFormKey.currentState!.save();
+      bool _result = await _firebaseService!.registerUser(
+        name: _name!,
+        email: _email!,
+        password: _password!,
+        image: _image!.path,
+      );
+      if (_result) Navigator.pop(context);
     }
   }
 }

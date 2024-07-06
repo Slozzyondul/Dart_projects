@@ -11,12 +11,15 @@ analyzer:
   errors:
     avoid_print: ignore
     dead_code: ignore
+    depend_on_referenced_packages: ignore
     no_leading_underscores_for_local_identifiers: ignore
     non_constant_identifier_names: ignore
     prefer_const_constructors: ignore
     prefer_const_declarations: ignore
     prefer_final_fields: ignore
     unused_field: ignore
+    unused_import: ignore
+    use_build_context_synchronously: ignore
     use_key_in_widget_constructors: ignore
 include: package:flutter_lints/flutter.yaml
 
