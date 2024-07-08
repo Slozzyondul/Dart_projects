@@ -15,7 +15,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   FirebaseService? _firebaseService;
 
   int _currentPage = 0;
@@ -34,6 +33,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.yellow,
       appBar: AppBar(
         title: const Text(
           "ondulgram",
@@ -49,7 +49,10 @@ class _HomePageState extends State<HomePage> {
               right: 8.0,
             ),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () async {
+                await _firebaseService!.logout();
+                Navigator.popAndPushNamed(context, 'login');
+              },
               child: const Icon(Icons.logout),
             ),
           ),
@@ -63,7 +66,6 @@ class _HomePageState extends State<HomePage> {
   Widget _bottomNavigationBar() {
     return BottomNavigationBar(
       currentIndex: _currentPage,
-
       onTap: (_index) {
         setState(() {
           _currentPage = _index;
@@ -77,20 +79,19 @@ class _HomePageState extends State<HomePage> {
             Icons.feed,
           ),
         ),
-
         BottomNavigationBarItem(
           label: 'profile',
           icon: Icon(
             Icons.account_box,
           ),
         ),
-
       ],
     );
   }
 
   void _postImage() async {
-    FilePickerResult? _result = await FilePicker.platform.pickFiles(type: FileType.image);
+    FilePickerResult? _result =
+        await FilePicker.platform.pickFiles(type: FileType.image);
     File _image = File(_result!.files.first.path!);
     await _firebaseService!.postImage(_image);
   }
