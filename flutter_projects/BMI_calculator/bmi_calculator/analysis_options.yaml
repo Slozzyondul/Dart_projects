@@ -10,6 +10,7 @@
 analyzer:
   errors:
     no_leading_underscores_for_local_identifiers: ignore
+    unused_field: ignore
     use_key_in_widget_constructors: ignore
 include: package:flutter_lints/flutter.yaml
 
