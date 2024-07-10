@@ -11,6 +11,7 @@ class BMIPage extends StatefulWidget {
 
 class _BMIPageState extends State<BMIPage> {
   double? _deviceHeight, _deviceWidth;
+  int _age = 27;
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +21,76 @@ class _BMIPageState extends State<BMIPage> {
       child: Container(
         color: Colors.black,
         child: Center(
-          child: InfoCard(
-            height: _deviceHeight! * 0.2,
-            width: _deviceWidth! * 0.45,
-            child: Container(),
-          ),
+          child: _ageSelectContainer(),
         ),
+      ),
+    );
+  }
+
+  Widget _ageSelectContainer() {
+    return InfoCard(
+      height: _deviceHeight! * 0.2,
+      width: _deviceWidth! * 0.45,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            'age',
+            style: TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+          Text(
+            _age.toString(),
+            style: TextStyle(
+              fontSize: 45,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                width: 50,
+                child: CupertinoDialogAction(
+                  onPressed: () {
+                    setState(
+                      () {
+                        _age--;
+                      },
+                    );
+                  },
+                  child: Text('-'),
+                  textStyle: TextStyle(
+                    fontSize: 25,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 50,
+                child: CupertinoDialogAction(
+                  onPressed: () {
+                    setState(
+                      () {
+                        _age++;
+                      },
+                    );
+                  },
+                  child: Text('+'),
+                  textStyle: TextStyle(
+                    fontSize: 25,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
