@@ -10,6 +10,9 @@
 analyzer:
   errors:
     no_leading_underscores_for_local_identifiers: ignore
+    prefer_const_constructors: ignore
+    sized_box_for_whitespace: ignore
+    sort_child_properties_last: ignore
     unused_field: ignore
     use_key_in_widget_constructors: ignore
 include: package:flutter_lints/flutter.yaml

@@ -33,6 +33,7 @@ class _BMIPageState extends State<BMIPage> {
               children: [
                 _ageSelectContainer(),
                 _weightSelectorContainer(),
+
               ],
             ),
           ],
@@ -57,7 +58,7 @@ class _BMIPageState extends State<BMIPage> {
             ),
           ),
           Text(
-            _weight.toString(),
+            _age.toString(),
             style: TextStyle(
               fontSize: 45,
               fontWeight: FontWeight.w700,

@@ -1,7 +1,6 @@
 import 'package:bmi_calculator/pages/bmi_page.dart';
 import 'package:bmi_calculator/pages/history_page.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
   @override
