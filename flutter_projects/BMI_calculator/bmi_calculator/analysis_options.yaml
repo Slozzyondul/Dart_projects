@@ -10,6 +10,7 @@
 analyzer:
   errors:
     avoid_print: ignore
+    must_be_immutable: ignore
     no_leading_underscores_for_local_identifiers: ignore
     prefer_const_constructors: ignore
     sized_box_for_whitespace: ignore
