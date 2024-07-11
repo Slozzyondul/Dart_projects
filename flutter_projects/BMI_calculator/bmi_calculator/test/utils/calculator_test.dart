@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:bmi_calculator/utils/calculator.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -44,3 +42,4 @@ void main() {
     },
   );
 }
+  
