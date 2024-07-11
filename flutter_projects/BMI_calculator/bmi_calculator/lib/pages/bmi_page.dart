@@ -3,6 +3,7 @@ import 'package:bmi_calculator/widgets/info_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:developer' as developer;
 
 class BMIPage extends StatefulWidget {
   @override
@@ -319,6 +320,7 @@ class _BMIPageState extends State<BMIPage> {
       'bmi_data',
       bmiData,
     );
-    print('bmi result saved');
+    developer.log("\x1B[32mBMI result saved\x1B[0m");
+    //print('bmi result saved');
   }
 }
