@@ -56,7 +56,7 @@ class _BMIPageState extends State<BMIPage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            'age',
+            'age yrs',
             style: TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.w400,
@@ -190,7 +190,7 @@ class _BMIPageState extends State<BMIPage> {
       child: Column(
         children: [
           Text(
-            'height',
+            'height inches',
             style: TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.w400,
@@ -263,10 +263,43 @@ class _BMIPageState extends State<BMIPage> {
         onPressed: () {
           if (_height > 0 && _weight > 0 && _age > 0) {
             double _bmi = 703 * (_weight / pow(_height, 2));
-            print(_bmi);
+            _showResultDialog(_bmi);
+            //print(_bmi);
           }
         },
       ),
+    );
+  }
+
+  void _showResultDialog(double _bmi) {
+    String? _status;
+    if (_bmi < 18.5) {
+      _status = "Underweight";
+    } else if (_bmi >= 18.5 && _bmi < 25) {
+      _status = "Normal";
+    } else if (_bmi >= 25 && _bmi < 30) {
+      _status = "Overweight";
+    } else {
+      _status = "Obese";
+    }
+    showCupertinoDialog(
+      context: context,
+      builder: (BuildContext _context) {
+        return CupertinoAlertDialog(
+          title: Text(_status!),
+          content: Text(
+            _bmi.toStringAsFixed(2),
+          ),
+          actions: [
+            CupertinoDialogAction(
+              child: const Text('ok'),
+              onPressed: () {
+                Navigator.pop(_context);
+              },
+            ),
+          ],
+        );
+      },
     );
   }
 }
