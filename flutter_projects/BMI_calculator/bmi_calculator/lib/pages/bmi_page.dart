@@ -1,4 +1,3 @@
-
 import 'package:bmi_calculator/utils/calculator.dart';
 import 'package:bmi_calculator/widgets/info_card.dart';
 import 'package:flutter/cupertino.dart';
@@ -146,6 +145,7 @@ class _BMIPageState extends State<BMIPage> {
               SizedBox(
                 width: 50,
                 child: CupertinoDialogAction(
+                  key: Key('weight_minus'),
                   onPressed: () {
                     setState(
                       () {
@@ -163,6 +163,7 @@ class _BMIPageState extends State<BMIPage> {
               SizedBox(
                 width: 50,
                 child: CupertinoDialogAction(
+                  key: Key('weight_plus'),
                   onPressed: () {
                     setState(
                       () {
@@ -186,7 +187,7 @@ class _BMIPageState extends State<BMIPage> {
 
   Widget _heightSelectContainer() {
     return InfoCard(
-      height: _deviceHeight! * 0.15,
+      height: _deviceHeight! * 0.18,
       width: _deviceWidth! * 0.9,
       child: Column(
         children: [
