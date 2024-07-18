@@ -23,11 +23,15 @@ class _HomeState extends State<Home> {
           appBar: AppBar(
             actions: [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  homeBloc.add(HomeWishlistButtonNavigateEvent());
+                },
                 icon: Icon(Icons.favorite),
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  homeBloc.add(HomeCartButtonNavigateEvent());
+                },
                 icon: Icon(Icons.shopping_bag),
               ),
             ],
