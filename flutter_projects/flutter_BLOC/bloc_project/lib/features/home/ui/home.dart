@@ -13,13 +13,29 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final HomeBloc homeBloc = HomeBloc();
+
+  @override
+  void dispose() {
+    homeBloc.close();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<HomeBloc, HomeState>(
       bloc: homeBloc,
-      listenWhen: (previos, current) => current is HomeActionState,
-      buildWhen: (previous, current) => current is! HomeActionState,
+      listenWhen: (previous, current) {
+        print("listenWhen: previous - $previous, current - $current");
+        return current is HomeNavigateToWishlistPageActionState ||
+            current is HomeNavigateToCartPageActionState;
+      },
+      buildWhen: (previous, current) {
+        print("buildWhen: previous - $previous, current - $current");
+        return current is! HomeNavigateToWishlistPageActionState &&
+            current is! HomeNavigateToCartPageActionState;
+      },
       listener: (context, state) {
+        print("listener: state - $state");
         if (state is HomeNavigateToCartPageActionState) {
           Navigator.push(
             context,
@@ -42,17 +58,13 @@ class _HomeState extends State<Home> {
             actions: [
               IconButton(
                 onPressed: () {
-                  homeBloc.add(
-                    HomeWishlistButtonNavigateEvent(),
-                  );
+                  homeBloc.add(HomeWishlistButtonNavigateEvent());
                 },
                 icon: Icon(Icons.favorite),
               ),
               IconButton(
                 onPressed: () {
-                  homeBloc.add(
-                    HomeCartButtonNavigateEvent(),
-                  );
+                  homeBloc.add(HomeCartButtonNavigateEvent());
                 },
                 icon: Icon(Icons.shopping_bag),
               ),
