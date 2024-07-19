@@ -41,12 +41,33 @@ class ProductTileWidget extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          Text(
-            "Ksh " + productDataModel.price.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Ksh " + productDataModel.price.toString(),
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      //homeBloc.add(HomeWishlistButtonNavigateEvent());
+                    },
+                    icon: Icon(Icons.favorite),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      //homeBloc.add(HomeCartButtonNavigateEvent());
+                    },
+                    icon: Icon(Icons.shopping_bag),
+                  ),
+                ],
+              )
+            ],
           ),
         ],
       ),
