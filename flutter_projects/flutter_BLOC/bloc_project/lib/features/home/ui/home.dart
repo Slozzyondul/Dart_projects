@@ -15,9 +15,9 @@ class _HomeState extends State<Home> {
   final HomeBloc homeBloc = HomeBloc();
 
   @override
-  void dispose() {
-    homeBloc.close();
-    super.dispose();
+  void initState() {
+    homeBloc.add(HomeInitialEvent());
+    super.initState();
   }
 
   @override
@@ -53,34 +53,54 @@ class _HomeState extends State<Home> {
         }
       },
       builder: (context, state) {
-        return Scaffold(
-          appBar: AppBar(
-            actions: [
-              IconButton(
-                onPressed: () {
-                  homeBloc.add(HomeWishlistButtonNavigateEvent());
-                },
-                icon: Icon(Icons.favorite),
+        switch (state.runtimeType) {
+          case HomeLoadingState:
+            return Scaffold(
+              body: Center(
+                child: CircularProgressIndicator(),
               ),
-              IconButton(
-                onPressed: () {
-                  homeBloc.add(HomeCartButtonNavigateEvent());
-                },
-                icon: Icon(Icons.shopping_bag),
+            );
+          case HomeLoadedSuccessState:
+            return Scaffold(
+              appBar: AppBar(
+                actions: [
+                  IconButton(
+                    onPressed: () {
+                      homeBloc.add(HomeWishlistButtonNavigateEvent());
+                    },
+                    icon: Icon(Icons.favorite),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      homeBloc.add(HomeCartButtonNavigateEvent());
+                    },
+                    icon: Icon(Icons.shopping_bag),
+                  ),
+                ],
+                title: Center(
+                  child: Text(
+                    "groceries",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 30,
+                    ),
+                  ),
+                ),
+                backgroundColor: Colors.yellowAccent,
               ),
-            ],
-            title: Center(
-              child: Text(
-                "groceries",
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 30,
+            );
+          case HomeErrorState:
+            return Scaffold(
+              body: Center(
+                child: Text(
+                  "An error occurred",
+                  style: TextStyle(color: Colors.red),
                 ),
               ),
-            ),
-            backgroundColor: Colors.yellowAccent,
-          ),
-        );
+            );
+          default:
+            return SizedBox();
+        }
       },
     );
   }
