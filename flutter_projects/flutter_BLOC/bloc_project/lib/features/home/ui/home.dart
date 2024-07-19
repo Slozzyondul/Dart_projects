@@ -25,16 +25,8 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return BlocConsumer<HomeBloc, HomeState>(
       bloc: homeBloc,
-      listenWhen: (previous, current) {
-        print("listenWhen: previous - $previous, current - $current");
-        return current is HomeNavigateToWishlistPageActionState ||
-            current is HomeNavigateToCartPageActionState;
-      },
-      buildWhen: (previous, current) {
-        print("buildWhen: previous - $previous, current - $current");
-        return current is! HomeNavigateToWishlistPageActionState &&
-            current is! HomeNavigateToCartPageActionState;
-      },
+      listenWhen: (previos, current) => current is HomeActionState,
+      buildWhen: (previous, current) => current is! HomeActionState,
       listener: (context, state) {
         print("listener: state - $state");
         if (state is HomeNavigateToCartPageActionState) {
@@ -51,6 +43,12 @@ class _HomeState extends State<Home> {
               builder: (context) => Wishlist(),
             ),
           );
+        } else if (state is HomeProductItemCartedActionState) {
+          ScaffoldMessenger.of(context)
+              .showSnackBar(SnackBar(content: Text("added to cart")));
+        } else if (state is HomeProductItemWishlistedActionState) {
+          ScaffoldMessenger.of(context)
+              .showSnackBar(SnackBar(content: Text("added to wishlist")));
         }
       },
       builder: (context, state) {
