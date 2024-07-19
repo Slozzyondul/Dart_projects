@@ -12,9 +12,10 @@ class Cart extends StatefulWidget {
 
 class _CartState extends State<Cart> {
   final CartBloc cartBloc = CartBloc();
+
   @override
   void initState() {
-    cartBloc.add(CartIntialEvent());
+    cartBloc.add(CartInitialEvent());
     super.initState();
   }
 
@@ -30,19 +31,22 @@ class _CartState extends State<Cart> {
         listenWhen: (previous, current) => current is CartActionState,
         buildWhen: (previous, current) => current is! CartActionState,
         builder: (context, state) {
-          switch (state.runtimeType) {
-            case CartSuccessState:
-              final successState = state as CartSuccessState;
-              return ListView.builder(
-                  itemCount: successState.cartItems.length,
-                  itemBuilder: (context, index) {
-                    return CartTileWidget(
-                      cartBloc: cartBloc,
-                      productDataModel: successState.cartItems[index],
-                    );
-                  });
+          if (state is CartLoadingState) {
+            return Center(child: CircularProgressIndicator());
+          } else if (state is CartSuccessState) {
+            final successState = state as CartSuccessState;
+            return ListView.builder(
+              itemCount: successState.cartItems.length,
+              itemBuilder: (context, index) {
+                return CartTileWidget(
+                  cartBloc: cartBloc,
+                  productDataModel: successState.cartItems[index],
+                );
+              },
+            );
+          } else {
+            return Center(child: Text('No items in the cart.'));
           }
-          return Container();
         },
       ),
     );

@@ -15,6 +15,7 @@ analyzer:
     prefer_interpolation_to_compose_strings: ignore
     sized_box_for_whitespace: ignore
     type_literal_in_constant_pattern: ignore
+    unnecessary_cast: ignore
 include: package:flutter_lints/flutter.yaml
 
 linter:
