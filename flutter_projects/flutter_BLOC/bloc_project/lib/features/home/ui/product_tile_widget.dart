@@ -15,6 +15,12 @@ class ProductTileWidget extends StatelessWidget {
           Container(
             height: 200,
             width: double.maxFinite,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage(productDataModel.imageUrl),
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
           Text(productDataModel.name),
           Text(productDataModel.description),
