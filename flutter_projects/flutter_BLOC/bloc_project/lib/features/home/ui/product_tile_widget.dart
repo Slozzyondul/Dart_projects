@@ -10,7 +10,12 @@ class ProductTileWidget extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(10),
       padding: const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: Colors.black),
+      ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             height: 200,
@@ -22,8 +27,27 @@ class ProductTileWidget extends StatelessWidget {
               ),
             ),
           ),
-          Text(productDataModel.name),
+          const SizedBox(
+            height: 20,
+          ),
+          Text(
+            productDataModel.name,
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           Text(productDataModel.description),
+          const SizedBox(
+            height: 20,
+          ),
+          Text(
+            "Ksh " + productDataModel.price.toString(),
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ],
       ),
     );

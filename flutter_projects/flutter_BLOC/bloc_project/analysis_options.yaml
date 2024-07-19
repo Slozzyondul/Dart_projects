@@ -12,6 +12,7 @@ analyzer:
     avoid_print: ignore
     depend_on_referenced_packages: ignore
     prefer_const_constructors: ignore
+    prefer_interpolation_to_compose_strings: ignore
     sized_box_for_whitespace: ignore
     type_literal_in_constant_pattern: ignore
 include: package:flutter_lints/flutter.yaml
