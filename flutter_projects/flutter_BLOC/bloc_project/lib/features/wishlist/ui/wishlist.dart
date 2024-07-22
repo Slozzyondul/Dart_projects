@@ -1,5 +1,7 @@
 import 'package:bloc_project/features/wishlist/bloc/wishlist_bloc.dart';
+import 'package:bloc_project/features/wishlist/ui/wishlist_tile_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Wishlist extends StatefulWidget {
   const Wishlist({super.key});
@@ -23,8 +25,28 @@ class _WishlistState extends State<Wishlist> {
       appBar: AppBar(
         title: Text("wishlist items"),
       ),
-      body: Column(
-        children: [],
+      body: BlocConsumer<WishlistBloc, WishlistState>(
+        bloc: wishlistBloc,
+        listener: (context, state) => {},
+        listenWhen: (previous, current) => current is WishlistActionState,
+        buildWhen: (previous, current) => current is! WishlistActionState,
+        builder: (context, state) {
+          if (state is WishlistLoadingState) {
+            return Center(child: CircularProgressIndicator());
+          } else if (state is WishlistSuccessState) {
+            final successState = state as WishlistSuccessState;
+            return ListView.builder(
+              itemBuilder: (context, index) {
+                return WishlistTileWidget(
+                  wishlistBloc: wishlistBloc,
+                  productDataModel: successState.wishlistItems[index],
+                );
+              },
+            );
+          } else {
+            return Center(child: Text("No items in wishlist"));
+          }
+        },
       ),
     );
   }
