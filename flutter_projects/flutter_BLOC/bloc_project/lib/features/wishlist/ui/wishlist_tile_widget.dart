@@ -58,7 +58,7 @@ class WishlistTileWidget extends StatelessWidget {
                       wishlistBloc.add(WishlistRemovefromWishlistEvent(
                           productDataModel: productDataModel));
                     },
-                    icon: Icon(Icons.shopping_basket_outlined),
+                    icon: Icon(Icons.favorite),
                   ),
                 ],
               )
