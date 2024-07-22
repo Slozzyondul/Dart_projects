@@ -36,6 +36,7 @@ class _WishlistState extends State<Wishlist> {
           } else if (state is WishlistSuccessState) {
             final successState = state as WishlistSuccessState;
             return ListView.builder(
+              itemCount: successState.wishlistItems.length,
               itemBuilder: (context, index) {
                 return WishlistTileWidget(
                   wishlistBloc: wishlistBloc,
