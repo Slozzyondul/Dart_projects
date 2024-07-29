@@ -28,7 +28,7 @@ class _UploadImageScreenState extends State<UploadImageScreen> {
 
     final request = http.MultipartRequest(
       'POST',
-      Uri.parse('http://your-backend-url/upload'),
+      Uri.parse('http://127.0.0.1:5000//upload'),
     );
     request.files.add(await http.MultipartFile.fromPath('file', _image!.path));
 

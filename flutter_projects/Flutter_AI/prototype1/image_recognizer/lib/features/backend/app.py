@@ -58,19 +58,19 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 #     return detected_objects
 
-# @app.route('/upload', methods=['POST'])
-# def upload_file():
-#     if 'file' not in request.files:
-#         return "No file part"
-#     file = request.files['file']
-#     if file.filename == '':
-#         return "No selected file"
-#     if file:
-#         filename = secure_filename(file.filename)
-#         file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-#         file.save(file_path)
-#         detected_objects = detect_objects(file_path)
-#         return jsonify({"filename": filename, "detected_objects": detected_objects})
+@app.route('/upload', methods=['POST'])
+def upload_file():
+     if 'file' not in request.files:
+         return "No file part"
+     file = request.files['file']
+     if file.filename == '':
+         return "No selected file"
+     if file:
+         filename = secure_filename(file.filename)
+         file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+         file.save(file_path)
+         #detected_objects = detect_objects(file_path)
+         return jsonify({"filename": filename, "detected_objects": """detected_objects"""})
 
 @app.route('/search', methods=['GET'])
 def search_objects():
