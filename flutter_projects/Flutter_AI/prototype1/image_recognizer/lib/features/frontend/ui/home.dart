@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:image_recognizer/features/uploads/image_picker.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -17,7 +18,29 @@ class _HomeState extends State<Home> {
           backgroundColor: Colors.brown,
         ),
         body: Column(
-          children: [],
+          children: [_searchPageButton()],
+        ),
+      ),
+    );
+  }
+
+  Widget _searchPageButton() {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => UploadImageScreen(),
+          ),
+        );
+      },
+      child: Container(
+        height: 70,
+        width: 70,
+        decoration: BoxDecoration(
+          color: Colors.lightBlue,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: Colors.black),
         ),
       ),
     );
