@@ -107,7 +107,9 @@ class _HomePageState extends State<HomePage>
       animation: _starIconAnimationController!.view,
       builder: (_buildContext, _child) {
         return Transform.rotate(
-          angle: _starIconAnimationController!.value * 2 * pi, //converting from radians to degrees
+          angle: _starIconAnimationController!.value *
+              2 *
+              pi, //converting from radians to degrees
           child: _child,
         );
       },
