@@ -3,10 +3,27 @@ from werkzeug.utils import secure_filename
 import cv2
 import numpy as np
 import os
+from flask_mysqldb import MySQL
+from flask_cors import CORS
+
+
 
 app = Flask(__name__)
+CORS(app)
+
+
+mysql = MySQL(app)
+
+# Directory to save uploaded images
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'o'
+app.config['MYSQL_PASSWORD'] = 'ondul'
+app.config['MYSQL_DB'] = 'image_db'
+
+# Directory to save uploaded images
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
 
 # Load YOLO
 # net = cv2.dnn.readNet("yolov3.weights", "yolov3.cfg")
@@ -58,19 +75,41 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 #     return detected_objects
 
+# Ensure the upload folder exists
+if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
+
 @app.route('/upload', methods=['POST'])
-def upload_file():
-     if 'file' not in request.files:
-         return "No file part"
-     file = request.files['file']
-     if file.filename == '':
-         return "No selected file"
-     if file:
-         filename = secure_filename(file.filename)
-         file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-         file.save(file_path)
-         #detected_objects = detect_objects(file_path)
-         return jsonify({"filename": filename, "detected_objects": """detected_objects"""})
+def upload_image():
+    if 'image' not in request.files:
+        return jsonify({'error': 'No image part'}), 400
+    
+    file = request.files['image']
+    if file.filename == '':
+        return jsonify({'error': 'No selected file'}), 400
+    
+    if file:
+        filename = secure_filename(file.filename)
+        filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(filepath)
+        
+        cursor = mysql.connection.cursor()
+        cursor.execute("INSERT INTO images (filepath) VALUES (%s)", [filepath])
+        mysql.connection.commit()
+        cursor.close()
+        
+        return jsonify({'message': 'Image uploaded successfully'}), 201
+    
+@app.route('/images', methods=['GET'])
+def get_images():
+    cursor = mysql.connection.cursor()
+    cursor.execute("SELECT * FROM images")
+    rows = cursor.fetchall()
+    cursor.close()
+    
+    images = [{'id': row[0], 'filepath': row[1]} for row in rows]
+    
+    return jsonify(images), 200
 
 @app.route('/search', methods=['GET'])
 def search_objects():
