@@ -15,7 +15,9 @@ analyzer:
     prefer_const_constructors: ignore
     prefer_const_literals_to_create_immutables: ignore
     prefer_final_fields: ignore
+    unused_field: ignore
     unused_local_variable: ignore
+    use_build_context_synchronously: ignore
     use_key_in_widget_constructors: ignore
 include: package:flutter_lints/flutter.yaml
 

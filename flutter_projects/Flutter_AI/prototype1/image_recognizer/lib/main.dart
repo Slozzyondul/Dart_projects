@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:image_recognizer/features/frontend/ui/home.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
