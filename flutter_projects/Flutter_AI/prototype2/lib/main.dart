@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Image Search App',
-        initialRoute: '/search',
+        initialRoute: '',
         routes: {
           '/': (context) => LoginScreen(),
           '/home': (context) => Home(),
