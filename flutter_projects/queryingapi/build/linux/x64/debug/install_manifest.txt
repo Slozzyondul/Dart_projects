@@ -1,0 +1,12 @@
+/home/ondul/Desktop/queryingapi/build/linux/x64/debug/bundle/queryingapi
+/home/ondul/Desktop/queryingapi/build/linux/x64/debug/bundle/data/icudtl.dat
+/home/ondul/Desktop/queryingapi/build/linux/x64/debug/bundle/lib/libflutter_linux_gtk.so
+/home/ondul/Desktop/queryingapi/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.json
+/home/ondul/Desktop/queryingapi/build/linux/x64/debug/bundle/data/flutter_assets/FontManifest.json
+/home/ondul/Desktop/queryingapi/build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin
+/home/ondul/Desktop/queryingapi/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.bin
+/home/ondul/Desktop/queryingapi/build/linux/x64/debug/bundle/data/flutter_assets/version.json
+/home/ondul/Desktop/queryingapi/build/linux/x64/debug/bundle/data/flutter_assets/NOTICES.Z
+/home/ondul/Desktop/queryingapi/build/linux/x64/debug/bundle/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+/home/ondul/Desktop/queryingapi/build/linux/x64/debug/bundle/data/flutter_assets/shaders/ink_sparkle.frag
+/home/ondul/Desktop/queryingapi/build/linux/x64/debug/bundle/data/flutter_assets/fonts/MaterialIcons-Regular.otf

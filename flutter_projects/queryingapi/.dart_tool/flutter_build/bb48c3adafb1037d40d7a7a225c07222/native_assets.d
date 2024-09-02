@@ -1,0 +1,1 @@
+ /home/ondul/Desktop/queryingapi/.dart_tool/flutter_build/bb48c3adafb1037d40d7a7a225c07222/native_assets.yaml: 
