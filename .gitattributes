@@ -1,2 +1,4 @@
 *.apk filter=lfs diff=lfs merge=lfs -text
 *.so filter=lfs diff=lfs merge=lfs -text
+flutter_projects/queryingapi/build/app/intermediates/merged_native_libs/debug/out/lib/arm64-v8a/libVkLayer_khronos_validation.so filter=lfs diff=lfs merge=lfs -text
+flutter_projects/queryingapi/build/app/outputs/apk/debug/app-debug.apk filter=lfs diff=lfs merge=lfs -text
