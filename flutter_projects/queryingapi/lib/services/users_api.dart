@@ -12,7 +12,7 @@ class UsersApi {
     if (response.statusCode == 200) {
       final body = response.body;
       final json = jsonDecode(body);
-      //print("API Response: $json");  // Log the entire API response
+      print("API Response: $json");  // Log the entire API response
 
       // Check if 'results' is present and is a list
       if (json["results"] != null && json["results"] is List) {
