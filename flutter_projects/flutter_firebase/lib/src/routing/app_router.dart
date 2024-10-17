@@ -10,12 +10,17 @@ enum AppRoute {
   profile,
 }
 
+final FirebaseAuthProvider = Provider<FirebaseAuth>((ref) {
+  return FirebaseAuth.instance;
+});
+
 final goRouterProvider = Provider<GoRouter>((ref) {
+  final firebaseAuth = ref.watch(FirebaseAuthProvider);
   return GoRouter(
     initialLocation: '/sign-in',
     debugLogDiagnostics: true,
     redirect: (context, state) {
-      final isLoggedIn = FirebaseAuth.instance.currentUser != null;
+      final isLoggedIn = firebaseAuth.currentUser != null;
       
       // If user is not logged in and trying to access profile, redirect to sign-in
       if (!isLoggedIn && state.location == '/profile') {
@@ -30,7 +35,7 @@ final goRouterProvider = Provider<GoRouter>((ref) {
       return null; // No redirection needed
     },
 
-    refreshListenable: GoRouterRefreshStream(FirebaseAuth.instance.authStateChanges()),
+    refreshListenable: GoRouterRefreshStream(firebaseAuth.authStateChanges()),
     routes: [
       GoRoute(
         path: '/sign-in',
