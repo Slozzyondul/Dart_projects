@@ -20,15 +20,15 @@ class CustomSignInScreen extends ConsumerWidget {
       body: SignInScreen(
         
         providers: authtProviders,
-        actions: [
-          AuthStateChangeAction<SignedIn>((context, state) {
-            context.goNamed(AppRoute.profile.name);
-          }),
+        // actions: [
+        //   AuthStateChangeAction<SignedIn>((context, state) {
+        //     context.goNamed(AppRoute.profile.name);
+        //   }),
 
-          AuthStateChangeAction<UserCreated>((context, state) {
-            context.goNamed(AppRoute.profile.name);
-          })
-        ],
+        //   AuthStateChangeAction<UserCreated>((context, state) {
+        //     context.goNamed(AppRoute.profile.name);
+        //   })
+        // ],
       ),
     );
   }

@@ -16,11 +16,11 @@ class CustomProfileScreen extends ConsumerWidget {
       ),
       avatarSize: 100,
       providers: authProviders,
-      actions: [
-        SignedOutAction((context) {
-          context.goNamed(AppRoute.signIn.name);
-        })
-      ],
+      // actions: [
+      //   SignedOutAction((context) {
+      //     context.goNamed(AppRoute.signIn.name);
+      //   })
+      // ],
     );
   }
 }
