@@ -2,11 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-
 final firestoreRepositoryProvider = Provider<FirestoreRepository>((ref) {
   return FirestoreRepository(FirebaseFirestore.instance);
 });
-
 
 class FirestoreRepository {
   FirestoreRepository(this._firestore);
@@ -20,5 +18,9 @@ class FirestoreRepository {
       'company': company,
     });
     debugPrint(docRef.id);
+  }
+
+  Query<Map<String, dynamic>> jobsQuery() {
+    return _firestore.collection('jobs');
   }
 }
