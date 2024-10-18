@@ -22,22 +22,22 @@ class MyApp extends ConsumerWidget {
     return MaterialApp.router(
       routerConfig: goRouter,
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       theme: ThemeData(
-        primarySwatch: Colors.indigo,
+        primarySwatch: Colors.yellow,
         appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.indigo,
-          foregroundColor: Colors.white,
+          backgroundColor: Colors.yellow,
+          foregroundColor: Colors.black,
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.indigo, // background (button) color
-            foregroundColor: Colors.white, // foreground (text) color
+            backgroundColor: Colors.yellow, // background (button) color
+            foregroundColor: Colors.black, // foreground (text) color
           ),
         ),
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
-          backgroundColor: Colors.indigo, // background (button) color
-          foregroundColor: Colors.white, // foreground (text) color
+          backgroundColor: Colors.yellow, // background (button) color
+          foregroundColor: Colors.black, // foreground (text) color
         ),
       ),
     );
