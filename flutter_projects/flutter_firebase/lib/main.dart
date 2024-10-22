@@ -31,8 +31,8 @@ class MyApp extends ConsumerWidget {
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.yellow, // background (button) color
-            foregroundColor: Colors.black, // foreground (text) color
+            backgroundColor: Colors.yellow, 
+            foregroundColor: Colors.black, 
           ),
         ),
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
