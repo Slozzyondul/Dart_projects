@@ -16,6 +16,7 @@ class FirestoreRepository {
       _firestore.collection('users/$uid/jobs').add({
         'title': title,
         'company': company,
+        'createdAt': FieldValue.serverTimestamp(),
       });
 
   Future<void> updateJob(
@@ -23,6 +24,7 @@ class FirestoreRepository {
       _firestore.doc('users/$uid/jobs/$jobId').update({
         'title': title,
         'company': company,
+        
       });
 
   Future<void> deleteJob(String uid, String jobId) =>
