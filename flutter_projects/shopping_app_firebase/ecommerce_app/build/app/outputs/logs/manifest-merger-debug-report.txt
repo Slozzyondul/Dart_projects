@@ -1,0 +1,263 @@
+-- Merging decision tree log ---
+application
+INJECTED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml:2:5-33:19
+MERGED from [androidx.window:window:1.2.0] /home/ondul/.gradle/caches/transforms-3/b7474492f10e512628817f8294ed10f1/transformed/jetified-window-1.2.0/AndroidManifest.xml:22:5-29:19
+MERGED from [androidx.window:window:1.2.0] /home/ondul/.gradle/caches/transforms-3/b7474492f10e512628817f8294ed10f1/transformed/jetified-window-1.2.0/AndroidManifest.xml:22:5-29:19
+MERGED from [androidx.core:core:1.13.1] /home/ondul/.gradle/caches/transforms-3/991bfbfb4f1e2b6901617366168964a5/transformed/core-1.13.1/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.13.1] /home/ondul/.gradle/caches/transforms-3/991bfbfb4f1e2b6901617366168964a5/transformed/core-1.13.1/AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/ondul/.gradle/caches/transforms-3/7073900506155613eb3b30e7635d40e9/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/ondul/.gradle/caches/transforms-3/7073900506155613eb3b30e7635d40e9/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/ondul/.gradle/caches/transforms-3/20ee7b9fcbea8e7bf8bda9d94fa05894/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/ondul/.gradle/caches/transforms-3/20ee7b9fcbea8e7bf8bda9d94fa05894/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/ondul/.gradle/caches/transforms-3/1d1ea27abfcf48aeaa941bbbd85656e4/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/ondul/.gradle/caches/transforms-3/1d1ea27abfcf48aeaa941bbbd85656e4/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.13.1] /home/ondul/.gradle/caches/transforms-3/991bfbfb4f1e2b6901617366168964a5/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+	android:name
+		INJECTED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml
+manifest
+ADDED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml:1:1-45:12
+INJECTED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml:1:1-45:12
+INJECTED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml:1:1-45:12
+INJECTED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml:1:1-45:12
+MERGED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml:1:1-45:12
+MERGED from [:integration_test] /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/build/integration_test/intermediates/merged_manifest/debug/AndroidManifest.xml:7:1-14:12
+MERGED from [:path_provider_android] /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:sqflite_android] /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/build/sqflite_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.fragment:fragment:1.7.1] /home/ondul/.gradle/caches/transforms-3/828d59c065cc5cadf682b3932f26fdeb/transformed/fragment-1.7.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.window:window:1.2.0] /home/ondul/.gradle/caches/transforms-3/b7474492f10e512628817f8294ed10f1/transformed/jetified-window-1.2.0/AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.window:window-java:1.2.0] /home/ondul/.gradle/caches/transforms-3/7c4e4961e87f1835fd590bb2725ef745/transformed/jetified-window-java-1.2.0/AndroidManifest.xml:17:1-21:12
+MERGED from [androidx.activity:activity:1.8.1] /home/ondul/.gradle/caches/transforms-3/19c12dc92faf0c17ac8017537a44777c/transformed/jetified-activity-1.8.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/ondul/.gradle/caches/transforms-3/bbad0397cd0a7e70de6cdefaeefb3f6e/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/ondul/.gradle/caches/transforms-3/4ee45e45f3dcd7d264b7202f7f00b9d9/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] /home/ondul/.gradle/caches/transforms-3/ace51972f45496d66de5735c32c84ec1/transformed/jetified-lifecycle-livedata-core-ktx-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] /home/ondul/.gradle/caches/transforms-3/958d6e50ea6f370f623b4fba6752a154/transformed/lifecycle-livedata-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /home/ondul/.gradle/caches/transforms-3/416d7d1b5145a22bd43e7402053b9b4e/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /home/ondul/.gradle/caches/transforms-3/fae48112c3d64886c14fa1909638f9f8/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /home/ondul/.gradle/caches/transforms-3/715c20d90285d5010b16102c53d54d52/transformed/jetified-lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.13.1] /home/ondul/.gradle/caches/transforms-3/7a9317370f5f62c9882558287e65b344/transformed/jetified-core-ktx-1.13.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.customview:customview:1.0.0] /home/ondul/.gradle/caches/transforms-3/1e2903d0d172efecaea6237a3c121d77/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.13.1] /home/ondul/.gradle/caches/transforms-3/991bfbfb4f1e2b6901617366168964a5/transformed/core-1.13.1/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] /home/ondul/.gradle/caches/transforms-3/50b23bcafae4f2c4c0cf02d3f75088d3/transformed/lifecycle-runtime-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/ondul/.gradle/caches/transforms-3/7073900506155613eb3b30e7635d40e9/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/ondul/.gradle/caches/transforms-3/7a1ad333499552d4c701b3c6041b8468/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.test:rules:1.2.0] /home/ondul/.gradle/caches/transforms-3/9dd25bc46663305611d2272fce0b1a6e/transformed/rules-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.test.espresso:espresso-core:3.2.0] /home/ondul/.gradle/caches/transforms-3/2cbbce6c511d4a4f570bf91e79078361/transformed/espresso-core-3.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.test:runner:1.2.0] /home/ondul/.gradle/caches/transforms-3/990c27b86bfa06d205ae6721563343bb/transformed/runner-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.test:monitor:1.2.0] /home/ondul/.gradle/caches/transforms-3/10631611ecfb9defe47a3edaebd71b92/transformed/monitor-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/ondul/.gradle/caches/transforms-3/20ee7b9fcbea8e7bf8bda9d94fa05894/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.2.0] /home/ondul/.gradle/caches/transforms-3/ba4297db1da94f1e3b44f58df46a898f/transformed/jetified-tracing-1.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/ondul/.gradle/caches/transforms-3/a7138896d74b2495364cb5bb489ba35c/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/ondul/.gradle/caches/transforms-3/1d1ea27abfcf48aeaa941bbbd85656e4/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/ondul/.gradle/caches/transforms-3/33a5c5b9a964034ca3fb8f872db3635a/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.window.extensions.core:core:1.0.0] /home/ondul/.gradle/caches/transforms-3/719da103b605c7a4c9e9f48203bc9e23/transformed/jetified-core-1.0.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/ondul/.gradle/caches/transforms-3/79f86c5f38166a2a64554e2d3a65456d/transformed/jetified-annotation-experimental-1.4.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.test.espresso:espresso-idling-resource:3.2.0] /home/ondul/.gradle/caches/transforms-3/ec453b21890fc3d563751492164a59ae/transformed/espresso-idling-resource-3.2.0/AndroidManifest.xml:17:1-24:12
+INJECTED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+	package
+		INJECTED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml:1:1-45:12
+		INJECTED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/debug/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml:1:1-45:12
+		INJECTED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/debug/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml:1:1-45:12
+		INJECTED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/debug/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml:1:11-69
+queries
+ADDED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml:39:5-44:15
+intent#action:name:android.intent.action.PROCESS_TEXT+data:mimeType:text/plain
+ADDED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml:40:9-43:18
+action#android.intent.action.PROCESS_TEXT
+ADDED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml:41:13-72
+	android:name
+		ADDED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml:41:21-70
+data
+ADDED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml:42:13-50
+	android:mimeType
+		ADDED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml:42:19-48
+uses-sdk
+INJECTED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml
+MERGED from [:integration_test] /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/build/integration_test/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-12:41
+MERGED from [:integration_test] /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/build/integration_test/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-12:41
+MERGED from [:path_provider_android] /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:path_provider_android] /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:sqflite_android] /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/build/sqflite_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:sqflite_android] /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/build/sqflite_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.fragment:fragment:1.7.1] /home/ondul/.gradle/caches/transforms-3/828d59c065cc5cadf682b3932f26fdeb/transformed/fragment-1.7.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.fragment:fragment:1.7.1] /home/ondul/.gradle/caches/transforms-3/828d59c065cc5cadf682b3932f26fdeb/transformed/fragment-1.7.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.window:window:1.2.0] /home/ondul/.gradle/caches/transforms-3/b7474492f10e512628817f8294ed10f1/transformed/jetified-window-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.window:window:1.2.0] /home/ondul/.gradle/caches/transforms-3/b7474492f10e512628817f8294ed10f1/transformed/jetified-window-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.window:window-java:1.2.0] /home/ondul/.gradle/caches/transforms-3/7c4e4961e87f1835fd590bb2725ef745/transformed/jetified-window-java-1.2.0/AndroidManifest.xml:19:5-44
+MERGED from [androidx.window:window-java:1.2.0] /home/ondul/.gradle/caches/transforms-3/7c4e4961e87f1835fd590bb2725ef745/transformed/jetified-window-java-1.2.0/AndroidManifest.xml:19:5-44
+MERGED from [androidx.activity:activity:1.8.1] /home/ondul/.gradle/caches/transforms-3/19c12dc92faf0c17ac8017537a44777c/transformed/jetified-activity-1.8.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.1] /home/ondul/.gradle/caches/transforms-3/19c12dc92faf0c17ac8017537a44777c/transformed/jetified-activity-1.8.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/ondul/.gradle/caches/transforms-3/bbad0397cd0a7e70de6cdefaeefb3f6e/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/ondul/.gradle/caches/transforms-3/bbad0397cd0a7e70de6cdefaeefb3f6e/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/ondul/.gradle/caches/transforms-3/4ee45e45f3dcd7d264b7202f7f00b9d9/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/ondul/.gradle/caches/transforms-3/4ee45e45f3dcd7d264b7202f7f00b9d9/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] /home/ondul/.gradle/caches/transforms-3/ace51972f45496d66de5735c32c84ec1/transformed/jetified-lifecycle-livedata-core-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] /home/ondul/.gradle/caches/transforms-3/ace51972f45496d66de5735c32c84ec1/transformed/jetified-lifecycle-livedata-core-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] /home/ondul/.gradle/caches/transforms-3/958d6e50ea6f370f623b4fba6752a154/transformed/lifecycle-livedata-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] /home/ondul/.gradle/caches/transforms-3/958d6e50ea6f370f623b4fba6752a154/transformed/lifecycle-livedata-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /home/ondul/.gradle/caches/transforms-3/416d7d1b5145a22bd43e7402053b9b4e/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /home/ondul/.gradle/caches/transforms-3/416d7d1b5145a22bd43e7402053b9b4e/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /home/ondul/.gradle/caches/transforms-3/fae48112c3d64886c14fa1909638f9f8/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /home/ondul/.gradle/caches/transforms-3/fae48112c3d64886c14fa1909638f9f8/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /home/ondul/.gradle/caches/transforms-3/715c20d90285d5010b16102c53d54d52/transformed/jetified-lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /home/ondul/.gradle/caches/transforms-3/715c20d90285d5010b16102c53d54d52/transformed/jetified-lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.13.1] /home/ondul/.gradle/caches/transforms-3/7a9317370f5f62c9882558287e65b344/transformed/jetified-core-ktx-1.13.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.13.1] /home/ondul/.gradle/caches/transforms-3/7a9317370f5f62c9882558287e65b344/transformed/jetified-core-ktx-1.13.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/ondul/.gradle/caches/transforms-3/1e2903d0d172efecaea6237a3c121d77/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/ondul/.gradle/caches/transforms-3/1e2903d0d172efecaea6237a3c121d77/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.1] /home/ondul/.gradle/caches/transforms-3/991bfbfb4f1e2b6901617366168964a5/transformed/core-1.13.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.1] /home/ondul/.gradle/caches/transforms-3/991bfbfb4f1e2b6901617366168964a5/transformed/core-1.13.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] /home/ondul/.gradle/caches/transforms-3/50b23bcafae4f2c4c0cf02d3f75088d3/transformed/lifecycle-runtime-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] /home/ondul/.gradle/caches/transforms-3/50b23bcafae4f2c4c0cf02d3f75088d3/transformed/lifecycle-runtime-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/ondul/.gradle/caches/transforms-3/7073900506155613eb3b30e7635d40e9/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/ondul/.gradle/caches/transforms-3/7073900506155613eb3b30e7635d40e9/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/ondul/.gradle/caches/transforms-3/7a1ad333499552d4c701b3c6041b8468/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/ondul/.gradle/caches/transforms-3/7a1ad333499552d4c701b3c6041b8468/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.test:rules:1.2.0] /home/ondul/.gradle/caches/transforms-3/9dd25bc46663305611d2272fce0b1a6e/transformed/rules-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test:rules:1.2.0] /home/ondul/.gradle/caches/transforms-3/9dd25bc46663305611d2272fce0b1a6e/transformed/rules-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test.espresso:espresso-core:3.2.0] /home/ondul/.gradle/caches/transforms-3/2cbbce6c511d4a4f570bf91e79078361/transformed/espresso-core-3.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test.espresso:espresso-core:3.2.0] /home/ondul/.gradle/caches/transforms-3/2cbbce6c511d4a4f570bf91e79078361/transformed/espresso-core-3.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test:runner:1.2.0] /home/ondul/.gradle/caches/transforms-3/990c27b86bfa06d205ae6721563343bb/transformed/runner-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test:runner:1.2.0] /home/ondul/.gradle/caches/transforms-3/990c27b86bfa06d205ae6721563343bb/transformed/runner-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test:monitor:1.2.0] /home/ondul/.gradle/caches/transforms-3/10631611ecfb9defe47a3edaebd71b92/transformed/monitor-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test:monitor:1.2.0] /home/ondul/.gradle/caches/transforms-3/10631611ecfb9defe47a3edaebd71b92/transformed/monitor-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/ondul/.gradle/caches/transforms-3/20ee7b9fcbea8e7bf8bda9d94fa05894/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/ondul/.gradle/caches/transforms-3/20ee7b9fcbea8e7bf8bda9d94fa05894/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.2.0] /home/ondul/.gradle/caches/transforms-3/ba4297db1da94f1e3b44f58df46a898f/transformed/jetified-tracing-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing:1.2.0] /home/ondul/.gradle/caches/transforms-3/ba4297db1da94f1e3b44f58df46a898f/transformed/jetified-tracing-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/ondul/.gradle/caches/transforms-3/a7138896d74b2495364cb5bb489ba35c/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/ondul/.gradle/caches/transforms-3/a7138896d74b2495364cb5bb489ba35c/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/ondul/.gradle/caches/transforms-3/1d1ea27abfcf48aeaa941bbbd85656e4/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/ondul/.gradle/caches/transforms-3/1d1ea27abfcf48aeaa941bbbd85656e4/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/ondul/.gradle/caches/transforms-3/33a5c5b9a964034ca3fb8f872db3635a/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/ondul/.gradle/caches/transforms-3/33a5c5b9a964034ca3fb8f872db3635a/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.window.extensions.core:core:1.0.0] /home/ondul/.gradle/caches/transforms-3/719da103b605c7a4c9e9f48203bc9e23/transformed/jetified-core-1.0.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.window.extensions.core:core:1.0.0] /home/ondul/.gradle/caches/transforms-3/719da103b605c7a4c9e9f48203bc9e23/transformed/jetified-core-1.0.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/ondul/.gradle/caches/transforms-3/79f86c5f38166a2a64554e2d3a65456d/transformed/jetified-annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/ondul/.gradle/caches/transforms-3/79f86c5f38166a2a64554e2d3a65456d/transformed/jetified-annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.test.espresso:espresso-idling-resource:3.2.0] /home/ondul/.gradle/caches/transforms-3/ec453b21890fc3d563751492164a59ae/transformed/espresso-idling-resource-3.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test.espresso:espresso-idling-resource:3.2.0] /home/ondul/.gradle/caches/transforms-3/ec453b21890fc3d563751492164a59ae/transformed/espresso-idling-resource-3.2.0/AndroidManifest.xml:20:5-22:41
+INJECTED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/debug/AndroidManifest.xml
+INJECTED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/debug/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/debug/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/debug/AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/debug/AndroidManifest.xml:6:5-66
+	android:name
+		ADDED from /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_firebase/ecommerce_app/android/app/src/debug/AndroidManifest.xml:6:22-64
+uses-library#androidx.window.extensions
+ADDED from [androidx.window:window:1.2.0] /home/ondul/.gradle/caches/transforms-3/b7474492f10e512628817f8294ed10f1/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40
+	android:required
+		ADDED from [androidx.window:window:1.2.0] /home/ondul/.gradle/caches/transforms-3/b7474492f10e512628817f8294ed10f1/transformed/jetified-window-1.2.0/AndroidManifest.xml:25:13-37
+	android:name
+		ADDED from [androidx.window:window:1.2.0] /home/ondul/.gradle/caches/transforms-3/b7474492f10e512628817f8294ed10f1/transformed/jetified-window-1.2.0/AndroidManifest.xml:24:13-54
+uses-library#androidx.window.sidecar
+ADDED from [androidx.window:window:1.2.0] /home/ondul/.gradle/caches/transforms-3/b7474492f10e512628817f8294ed10f1/transformed/jetified-window-1.2.0/AndroidManifest.xml:26:9-28:40
+	android:required
+		ADDED from [androidx.window:window:1.2.0] /home/ondul/.gradle/caches/transforms-3/b7474492f10e512628817f8294ed10f1/transformed/jetified-window-1.2.0/AndroidManifest.xml:28:13-37
+	android:name
+		ADDED from [androidx.window:window:1.2.0] /home/ondul/.gradle/caches/transforms-3/b7474492f10e512628817f8294ed10f1/transformed/jetified-window-1.2.0/AndroidManifest.xml:27:13-51
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /home/ondul/.gradle/caches/transforms-3/991bfbfb4f1e2b6901617366168964a5/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] /home/ondul/.gradle/caches/transforms-3/991bfbfb4f1e2b6901617366168964a5/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /home/ondul/.gradle/caches/transforms-3/991bfbfb4f1e2b6901617366168964a5/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+permission#com.example.ecommerce_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /home/ondul/.gradle/caches/transforms-3/991bfbfb4f1e2b6901617366168964a5/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] /home/ondul/.gradle/caches/transforms-3/991bfbfb4f1e2b6901617366168964a5/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /home/ondul/.gradle/caches/transforms-3/991bfbfb4f1e2b6901617366168964a5/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /home/ondul/.gradle/caches/transforms-3/991bfbfb4f1e2b6901617366168964a5/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /home/ondul/.gradle/caches/transforms-3/991bfbfb4f1e2b6901617366168964a5/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+uses-permission#com.example.ecommerce_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /home/ondul/.gradle/caches/transforms-3/991bfbfb4f1e2b6901617366168964a5/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /home/ondul/.gradle/caches/transforms-3/991bfbfb4f1e2b6901617366168964a5/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/ondul/.gradle/caches/transforms-3/7073900506155613eb3b30e7635d40e9/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/ondul/.gradle/caches/transforms-3/20ee7b9fcbea8e7bf8bda9d94fa05894/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/ondul/.gradle/caches/transforms-3/20ee7b9fcbea8e7bf8bda9d94fa05894/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/ondul/.gradle/caches/transforms-3/7073900506155613eb3b30e7635d40e9/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/ondul/.gradle/caches/transforms-3/7073900506155613eb3b30e7635d40e9/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/ondul/.gradle/caches/transforms-3/7073900506155613eb3b30e7635d40e9/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/ondul/.gradle/caches/transforms-3/7073900506155613eb3b30e7635d40e9/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/ondul/.gradle/caches/transforms-3/7073900506155613eb3b30e7635d40e9/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/ondul/.gradle/caches/transforms-3/7073900506155613eb3b30e7635d40e9/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/ondul/.gradle/caches/transforms-3/7073900506155613eb3b30e7635d40e9/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/1db7fd601635f0f1e649b502f8953a98/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92

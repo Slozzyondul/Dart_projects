@@ -50,6 +50,7 @@ class JobListView extends ConsumerWidget {
 
     return FirestoreListView<Job>(
         query: firestoreRepository.jobsQuery(user!.uid),
+        pageSize: 3,
         errorBuilder: (context, error, stackTrace) => Center(
               child: Text(error.toString()),
             ),
