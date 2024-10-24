@@ -1,0 +1,306 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.ecommerce_app"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="34" />
+10    <!--
+11         The INTERNET permission is required for development. Specifically,
+12         the Flutter tool needs it to communicate with the running application
+13         to allow setting breakpoints, to provide hot reload, etc.
+14    -->
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->/home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_with_firebase_email_verification/ecommerce_app/android/app/src/debug/AndroidManifest.xml:6:5-66
+15-->/home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_with_firebase_email_verification/ecommerce_app/android/app/src/debug/AndroidManifest.xml:6:22-64
+16    <!--
+17     Required to query activities that can process text, see:
+18         https://developer.android.com/training/package-visibility and
+19         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+20
+21         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
+22    -->
+23    <queries>
+23-->/home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_with_firebase_email_verification/ecommerce_app/android/app/src/main/AndroidManifest.xml:39:5-44:15
+24        <intent>
+24-->/home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_with_firebase_email_verification/ecommerce_app/android/app/src/main/AndroidManifest.xml:40:9-43:18
+25            <action android:name="android.intent.action.PROCESS_TEXT" />
+25-->/home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_with_firebase_email_verification/ecommerce_app/android/app/src/main/AndroidManifest.xml:41:13-72
+25-->/home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_with_firebase_email_verification/ecommerce_app/android/app/src/main/AndroidManifest.xml:41:21-70
+26
+27            <data android:mimeType="text/plain" />
+27-->/home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_with_firebase_email_verification/ecommerce_app/android/app/src/main/AndroidManifest.xml:42:13-50
+27-->/home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_with_firebase_email_verification/ecommerce_app/android/app/src/main/AndroidManifest.xml:42:19-48
+28        </intent>
+29    </queries>
+30
+31    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+31-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:26:5-79
+31-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:26:22-76
+32    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+32-->[com.google.android.recaptcha:recaptcha:18.4.0] /home/ondul/.gradle/caches/transforms-3/ef55856c72042193c59754802b1e1591/transformed/jetified-recaptcha-18.4.0/AndroidManifest.xml:9:5-98
+32-->[com.google.android.recaptcha:recaptcha:18.4.0] /home/ondul/.gradle/caches/transforms-3/ef55856c72042193c59754802b1e1591/transformed/jetified-recaptcha-18.4.0/AndroidManifest.xml:9:22-95
+33
+34    <permission
+34-->[androidx.core:core:1.13.1] /home/ondul/.gradle/caches/transforms-3/509303af563b28fbb806873f0e064e10/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+35        android:name="com.example.ecommerce_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+35-->[androidx.core:core:1.13.1] /home/ondul/.gradle/caches/transforms-3/509303af563b28fbb806873f0e064e10/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+36        android:protectionLevel="signature" />
+36-->[androidx.core:core:1.13.1] /home/ondul/.gradle/caches/transforms-3/509303af563b28fbb806873f0e064e10/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+37
+38    <uses-permission android:name="com.example.ecommerce_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+38-->[androidx.core:core:1.13.1] /home/ondul/.gradle/caches/transforms-3/509303af563b28fbb806873f0e064e10/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+38-->[androidx.core:core:1.13.1] /home/ondul/.gradle/caches/transforms-3/509303af563b28fbb806873f0e064e10/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+39
+40    <application
+41        android:name="android.app.Application"
+42        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+42-->[androidx.core:core:1.13.1] /home/ondul/.gradle/caches/transforms-3/509303af563b28fbb806873f0e064e10/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+43        android:debuggable="true"
+44        android:icon="@mipmap/launcher_icon"
+45        android:label="ecommerce_app" >
+46        <activity
+47            android:name="com.example.ecommerce_app.MainActivity"
+48            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+49            android:exported="true"
+50            android:hardwareAccelerated="true"
+51            android:launchMode="singleTop"
+52            android:taskAffinity=""
+53            android:theme="@style/LaunchTheme"
+54            android:windowSoftInputMode="adjustResize" >
+55
+56            <!--
+57                 Specifies an Android theme to apply to this Activity as soon as
+58                 the Android process has started. This theme is visible to the user
+59                 while the Flutter UI initializes. After that, this theme continues
+60                 to determine the Window background behind the Flutter UI.
+61            -->
+62            <meta-data
+63                android:name="io.flutter.embedding.android.NormalTheme"
+64                android:resource="@style/NormalTheme" />
+65
+66            <intent-filter>
+67                <action android:name="android.intent.action.MAIN" />
+68
+69                <category android:name="android.intent.category.LAUNCHER" />
+70            </intent-filter>
+71        </activity>
+72        <!--
+73             Don't delete the meta-data below.
+74             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+75        -->
+76        <meta-data
+77            android:name="flutterEmbedding"
+78            android:value="2" />
+79
+80        <service
+80-->[:firebase_auth] /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_with_firebase_email_verification/ecommerce_app/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-14:19
+81            android:name="com.google.firebase.components.ComponentDiscoveryService"
+81-->[:firebase_auth] /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_with_firebase_email_verification/ecommerce_app/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:10:18-89
+82            android:directBootAware="true"
+82-->[com.google.firebase:firebase-common:20.4.3] /home/ondul/.gradle/caches/transforms-3/9f31a7b32e5d43bb63daa3f1b8a74a23/transformed/jetified-firebase-common-20.4.3/AndroidManifest.xml:32:13-43
+83            android:exported="false" >
+83-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:68:13-37
+84            <meta-data
+84-->[:firebase_auth] /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_with_firebase_email_verification/ecommerce_app/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+85                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
+85-->[:firebase_auth] /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_with_firebase_email_verification/ecommerce_app/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-124
+86                android:value="com.google.firebase.components.ComponentRegistrar" />
+86-->[:firebase_auth] /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_with_firebase_email_verification/ecommerce_app/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+87            <meta-data
+87-->[:firebase_core] /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_with_firebase_email_verification/ecommerce_app/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+88                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+88-->[:firebase_core] /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_with_firebase_email_verification/ecommerce_app/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-124
+89                android:value="com.google.firebase.components.ComponentRegistrar" />
+89-->[:firebase_core] /home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_with_firebase_email_verification/ecommerce_app/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+90            <meta-data
+90-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:69:13-71:85
+91                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+91-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:70:17-109
+92                android:value="com.google.firebase.components.ComponentRegistrar" />
+92-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:71:17-82
+93            <meta-data
+93-->[com.google.firebase:firebase-common-ktx:20.4.3] /home/ondul/.gradle/caches/transforms-3/a958e5e9b753d32d23a23a18a773e7bd/transformed/jetified-firebase-common-ktx-20.4.3/AndroidManifest.xml:12:13-14:85
+94                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+94-->[com.google.firebase:firebase-common-ktx:20.4.3] /home/ondul/.gradle/caches/transforms-3/a958e5e9b753d32d23a23a18a773e7bd/transformed/jetified-firebase-common-ktx-20.4.3/AndroidManifest.xml:13:17-116
+95                android:value="com.google.firebase.components.ComponentRegistrar" />
+95-->[com.google.firebase:firebase-common-ktx:20.4.3] /home/ondul/.gradle/caches/transforms-3/a958e5e9b753d32d23a23a18a773e7bd/transformed/jetified-firebase-common-ktx-20.4.3/AndroidManifest.xml:14:17-82
+96            <meta-data
+96-->[com.google.firebase:firebase-common:20.4.3] /home/ondul/.gradle/caches/transforms-3/9f31a7b32e5d43bb63daa3f1b8a74a23/transformed/jetified-firebase-common-20.4.3/AndroidManifest.xml:35:13-37:85
+97                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+97-->[com.google.firebase:firebase-common:20.4.3] /home/ondul/.gradle/caches/transforms-3/9f31a7b32e5d43bb63daa3f1b8a74a23/transformed/jetified-firebase-common-20.4.3/AndroidManifest.xml:36:17-109
+98                android:value="com.google.firebase.components.ComponentRegistrar" />
+98-->[com.google.firebase:firebase-common:20.4.3] /home/ondul/.gradle/caches/transforms-3/9f31a7b32e5d43bb63daa3f1b8a74a23/transformed/jetified-firebase-common-20.4.3/AndroidManifest.xml:37:17-82
+99        </service>
+100
+101        <activity
+101-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:29:9-46:20
+102            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+102-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:30:13-80
+103            android:excludeFromRecents="true"
+103-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:31:13-46
+104            android:exported="true"
+104-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:32:13-36
+105            android:launchMode="singleTask"
+105-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:33:13-44
+106            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+106-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:34:13-72
+107            <intent-filter>
+107-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:35:13-45:29
+108                <action android:name="android.intent.action.VIEW" />
+108-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:36:17-69
+108-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:36:25-66
+109
+110                <category android:name="android.intent.category.DEFAULT" />
+110-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:38:17-76
+110-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:38:27-73
+111                <category android:name="android.intent.category.BROWSABLE" />
+111-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:39:17-78
+111-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:39:27-75
+112
+113                <data
+113-->/home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_with_firebase_email_verification/ecommerce_app/android/app/src/main/AndroidManifest.xml:42:13-50
+114                    android:host="firebase.auth"
+115                    android:path="/"
+116                    android:scheme="genericidp" />
+117            </intent-filter>
+118        </activity>
+119        <activity
+119-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:47:9-64:20
+120            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+120-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:48:13-79
+121            android:excludeFromRecents="true"
+121-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:49:13-46
+122            android:exported="true"
+122-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:50:13-36
+123            android:launchMode="singleTask"
+123-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:51:13-44
+124            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+124-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:52:13-72
+125            <intent-filter>
+125-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:53:13-63:29
+126                <action android:name="android.intent.action.VIEW" />
+126-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:36:17-69
+126-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:36:25-66
+127
+128                <category android:name="android.intent.category.DEFAULT" />
+128-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:38:17-76
+128-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:38:27-73
+129                <category android:name="android.intent.category.BROWSABLE" />
+129-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:39:17-78
+129-->[com.google.firebase:firebase-auth:22.3.1] /home/ondul/.gradle/caches/transforms-3/b14775f48209c26612549b5bb872951d/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:39:27-75
+130
+131                <data
+131-->/home/ondul/Desktop/Dart_projects/flutter_projects/shopping_app_with_firebase_email_verification/ecommerce_app/android/app/src/main/AndroidManifest.xml:42:13-50
+132                    android:host="firebase.auth"
+133                    android:path="/"
+134                    android:scheme="recaptcha" />
+135            </intent-filter>
+136        </activity>
+137
+138        <provider
+138-->[com.google.firebase:firebase-common:20.4.3] /home/ondul/.gradle/caches/transforms-3/9f31a7b32e5d43bb63daa3f1b8a74a23/transformed/jetified-firebase-common-20.4.3/AndroidManifest.xml:23:9-28:39
+139            android:name="com.google.firebase.provider.FirebaseInitProvider"
+139-->[com.google.firebase:firebase-common:20.4.3] /home/ondul/.gradle/caches/transforms-3/9f31a7b32e5d43bb63daa3f1b8a74a23/transformed/jetified-firebase-common-20.4.3/AndroidManifest.xml:24:13-77
+140            android:authorities="com.example.ecommerce_app.firebaseinitprovider"
+140-->[com.google.firebase:firebase-common:20.4.3] /home/ondul/.gradle/caches/transforms-3/9f31a7b32e5d43bb63daa3f1b8a74a23/transformed/jetified-firebase-common-20.4.3/AndroidManifest.xml:25:13-72
+141            android:directBootAware="true"
+141-->[com.google.firebase:firebase-common:20.4.3] /home/ondul/.gradle/caches/transforms-3/9f31a7b32e5d43bb63daa3f1b8a74a23/transformed/jetified-firebase-common-20.4.3/AndroidManifest.xml:26:13-43
+142            android:exported="false"
+142-->[com.google.firebase:firebase-common:20.4.3] /home/ondul/.gradle/caches/transforms-3/9f31a7b32e5d43bb63daa3f1b8a74a23/transformed/jetified-firebase-common-20.4.3/AndroidManifest.xml:27:13-37
+143            android:initOrder="100" />
+143-->[com.google.firebase:firebase-common:20.4.3] /home/ondul/.gradle/caches/transforms-3/9f31a7b32e5d43bb63daa3f1b8a74a23/transformed/jetified-firebase-common-20.4.3/AndroidManifest.xml:28:13-36
+144
+145        <uses-library
+145-->[androidx.window:window:1.2.0] /home/ondul/.gradle/caches/transforms-3/fea2cbfe2403d67c9cb164e99a9ff84b/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40
+146            android:name="androidx.window.extensions"
+146-->[androidx.window:window:1.2.0] /home/ondul/.gradle/caches/transforms-3/fea2cbfe2403d67c9cb164e99a9ff84b/transformed/jetified-window-1.2.0/AndroidManifest.xml:24:13-54
+147            android:required="false" />
+147-->[androidx.window:window:1.2.0] /home/ondul/.gradle/caches/transforms-3/fea2cbfe2403d67c9cb164e99a9ff84b/transformed/jetified-window-1.2.0/AndroidManifest.xml:25:13-37
+148        <uses-library
+148-->[androidx.window:window:1.2.0] /home/ondul/.gradle/caches/transforms-3/fea2cbfe2403d67c9cb164e99a9ff84b/transformed/jetified-window-1.2.0/AndroidManifest.xml:26:9-28:40
+149            android:name="androidx.window.sidecar"
+149-->[androidx.window:window:1.2.0] /home/ondul/.gradle/caches/transforms-3/fea2cbfe2403d67c9cb164e99a9ff84b/transformed/jetified-window-1.2.0/AndroidManifest.xml:27:13-51
+150            android:required="false" />
+150-->[androidx.window:window:1.2.0] /home/ondul/.gradle/caches/transforms-3/fea2cbfe2403d67c9cb164e99a9ff84b/transformed/jetified-window-1.2.0/AndroidManifest.xml:28:13-37
+151
+152        <activity
+152-->[com.google.android.gms:play-services-base:18.0.1] /home/ondul/.gradle/caches/transforms-3/f62ca9e5105dc256b8a7091bc0b00558/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+153            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+153-->[com.google.android.gms:play-services-base:18.0.1] /home/ondul/.gradle/caches/transforms-3/f62ca9e5105dc256b8a7091bc0b00558/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+154            android:exported="false"
+154-->[com.google.android.gms:play-services-base:18.0.1] /home/ondul/.gradle/caches/transforms-3/f62ca9e5105dc256b8a7091bc0b00558/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+155            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+155-->[com.google.android.gms:play-services-base:18.0.1] /home/ondul/.gradle/caches/transforms-3/f62ca9e5105dc256b8a7091bc0b00558/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+156
+157        <meta-data
+157-->[com.google.android.gms:play-services-basement:18.3.0] /home/ondul/.gradle/caches/transforms-3/4ea84d02988ce0874a6afacabe72c201/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:21:9-23:69
+158            android:name="com.google.android.gms.version"
+158-->[com.google.android.gms:play-services-basement:18.3.0] /home/ondul/.gradle/caches/transforms-3/4ea84d02988ce0874a6afacabe72c201/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:22:13-58
+159            android:value="@integer/google_play_services_version" />
+159-->[com.google.android.gms:play-services-basement:18.3.0] /home/ondul/.gradle/caches/transforms-3/4ea84d02988ce0874a6afacabe72c201/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:23:13-66
+160
+161        <provider
+161-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/ondul/.gradle/caches/transforms-3/90fb63b0300e183ae7febe99c3456b50/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
+162            android:name="androidx.startup.InitializationProvider"
+162-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/ondul/.gradle/caches/transforms-3/90fb63b0300e183ae7febe99c3456b50/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:25:13-67
+163            android:authorities="com.example.ecommerce_app.androidx-startup"
+163-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/ondul/.gradle/caches/transforms-3/90fb63b0300e183ae7febe99c3456b50/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:26:13-68
+164            android:exported="false" >
+164-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/ondul/.gradle/caches/transforms-3/90fb63b0300e183ae7febe99c3456b50/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:27:13-37
+165            <meta-data
+165-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/ondul/.gradle/caches/transforms-3/90fb63b0300e183ae7febe99c3456b50/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+166                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+166-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/ondul/.gradle/caches/transforms-3/90fb63b0300e183ae7febe99c3456b50/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+167                android:value="androidx.startup" />
+167-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/ondul/.gradle/caches/transforms-3/90fb63b0300e183ae7febe99c3456b50/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+168            <meta-data
+168-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/d9b92f44fdd267b5f5126d41beb699f4/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+169                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+169-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/d9b92f44fdd267b5f5126d41beb699f4/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+170                android:value="androidx.startup" />
+170-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/d9b92f44fdd267b5f5126d41beb699f4/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+171        </provider>
+172
+173        <receiver
+173-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/d9b92f44fdd267b5f5126d41beb699f4/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+174            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+174-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/d9b92f44fdd267b5f5126d41beb699f4/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+175            android:directBootAware="false"
+175-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/d9b92f44fdd267b5f5126d41beb699f4/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+176            android:enabled="true"
+176-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/d9b92f44fdd267b5f5126d41beb699f4/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+177            android:exported="true"
+177-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/d9b92f44fdd267b5f5126d41beb699f4/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+178            android:permission="android.permission.DUMP" >
+178-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/d9b92f44fdd267b5f5126d41beb699f4/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+179            <intent-filter>
+179-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/d9b92f44fdd267b5f5126d41beb699f4/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+180                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+180-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/d9b92f44fdd267b5f5126d41beb699f4/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+180-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/d9b92f44fdd267b5f5126d41beb699f4/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+181            </intent-filter>
+182            <intent-filter>
+182-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/d9b92f44fdd267b5f5126d41beb699f4/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+183                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+183-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/d9b92f44fdd267b5f5126d41beb699f4/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+183-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/d9b92f44fdd267b5f5126d41beb699f4/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+184            </intent-filter>
+185            <intent-filter>
+185-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/d9b92f44fdd267b5f5126d41beb699f4/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+186                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+186-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/d9b92f44fdd267b5f5126d41beb699f4/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+186-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/d9b92f44fdd267b5f5126d41beb699f4/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+187            </intent-filter>
+188            <intent-filter>
+188-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/d9b92f44fdd267b5f5126d41beb699f4/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+189                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+189-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/d9b92f44fdd267b5f5126d41beb699f4/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+189-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ondul/.gradle/caches/transforms-3/d9b92f44fdd267b5f5126d41beb699f4/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+190            </intent-filter>
+191        </receiver>
+192    </application>
+193
+194</manifest>
