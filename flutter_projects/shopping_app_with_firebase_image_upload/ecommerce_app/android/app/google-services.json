@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "319396534461",
+    "project_id": "flutter-firebase-masterc-c8a15",
+    "storage_bucket": "flutter-firebase-masterc-c8a15.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319396534461:android:4511a7e2a817884ae7ffd4",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWx4tZmSSECjMMBznLnhhfXAiBrXdcSgk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319396534461:android:8d9428a827084671e7ffd4",
+        "android_client_info": {
+          "package_name": "com.example.ecommerce_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWx4tZmSSECjMMBznLnhhfXAiBrXdcSgk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
