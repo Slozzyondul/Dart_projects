@@ -79,4 +79,9 @@ class FakeProductsRepository implements ProductsRepository {
       return null;
     }
   }
+
+  @override
+  Future<void> createProduct(ProductID id, String imageUrl) {
+    throw UnimplementedError();
+  }
 }

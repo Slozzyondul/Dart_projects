@@ -26,6 +26,17 @@ class ProductsRepository {
   Future<List<Product>> searchProducts(String query) {
     return Future.value([]);
   }
+
+  Future<void> createProduct(ProductID id, String imageUrl) {
+    return _firestore.doc('products').set(
+      {
+        'id': id,
+        'imageUrl': imageUrl,
+      },
+      //to maintain old files if any are existing 
+      SetOptions(merge: true),
+    );
+  }
 }
 
 @Riverpod(keepAlive: true)
