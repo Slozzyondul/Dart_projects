@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/src/features/products/data/products_repository.dart';
 import 'package:ecommerce_app/src/features/products/domain/product.dart';
 import 'package:ecommerce_app/src/features/products_admin/data/image_upload_repository.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -19,7 +20,10 @@ class AdminProductUploadController extends _$AdminProductUploadController {
             product.imageUrl,
             product.id,
           );
-          // TODO: save downloadUrl to firestore 
+      await ref.read(productsRepositoryProvider).createProduct(
+            product.id,
+            downloadUrl,
+          );
       state = const AsyncData(null);
       // TODO: on succes move to the edit product page
     } catch (e, st) {

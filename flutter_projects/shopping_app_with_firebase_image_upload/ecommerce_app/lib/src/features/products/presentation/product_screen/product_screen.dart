@@ -25,26 +25,35 @@ class ProductScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const HomeAppBar(),
-      body: Consumer(
-        builder: (context, ref, _) {
-          final productValue = ref.watch(productProvider(productId));
-          return AsyncValueWidget<Product?>(
-            value: productValue,
-            data: (product) => product == null
-                ? EmptyPlaceholderWidget(
-                    message: 'Product not found'.hardcoded,
-                  )
-                : CustomScrollView(
-                    slivers: [
-                      ResponsiveSliverCenter(
-                        padding: const EdgeInsets.all(Sizes.p16),
-                        child: ProductDetails(product: product),
-                      ),
-                      ProductReviewsList(productId: productId),
-                    ],
-                  ),
-          );
-        },
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.purple, Colors.blueAccent],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: Consumer(
+          builder: (context, ref, _) {
+            final productValue = ref.watch(productProvider(productId));
+            return AsyncValueWidget<Product?>(
+              value: productValue,
+              data: (product) => product == null
+                  ? EmptyPlaceholderWidget(
+                      message: 'Product not found'.hardcoded,
+                    )
+                  : CustomScrollView(
+                      slivers: [
+                        ResponsiveSliverCenter(
+                          padding: const EdgeInsets.all(Sizes.p16),
+                          child: ProductDetails(product: product),
+                        ),
+                        ProductReviewsList(productId: productId),
+                      ],
+                    ),
+            );
+          },
+        ),
       ),
     );
   }
@@ -75,7 +84,8 @@ class ProductDetails extends ConsumerWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(product.title, style: Theme.of(context).textTheme.titleLarge),
+              Text(product.title,
+                  style: Theme.of(context).textTheme.titleLarge),
               gapH8,
               Text(product.description),
               // Only show average if there is at least one rating

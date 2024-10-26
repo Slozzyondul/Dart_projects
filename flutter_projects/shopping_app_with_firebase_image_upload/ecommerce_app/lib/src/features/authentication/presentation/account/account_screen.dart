@@ -47,9 +47,18 @@ class AccountScreen extends ConsumerWidget {
           ),
         ],
       ),
-      body: const ResponsiveCenter(
-        padding: EdgeInsets.symmetric(horizontal: Sizes.p16),
-        child: AccountScreenContents(),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.purple, Colors.blueAccent],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: const ResponsiveCenter(
+          padding: EdgeInsets.symmetric(horizontal: Sizes.p16),
+          child: AccountScreenContents(),
+        ),
       ),
     );
   }
