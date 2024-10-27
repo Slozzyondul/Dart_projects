@@ -19,19 +19,21 @@ class MyApp extends ConsumerWidget {
         useMaterial3: true,
         primarySwatch: Colors.grey,
         appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.black87,
-          foregroundColor: Colors.white,
+          backgroundColor: Colors.blue,
+          foregroundColor: Colors.black,
           elevation: 0,
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.black, // background (button) color
-            foregroundColor: Colors.white, // foreground (text) color
+            backgroundColor: Colors.blue, // background (button) color
+            foregroundColor: Colors.black, // foreground (text) color
           ),
         ),
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
-          backgroundColor: Colors.black, // background (button) color
-          foregroundColor: Colors.white, // foreground (text) color
+          shape: CircleBorder(),
+          elevation: 16,
+          backgroundColor: Colors.blue, // background (button) color
+          foregroundColor: Colors.black, // foreground (text) color
         ),
       ),
     );
