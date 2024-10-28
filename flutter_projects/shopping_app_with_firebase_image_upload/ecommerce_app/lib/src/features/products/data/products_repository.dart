@@ -28,7 +28,7 @@ class ProductsRepository {
   }
 
   Future<void> createProduct(ProductID id, String imageUrl) {
-    return _firestore.doc('products').set(
+    return _firestore.doc('products/$id').set(
       {
         'id': id,
         'imageUrl': imageUrl,

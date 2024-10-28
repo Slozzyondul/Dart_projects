@@ -20,10 +20,9 @@ class AdminProductUploadController extends _$AdminProductUploadController {
             product.imageUrl,
             product.id,
           );
-      await ref.read(productsRepositoryProvider).createProduct(
-            product.id,
-            downloadUrl,
-          );
+      await ref
+          .read(productsRepositoryProvider)
+          .createProduct(product.id, downloadUrl);
       state = const AsyncData(null);
       // TODO: on succes move to the edit product page
     } catch (e, st) {
