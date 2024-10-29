@@ -19,6 +19,6 @@ void main() async {
   final container = await createFirebaseProviderContainer();
   // use the container above to create the root widget
   final root = appBootstrap.createRootWidget(container: container);
-  // start the app
+
   runApp(root);
 }
