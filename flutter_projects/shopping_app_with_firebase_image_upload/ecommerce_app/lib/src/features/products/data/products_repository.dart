@@ -17,8 +17,8 @@ class ProductsRepository {
           toFirestore: (product, _) => product.toMap(),
         );
 
-        final snapshot = await ref.get();
-        return snapshot.docs.map((docSnapshot) => docSnapshot.data()).toList();
+    final snapshot = await ref.get();
+    return snapshot.docs.map((docSnapshot) => docSnapshot.data()).toList();
   }
 
 //fetching data using stream, real time listener
@@ -60,9 +60,14 @@ class ProductsRepository {
           fromFirestore: (doc, _) => Product.fromMap(doc.data()!),
           toFirestore: (product, _) => product.toMap(),
         );
-        return ref.set(product, SetOptions(merge: true));
+    return ref.set(product, SetOptions(merge: true));
   }
-  
+
+  //method to delete product
+
+  Future<void> deleteProduct(ProductID id) {
+    return _firestore.doc('products/$id').delete();
+  }
 }
 
 @Riverpod(keepAlive: true)

@@ -103,22 +103,17 @@ class _AdminProductScreenContentsState
   }
 
   Future<void> _delete() async {
-    await showAlertDialog(
+    final delete = await showAlertDialog(
       context: context,
-      title: 'Not implemented'.hardcoded,
+      title: 'Are you sure?'.hardcoded,
+      cancelActionText: 'Cancel'.hardcoded,
+      defaultActionText: 'Delete'.hardcoded,
     );
-    // TODO: Uncomment
-    // final delete = await showAlertDialog(
-    //   context: context,
-    //   title: 'Are you sure?'.hardcoded,
-    //   cancelActionText: 'Cancel'.hardcoded,
-    //   defaultActionText: 'Delete'.hardcoded,
-    // );
-    // if (delete == true) {
-    //   ref
-    //       .read(adminProductEditControllerProvider.notifier)
-    //       .deleteProduct(product);
-    // }
+    if (delete == true) {
+      ref
+          .read(adminProductEditControllerProvider.notifier)
+          .deleteProduct(product);
+    }
   }
 
   Future<void> _submit() async {
@@ -149,7 +144,6 @@ class _AdminProductScreenContentsState
 
   @override
   Widget build(BuildContext context) {
-    
     ref.listen<AsyncValue>(
       adminProductEditControllerProvider,
       (_, state) => state.showAlertDialogOnError(context),
