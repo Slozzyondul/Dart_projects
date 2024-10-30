@@ -10,11 +10,18 @@ class ProductsRepository {
   const ProductsRepository(this._firestore);
   final FirebaseFirestore _firestore;
 
-  // TODO: Implement all methods using Cloud Firestore
-  Future<List<Product>> fetchProductsList() {
-    return Future.value([]);
+  //fetching data using future(one time reads at the start)
+  Future<List<Product>> fetchProductsList() async {
+    final ref = _firestore.collection('products').withConverter(
+          fromFirestore: (doc, _) => Product.fromMap(doc.data()!),
+          toFirestore: (product, _) => product.toMap(),
+        );
+
+        final snapshot = await ref.get();
+        return snapshot.docs.map((docSnapshot) => docSnapshot.data()).toList();
   }
 
+//fetching data using stream, real time listener
   Stream<List<Product>> watchProductsList() {
     final ref = _firestore.collection('products').withConverter(
           fromFirestore: (doc, _) => Product.fromMap(doc.data()!),
@@ -24,6 +31,7 @@ class ProductsRepository {
         snapshot.docs.map((docSnapshot) => docSnapshot.data()).toList());
   }
 
+//rendering data using stream, real time listener
   Stream<Product?> watchProduct(ProductID id) {
     final ref = _firestore.doc('products/$id').withConverter(
           fromFirestore: (doc, _) => Product.fromMap(doc.data()!),

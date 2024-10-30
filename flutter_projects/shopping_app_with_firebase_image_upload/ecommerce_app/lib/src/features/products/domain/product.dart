@@ -32,7 +32,7 @@ class Product extends Equatable {
       imageUrl: map['imageUrl'] as String,
       title: map['title'] ?? '',
       description: map['description'] ?? '',
-      price: map['price']?.toDouble() ?? 0.0,
+      price: double.tryParse(map['price']?.toString() ?? '') ?? 0.0,
       availableQuantity: map['availableQuantity']?.toInt() ?? 0,
       avgRating: map['avgRating']?.toDouble() ?? 0.0,
       numRatings: map['numRatings']?.toInt() ?? 0,
