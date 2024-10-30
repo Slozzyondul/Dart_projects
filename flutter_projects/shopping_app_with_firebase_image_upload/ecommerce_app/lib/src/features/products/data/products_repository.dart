@@ -54,6 +54,15 @@ class ProductsRepository {
       SetOptions(merge: true),
     );
   }
+
+  Future<void> updateProduct(ProductID id, Product product) {
+    final ref = _firestore.doc('products/$id').withConverter(
+          fromFirestore: (doc, _) => Product.fromMap(doc.data()!),
+          toFirestore: (product, _) => product.toMap(),
+        );
+        return ref.set(product, SetOptions(merge: true));
+  }
+  
 }
 
 @Riverpod(keepAlive: true)

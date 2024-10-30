@@ -84,4 +84,10 @@ class FakeProductsRepository implements ProductsRepository {
   Future<void> createProduct(ProductID id, String imageUrl) {
     throw UnimplementedError();
   }
+  
+  @override
+  Future<void> updateProduct(ProductID id, Product product) {
+    // TODO: implement updateProduct
+    throw UnimplementedError();
+  }
 }
