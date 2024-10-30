@@ -16,7 +16,12 @@ class ProductsRepository {
   }
 
   Stream<List<Product>> watchProductsList() {
-    return Stream.value([]);
+    final ref = _firestore.collection('products').withConverter(
+          fromFirestore: (doc, _) => Product.fromMap(doc.data()!),
+          toFirestore: (product, _) => product.toMap(),
+        );
+    return ref.snapshots().map((snapshot) =>
+        snapshot.docs.map((docSnapshot) => docSnapshot.data()).toList());
   }
 
   Stream<Product?> watchProduct(ProductID id) {
