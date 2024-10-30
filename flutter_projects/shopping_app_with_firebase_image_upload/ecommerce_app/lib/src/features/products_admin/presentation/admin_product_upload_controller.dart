@@ -29,8 +29,10 @@ class AdminProductUploadController extends _$AdminProductUploadController
         state = const AsyncData(null);
       }
 
-      ref.read(goRouterProvider).goNamed(AppRoute.adminEditProduct.name,
-          pathParameters: {'id': product.id});
+      ref.read(goRouterProvider).goNamed(
+        AppRoute.adminEditProduct.name,
+        pathParameters: {'id': product.id},
+      );
     } catch (e, st) {
       state = AsyncError(e, st);
     }
