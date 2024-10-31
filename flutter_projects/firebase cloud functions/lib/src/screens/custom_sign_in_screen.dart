@@ -13,8 +13,17 @@ class CustomSignInScreen extends ConsumerWidget {
       appBar: AppBar(
         title: const Text('Sign in'),
       ),
-      body: SignInScreen(
-        providers: authProviders,
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.white, Colors.yellow],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: SignInScreen(
+          providers: authProviders,
+        ),
       ),
     );
   }

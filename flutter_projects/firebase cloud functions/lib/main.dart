@@ -23,19 +23,19 @@ class MyApp extends ConsumerWidget {
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
       theme: ThemeData(
-        primarySwatch: Colors.indigo,
+        primarySwatch: Colors.yellow,
         appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.indigo,
-          foregroundColor: Colors.white,
+          backgroundColor: Colors.black,
+          foregroundColor: Colors.yellow,
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.indigo, // background (button) color
+            backgroundColor: Colors.black, // background (button) color
             foregroundColor: Colors.white, // foreground (text) color
           ),
         ),
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
-          backgroundColor: Colors.indigo, // background (button) color
+          backgroundColor: Colors.black, // background (button) color
           foregroundColor: Colors.white, // foreground (text) color
         ),
       ),
