@@ -1,7 +1,6 @@
 import 'package:ecommerce_app/src/features/products/data/products_repository.dart';
 import 'package:ecommerce_app/src/features/products/domain/product.dart';
 import 'package:ecommerce_app/src/features/products_admin/application/image_upload_service.dart';
-import 'package:ecommerce_app/src/features/products_admin/data/image_upload_repository.dart';
 import 'package:ecommerce_app/src/routing/app_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'admin_product_edit_controller.g.dart';

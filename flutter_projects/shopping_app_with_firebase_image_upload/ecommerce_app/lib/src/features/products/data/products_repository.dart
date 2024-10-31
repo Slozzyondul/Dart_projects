@@ -68,7 +68,7 @@ class ProductsRepository {
   Future<void> deleteProduct(ProductID id) {
     return _firestore.doc('products/$id').delete();
   }
-}
+} 
 
 @Riverpod(keepAlive: true)
 ProductsRepository productsRepository(ProductsRepositoryRef ref) {
