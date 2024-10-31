@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "795303902726",
+    "project_id": "tests-a43da",
+    "storage_bucket": "tests-a43da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:795303902726:android:86a1c4f412679121488d87",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkCemGzDdM6FVu1FZTwGSy85UaUq3u3LY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:795303902726:android:13d046b3358f9592488d87",
+        "android_client_info": {
+          "package_name": "com.ondul.firebasemastery"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkCemGzDdM6FVu1FZTwGSy85UaUq3u3LY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
