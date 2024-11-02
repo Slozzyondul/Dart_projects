@@ -14,12 +14,17 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      appBar: AppBar(title: const Text('My Jobs'), actions: [
-        IconButton(
-          icon: const Icon(Icons.person),
-          onPressed: () => context.goNamed(AppRoute.profile.name),
-        )
-      ]),
+      appBar: AppBar(
+        elevation: 4.0,
+          title: const Center(
+            child: Text('My Jobs'),
+          ),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.person),
+              onPressed: () => context.goNamed(AppRoute.profile.name),
+            )
+          ]),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -31,6 +36,7 @@ class HomeScreen extends ConsumerWidget {
         child: const JobsListView(),
       ),
       floatingActionButton: FloatingActionButton(
+        tooltip: 'Add Job',
         child: const Icon(Icons.add),
         onPressed: () {
           final user = ref.read(firebaseAuthProvider).currentUser;
