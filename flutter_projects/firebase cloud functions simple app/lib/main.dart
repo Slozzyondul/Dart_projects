@@ -31,7 +31,7 @@ class MyApp extends ConsumerWidget {
     return MaterialApp.router(
       routerConfig: goRouter,
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       theme: ThemeData(
         primarySwatch: Colors.yellow,
         appBarTheme: const AppBarTheme(
