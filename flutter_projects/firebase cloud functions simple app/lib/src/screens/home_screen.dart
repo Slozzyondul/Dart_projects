@@ -1,8 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:faker/faker.dart' hide Job;
 import 'package:faker_app_flutter_firebase/src/data/firestore_repository.dart';
+import 'package:faker_app_flutter_firebase/src/data/functions_repository.dart';
 import 'package:faker_app_flutter_firebase/src/data/job.dart';
 import 'package:faker_app_flutter_firebase/src/routing/app_router.dart';
+import 'package:faker_app_flutter_firebase/src/widgets/alert_dialog.dart';
 import 'package:firebase_ui_firestore/firebase_ui_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -15,11 +17,28 @@ class HomeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 4.0,
+          elevation: 4.0,
           title: const Center(
             child: Text('My Jobs'),
           ),
           actions: [
+            IconButton(
+              icon: const Icon(Icons.delete),
+              onPressed: () async {
+                try {
+                  await ref
+                      .read(functionsRepositoryProvider)
+                      .deleteAllUserJobs();
+                } catch (e) {
+                  showAlertDialog(
+                    context: context,
+                    title: 'An error occured',
+                    content: e.toString(),
+                    
+                  );
+                }
+              },
+            ),
             IconButton(
               icon: const Icon(Icons.person),
               onPressed: () => context.goNamed(AppRoute.profile.name),
