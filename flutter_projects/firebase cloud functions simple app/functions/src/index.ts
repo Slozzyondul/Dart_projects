@@ -32,15 +32,12 @@ export const deleteAllUserJobs = functions.https.onCall(async (context: function
   if (uid === undefined) {
     throw new functions.https.HttpsError("unauthenticated", "you need authentication to perform this task")
   }
-
   const firestore = admin.firestore()
   const collectionRef = firestore.collection(`/users/${uid}/jobs`)
   const docRefs = await collectionRef.listDocuments()
-
   for (const docRef of docRefs) {
     await docRef.delete()
   }
-
-  return {"success": true}
-
+  logger.log(`Deleted ${docRefs.length} docs at ${collectionRef.path}`)
+  return { "success": true }
 })

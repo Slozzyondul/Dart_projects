@@ -5,7 +5,10 @@ class FunctionsRepository {
   FunctionsRepository(this._functions);
   final FirebaseFunctions _functions;
 
-  Future<void> deleteAllUserJobs() async {}
+  Future<void> deleteAllUserJobs() async {
+    final callable = _functions.httpsCallable('deleteAllUserJobs');
+    await callable();
+  }
 }
 
 final functionsRepositoryProvider = Provider<FunctionsRepository>((ref) {
