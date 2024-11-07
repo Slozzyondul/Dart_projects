@@ -39,6 +39,6 @@ export const deleteAllUserJobs = functions.https.onCall(async (context: function
     await docRef.delete()
   }
   logger.log(`Deleted ${docRefs.length} docs at ${collectionRef.path}`)
-  
-  return { "count": docRefs.length }
+
+  return { "count": docRefs.length}
 })
