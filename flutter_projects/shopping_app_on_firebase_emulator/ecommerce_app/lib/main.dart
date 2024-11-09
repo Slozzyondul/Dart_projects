@@ -15,8 +15,8 @@ void main() async {
   usePathUrlStrategy();
   // create an app bootstrap instance
   final appBootstrap = AppBootstrap();
-  //loading app from the emlator
-  appBootstrap.setupEmulators();
+  // connect to the Firebase emulators
+  await appBootstrap.setupEmulators();
   // create a container configured with all the Firebase repositories
   final container = await appBootstrap.createFirebaseProviderContainer();
   // use the container above to create the root widget
