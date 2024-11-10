@@ -43,7 +43,16 @@ class AppBootstrap {
           backgroundColor: Colors.red,
           title: Text('An error occurred'.hardcoded),
         ),
-        body: Center(child: Text(details.toString())),
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.purple, Colors.blueAccent],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+          ),
+          child: Center(child: Text(details.toString())),
+        ),
       );
     };
   }

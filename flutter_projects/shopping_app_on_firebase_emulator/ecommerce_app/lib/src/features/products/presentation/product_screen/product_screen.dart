@@ -25,26 +25,35 @@ class ProductScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const HomeAppBar(),
-      body: Consumer(
-        builder: (context, ref, _) {
-          final productValue = ref.watch(productStreamProvider(productId));
-          return AsyncValueWidget<Product?>(
-            value: productValue,
-            data: (product) => product == null
-                ? EmptyPlaceholderWidget(
-                    message: 'Product not found'.hardcoded,
-                  )
-                : CustomScrollView(
-                    slivers: [
-                      ResponsiveSliverCenter(
-                        padding: const EdgeInsets.all(Sizes.p16),
-                        child: ProductDetails(product: product),
-                      ),
-                      ProductReviewsList(productId: productId),
-                    ],
-                  ),
-          );
-        },
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.purple, Colors.blueAccent],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: Consumer(
+          builder: (context, ref, _) {
+            final productValue = ref.watch(productStreamProvider(productId));
+            return AsyncValueWidget<Product?>(
+              value: productValue,
+              data: (product) => product == null
+                  ? EmptyPlaceholderWidget(
+                      message: 'Product not found'.hardcoded,
+                    )
+                  : CustomScrollView(
+                      slivers: [
+                        ResponsiveSliverCenter(
+                          padding: const EdgeInsets.all(Sizes.p16),
+                          child: ProductDetails(product: product),
+                        ),
+                        ProductReviewsList(productId: productId),
+                      ],
+                    ),
+            );
+          },
+        ),
       ),
     );
   }
