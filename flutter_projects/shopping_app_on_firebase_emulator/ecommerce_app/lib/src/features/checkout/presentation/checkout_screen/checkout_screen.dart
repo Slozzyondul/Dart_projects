@@ -61,17 +61,26 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
     // * Note: only the currently active page will be visible.
     return Scaffold(
       appBar: AppBar(title: Text(title)),
-      body: PageView(
-        // * disable swiping between pages
-        physics: const NeverScrollableScrollPhysics(),
-        controller: _controller,
-        children: [
-          EmailPasswordSignInContents(
-            formType: EmailPasswordSignInFormType.register,
-            onSignedIn: _onSignedIn,
+      body: Container(
+         decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.purple, Colors.blueAccent],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
           ),
-          const PaymentPage()
-        ],
+        ),
+        child: PageView(
+          // * disable swiping between pages
+          physics: const NeverScrollableScrollPhysics(),
+          controller: _controller,
+          children: [
+            EmailPasswordSignInContents(
+              formType: EmailPasswordSignInFormType.register,
+              onSignedIn: _onSignedIn,
+            ),
+            const PaymentPage()
+          ],
+        ),
       ),
     );
   }

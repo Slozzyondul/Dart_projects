@@ -28,25 +28,34 @@ class ShoppingCartScreen extends ConsumerWidget {
       appBar: AppBar(
         title: Text('Shopping Cart'.hardcoded),
       ),
-      body: Consumer(
-        builder: (context, ref, child) {
-          final cartValue = ref.watch(cartProvider);
-          return AsyncValueWidget<Cart>(
-            value: cartValue,
-            data: (cart) => ShoppingCartItemsBuilder(
-              items: cart.toItemsList(),
-              itemBuilder: (_, item, index) => ShoppingCartItem(
-                item: item,
-                itemIndex: index,
+      body: Container(
+         decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.purple, Colors.blueAccent],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: Consumer(
+          builder: (context, ref, child) {
+            final cartValue = ref.watch(cartProvider);
+            return AsyncValueWidget<Cart>(
+              value: cartValue,
+              data: (cart) => ShoppingCartItemsBuilder(
+                items: cart.toItemsList(),
+                itemBuilder: (_, item, index) => ShoppingCartItem(
+                  item: item,
+                  itemIndex: index,
+                ),
+                ctaBuilder: (_) => PrimaryButton(
+                  text: 'Checkout'.hardcoded,
+                  isLoading: state.isLoading,
+                  onPressed: () => context.goNamed(AppRoute.checkout.name),
+                ),
               ),
-              ctaBuilder: (_) => PrimaryButton(
-                text: 'Checkout'.hardcoded,
-                isLoading: state.isLoading,
-                onPressed: () => context.goNamed(AppRoute.checkout.name),
-              ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }

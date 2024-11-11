@@ -35,9 +35,18 @@ class AuthRobot {
         ],
         child: MaterialApp(
           home: Scaffold(
-            body: EmailPasswordSignInContents(
-              formType: formType,
-              onSignedIn: onSignedIn,
+            body: Container(
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.purple, Colors.blueAccent],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
+              ),
+              child: EmailPasswordSignInContents(
+                formType: formType,
+                onSignedIn: onSignedIn,
+              ),
             ),
           ),
         ),
