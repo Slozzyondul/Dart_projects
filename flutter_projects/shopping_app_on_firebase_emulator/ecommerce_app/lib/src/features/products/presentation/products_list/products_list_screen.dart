@@ -46,29 +46,20 @@ class _ProductsListScreenState extends State<ProductsListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const HomeAppBar(),
-      body: Container(
-         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.purple, Colors.blueAccent],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
+      body: CustomScrollView(
+        controller: _scrollController,
+        slivers: [
+          const ResponsiveSliverCenter(
+            padding: EdgeInsets.all(Sizes.p16),
+            child: ProductsSearchTextField(),
           ),
-        ),
-        child: CustomScrollView(
-          controller: _scrollController,
-          slivers: [
-            const ResponsiveSliverCenter(
-              padding: EdgeInsets.all(Sizes.p16),
-              child: ProductsSearchTextField(),
+          SliverProductsGrid(
+            onPressed: (context, productId) => context.goNamed(
+              AppRoute.product.name,
+              pathParameters: {'id': productId},
             ),
-            SliverProductsGrid(
-              onPressed: (context, productId) => context.goNamed(
-                AppRoute.product.name,
-                pathParameters: {'id': productId},
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -13,24 +13,15 @@ class AdminProductsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(title: Text('Manage Products'.hardcoded)),
-      body: Container(
-         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.purple, Colors.blueAccent],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
-        child: CustomScrollView(
-          slivers: [
-            SliverProductsGrid(
-              onPressed: (context, productId) => context.goNamed(
-                AppRoute.adminEditProduct.name,
-                pathParameters: {'id': productId},
-              ),
+      body: CustomScrollView(
+        slivers: [
+          SliverProductsGrid(
+            onPressed: (context, productId) => context.goNamed(
+              AppRoute.adminEditProduct.name,
+              pathParameters: {'id': productId},
             ),
-          ],
-        ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),

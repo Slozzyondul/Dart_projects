@@ -19,37 +19,28 @@ class AdminProductsAddScreen extends ConsumerWidget {
       appBar: AppBar(
         title: Text('Add a product'.hardcoded),
       ),
-      body: Container(
-         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.purple, Colors.blueAccent],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          ColoredBox(
+            color: Colors.grey.shade400,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'Choose a product from template'.hardcoded,
+                textAlign: TextAlign.center,
+              ),
+            ),
           ),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            ColoredBox(
-              color: Colors.grey.shade400,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  'Choose a product from template'.hardcoded,
-                  textAlign: TextAlign.center,
-                ),
-              ),
+          const Expanded(
+            child: CustomScrollView(
+              slivers: [
+                // Choose from template
+                ProductsTemplateGrid(),
+              ],
             ),
-            const Expanded(
-              child: CustomScrollView(
-                slivers: [
-                  // Choose from template
-                  ProductsTemplateGrid(),
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

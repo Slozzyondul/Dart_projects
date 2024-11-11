@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/src/features/authentication/application/user_token_refresh_service.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -12,6 +13,8 @@ class AppBootstrap {
   Widget createRootWidget({required ProviderContainer container}) {
     // * Initialize CartSyncService to start the listener
     container.read(cartSyncServiceProvider);
+    // * Initialize UserTokenRefreshService
+    container.read(userTokenRefreshServiceProvider);
 
     // * Register error handlers. For more info, see:
     // * https://docs.flutter.dev/testing/errors
@@ -43,16 +46,7 @@ class AppBootstrap {
           backgroundColor: Colors.red,
           title: Text('An error occurred'.hardcoded),
         ),
-        body: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Colors.purple, Colors.blueAccent],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-            ),
-          ),
-          child: Center(child: Text(details.toString())),
-        ),
+        body: Center(child: Text(details.toString())),
       );
     };
   }

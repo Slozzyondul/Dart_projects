@@ -24,27 +24,18 @@ class LeaveReviewScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Leave a review'.hardcoded),
       ),
-      body: Container(
-         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.purple, Colors.blueAccent],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
-        child: ResponsiveCenter(
-          maxContentWidth: Breakpoint.tablet,
-          padding: const EdgeInsets.all(Sizes.p16),
-          child: Consumer(
-            builder: (context, ref, child) {
-              final reviewValue = ref.watch(userReviewFutureProvider(productId));
-              return AsyncValueWidget<Review?>(
-                value: reviewValue,
-                data: (review) =>
-                    LeaveReviewForm(productId: productId, review: review),
-              );
-            },
-          ),
+      body: ResponsiveCenter(
+        maxContentWidth: Breakpoint.tablet,
+        padding: const EdgeInsets.all(Sizes.p16),
+        child: Consumer(
+          builder: (context, ref, child) {
+            final reviewValue = ref.watch(userReviewFutureProvider(productId));
+            return AsyncValueWidget<Review?>(
+              value: reviewValue,
+              data: (review) =>
+                  LeaveReviewForm(productId: productId, review: review),
+            );
+          },
         ),
       ),
     );

@@ -18,44 +18,35 @@ class OrdersListScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Your Orders'.hardcoded),
       ),
-      body: Container(
-         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.purple, Colors.blueAccent],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
-        child: Consumer(builder: (context, ref, _) {
-          final userOrdersValue = ref.watch(userOrdersProvider);
-          return AsyncValueWidget<List<Order>>(
-            value: userOrdersValue,
-            data: (orders) => orders.isEmpty
-                ? Center(
-                    child: Text(
-                      'No previous orders'.hardcoded,
-                      style: Theme.of(context).textTheme.displaySmall,
-                      textAlign: TextAlign.center,
-                    ),
-                  )
-                : CustomScrollView(
-                    slivers: <Widget>[
-                      SliverList(
-                        delegate: SliverChildBuilderDelegate(
-                          (BuildContext context, int index) => ResponsiveCenter(
-                            padding: const EdgeInsets.all(Sizes.p8),
-                            child: OrderCard(
-                              order: orders[index],
-                            ),
-                          ),
-                          childCount: orders.length,
-                        ),
-                      ),
-                    ],
+      body: Consumer(builder: (context, ref, _) {
+        final userOrdersValue = ref.watch(userOrdersProvider);
+        return AsyncValueWidget<List<Order>>(
+          value: userOrdersValue,
+          data: (orders) => orders.isEmpty
+              ? Center(
+                  child: Text(
+                    'No previous orders'.hardcoded,
+                    style: Theme.of(context).textTheme.displaySmall,
+                    textAlign: TextAlign.center,
                   ),
-          );
-        }),
-      ),
+                )
+              : CustomScrollView(
+                  slivers: <Widget>[
+                    SliverList(
+                      delegate: SliverChildBuilderDelegate(
+                        (BuildContext context, int index) => ResponsiveCenter(
+                          padding: const EdgeInsets.all(Sizes.p8),
+                          child: OrderCard(
+                            order: orders[index],
+                          ),
+                        ),
+                        childCount: orders.length,
+                      ),
+                    ),
+                  ],
+                ),
+        );
+      }),
     );
   }
 }

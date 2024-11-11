@@ -34,17 +34,8 @@ class AdminProductEditScreen extends ConsumerWidget {
           ? AdminProductEditScreenContents(product: product)
           : Scaffold(
               appBar: AppBar(title: Text('Edit Product'.hardcoded)),
-              body: Container(
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [Colors.purple, Colors.blueAccent],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                  ),
-                ),
-                child: Center(
-                  child: ErrorMessageWidget('Product not found'.hardcoded),
-                ),
+              body: Center(
+                child: ErrorMessageWidget('Product not found'.hardcoded),
               ),
             ),
       // * to prevent a black screen, return a [Scaffold] from the error and
@@ -166,90 +157,81 @@ class _AdminProductScreenContentsState
           ),
         ],
       ),
-      body: Container(
-         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.purple, Colors.blueAccent],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
-        child: SingleChildScrollView(
-          child: ResponsiveCenter(
-            padding: const EdgeInsets.all(Sizes.p16),
-            child: Form(
-              key: _formKey,
-              child: ResponsiveTwoColumnLayout(
-                startContent: Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(Sizes.p16),
-                    child: CustomImage(imageUrl: product.imageUrl),
-                  ),
+      body: SingleChildScrollView(
+        child: ResponsiveCenter(
+          padding: const EdgeInsets.all(Sizes.p16),
+          child: Form(
+            key: _formKey,
+            child: ResponsiveTwoColumnLayout(
+              startContent: Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(Sizes.p16),
+                  child: CustomImage(imageUrl: product.imageUrl),
                 ),
-                spacing: Sizes.p16,
-                endContent: Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(Sizes.p16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        TextFormField(
-                          controller: _titleController,
-                          enabled: !isLoading,
-                          decoration: InputDecoration(
-                            label: Text('Title'.hardcoded),
-                          ),
-                          autovalidateMode: autovalidateMode,
-                          validator:
-                              ref.read(productValidatorProvider).titleValidator,
+              ),
+              spacing: Sizes.p16,
+              endContent: Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(Sizes.p16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      TextFormField(
+                        controller: _titleController,
+                        enabled: !isLoading,
+                        decoration: InputDecoration(
+                          label: Text('Title'.hardcoded),
                         ),
-                        gapH8,
-                        TextFormField(
-                          controller: _descriptionController,
-                          enabled: !isLoading,
-                          keyboardType: TextInputType.multiline,
-                          maxLines: null,
-                          decoration: InputDecoration(
-                            label: Text('Description'.hardcoded),
-                          ),
-                          autovalidateMode: autovalidateMode,
-                          validator: ref
-                              .read(productValidatorProvider)
-                              .descriptionValidator,
+                        autovalidateMode: autovalidateMode,
+                        validator:
+                            ref.read(productValidatorProvider).titleValidator,
+                      ),
+                      gapH8,
+                      TextFormField(
+                        controller: _descriptionController,
+                        enabled: !isLoading,
+                        keyboardType: TextInputType.multiline,
+                        maxLines: null,
+                        decoration: InputDecoration(
+                          label: Text('Description'.hardcoded),
                         ),
-                        gapH8,
-                        TextFormField(
-                          controller: _priceController,
-                          enabled: !isLoading,
-                          decoration: InputDecoration(
-                            label: Text('Price'.hardcoded),
-                          ),
-                          autovalidateMode: autovalidateMode,
-                          validator:
-                              ref.read(productValidatorProvider).priceValidator,
+                        autovalidateMode: autovalidateMode,
+                        validator: ref
+                            .read(productValidatorProvider)
+                            .descriptionValidator,
+                      ),
+                      gapH8,
+                      TextFormField(
+                        controller: _priceController,
+                        enabled: !isLoading,
+                        decoration: InputDecoration(
+                          label: Text('Price'.hardcoded),
                         ),
-                        gapH8,
-                        TextFormField(
-                          controller: _availableQuantityController,
-                          enabled: !isLoading,
-                          decoration: InputDecoration(
-                            label: Text('Available Quantity'.hardcoded),
-                          ),
-                          autovalidateMode: autovalidateMode,
-                          validator: ref
-                              .read(productValidatorProvider)
-                              .availableQuantityValidator,
+                        autovalidateMode: autovalidateMode,
+                        validator:
+                            ref.read(productValidatorProvider).priceValidator,
+                      ),
+                      gapH8,
+                      TextFormField(
+                        controller: _availableQuantityController,
+                        enabled: !isLoading,
+                        decoration: InputDecoration(
+                          label: Text('Available Quantity'.hardcoded),
                         ),
-                        gapH16,
-                        const Divider(),
-                        gapH8,
-                        EditProductOptions(
-                          onLoadFromTemplate:
-                              isLoading ? null : _loadFromTemplate,
-                          onDelete: isLoading ? null : _delete,
-                        ),
-                      ],
-                    ),
+                        autovalidateMode: autovalidateMode,
+                        validator: ref
+                            .read(productValidatorProvider)
+                            .availableQuantityValidator,
+                      ),
+                      gapH16,
+                      const Divider(),
+                      gapH8,
+                      EditProductOptions(
+                        onLoadFromTemplate:
+                            isLoading ? null : _loadFromTemplate,
+                        onDelete: isLoading ? null : _delete,
+                      ),
+                    ],
                   ),
                 ),
               ),
