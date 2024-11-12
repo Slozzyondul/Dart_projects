@@ -32,7 +32,7 @@ export const makeAdminIfWhitelisted = functions.auth.user().onCreate(async (user
     await admin.auth().setCustomUserClaims(user.uid, {
         admin: true,
     })
-    
+
     // write to Firestore so the client knows it needs to update
     await admin.firestore().doc(`metadata/${user.uid}`).set({
         refreshTime: firestore.FieldValue.serverTimestamp(),

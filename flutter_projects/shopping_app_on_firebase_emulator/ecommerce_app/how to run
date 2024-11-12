@@ -1,0 +1,6 @@
+//how to run this project
+1. emulator -avd my_avd = start android emulator 
+2. firebase emulators:start = start firebase emulator
+3. npm run build = run to convert typescript functions into javascript
+4. flutter run = start the flutter app
+

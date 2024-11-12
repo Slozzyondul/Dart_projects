@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:ecommerce_app/src/app_bootstrap.dart';
 // ignore:depend_on_referenced_packages
 import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:go_router/go_router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,6 +14,10 @@ void main() async {
   );
   // turn off the # in the URLs on the web
   usePathUrlStrategy();
+
+  //ensure URL changes in the address bar when using push / pushNamed
+  GoRouter.optionURLReflectsImperativeAPIs = true;
+
   // create an app bootstrap instance
   final appBootstrap = AppBootstrap();
   // connect to the Firebase emulators
