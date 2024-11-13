@@ -39,7 +39,7 @@ extension AppBootstrapFirebase on AppBootstrap {
     // TODO: Replace with Firebase repositories
     final reviewsRepository = FakeReviewsRepository(addDelay: addDelay);
     // * set delay to false to make it easier to add/remove items
-    final remoteCartRepository = FakeRemoteCartRepository(addDelay: false);
+    //final remoteCartRepository = FakeRemoteCartRepository(addDelay: false);
     final ordersRepository = FakeOrdersRepository(addDelay: addDelay);
 
     return ProviderContainer(
@@ -48,7 +48,7 @@ extension AppBootstrapFirebase on AppBootstrap {
         reviewsRepositoryProvider.overrideWithValue(reviewsRepository),
         ordersRepositoryProvider.overrideWithValue(ordersRepository),
         localCartRepositoryProvider.overrideWithValue(localCartRepository),
-        remoteCartRepositoryProvider.overrideWithValue(remoteCartRepository),
+        //remoteCartRepositoryProvider.overrideWithValue(remoteCartRepository),
       ],
       observers: [AsyncErrorLogger()],
     );
