@@ -1,0 +1,11 @@
+*start server in linux
+./run/linux-server
+
+*default registered accoounts
+1. seller login
+email: seller@wootcot.com
+password: password
+
+2. buyer login
+email: buyer@wootcot.com
+password: password

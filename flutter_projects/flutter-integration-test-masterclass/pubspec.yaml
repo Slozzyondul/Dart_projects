@@ -34,6 +34,10 @@ dev_dependencies:
   freezed: ^2.5.8
   json_serializable: ^6.9.2
 
+  integration_test:
+    sdk: flutter
+  faker: ^2.2.0
+
 flutter:
   generate: true
   uses-material-design: true
