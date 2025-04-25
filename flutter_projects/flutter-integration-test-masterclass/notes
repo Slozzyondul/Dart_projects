@@ -9,3 +9,6 @@ password: password
 2. buyer login
 email: buyer@wootcot.com
 password: password
+
+run test file
+ flutter run integration_test/app_test.dart
