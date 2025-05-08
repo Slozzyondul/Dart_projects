@@ -14,11 +14,11 @@ import 'package:intl/intl.dart';
 /// Shows a shopping cart item (or loading/error UI if needed)
 class ShoppingCartItem extends StatelessWidget {
   const ShoppingCartItem({
-    Key? key,
+    super.key,
     required this.item,
     required this.itemIndex,
     this.isEditable = true,
-  }) : super(key: key);
+  });
   final Item item;
   final int itemIndex;
 
@@ -30,7 +30,8 @@ class ShoppingCartItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: Read from data source
-    final product = kTestProducts.firstWhere((product) => product.id == item.productId);
+    final product =
+        kTestProducts.firstWhere((product) => product.id == item.productId);
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: Sizes.p8),
       child: Card(
@@ -51,12 +52,12 @@ class ShoppingCartItem extends StatelessWidget {
 /// Shows a shopping cart item for a given product
 class ShoppingCartItemContents extends StatelessWidget {
   const ShoppingCartItemContents({
-    Key? key,
+    super.key,
     required this.product,
     required this.item,
     required this.itemIndex,
     required this.isEditable,
-  }) : super(key: key);
+  });
   final Product product;
   final Item item;
   final int itemIndex;
@@ -80,7 +81,8 @@ class ShoppingCartItemContents extends StatelessWidget {
         children: [
           Text(product.title, style: Theme.of(context).textTheme.headlineSmall),
           gapH24,
-          Text(priceFormatted, style: Theme.of(context).textTheme.headlineSmall),
+          Text(priceFormatted,
+              style: Theme.of(context).textTheme.headlineSmall),
           gapH24,
           isEditable
               // show the quantity selector and a delete button

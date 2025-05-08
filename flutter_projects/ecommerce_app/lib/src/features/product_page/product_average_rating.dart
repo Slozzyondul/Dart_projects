@@ -4,7 +4,7 @@ import 'package:ecommerce_app/src/models/product.dart';
 
 /// Shows the product average rating score and the number of ratings
 class ProductAverageRating extends StatelessWidget {
-  const ProductAverageRating({Key? key, required this.product}) : super(key: key);
+  const ProductAverageRating({super.key, required this.product});
   final Product product;
 
   @override
@@ -22,7 +22,9 @@ class ProductAverageRating extends StatelessWidget {
         ),
         gapW8,
         Text(
-          product.numRatings == 1 ? '1 rating' : '${product.numRatings} ratings',
+          product.numRatings == 1
+              ? '1 rating'
+              : '${product.numRatings} ratings',
           style: Theme.of(context).textTheme.bodyMedium,
         ),
       ],

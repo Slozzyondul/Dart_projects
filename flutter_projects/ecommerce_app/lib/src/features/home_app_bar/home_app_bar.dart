@@ -1,7 +1,5 @@
 import 'package:ecommerce_app/src/features/account/account_screen.dart';
 import 'package:ecommerce_app/src/features/orders_list/orders_list_screen.dart';
-import 'package:ecommerce_app/src/features/sign_in/email_password_sign_in_screen.dart';
-import 'package:ecommerce_app/src/features/sign_in/email_password_sign_in_state.dart';
 import 'package:ecommerce_app/src/localization/string_hardcoded.dart';
 import 'package:ecommerce_app/src/models/app_user.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +15,7 @@ import 'package:ecommerce_app/src/features/home_app_bar/shopping_cart_icon.dart'
 /// - Orders button
 /// - Account or Sign-in button
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const HomeAppBar({Key? key}) : super(key: key);
+  const HomeAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +42,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         title: Text('My Shop'.hardcoded),
         actions: [
           const ShoppingCartIcon(),
-          if (user != null) ...[
+          ...[
             ActionTextButton(
               key: MoreMenuButton.ordersKey,
               text: 'Orders'.hardcoded,
@@ -65,19 +63,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
             ),
-          ] else
-            ActionTextButton(
-              key: MoreMenuButton.signInKey,
-              text: 'Sign In'.hardcoded,
-              onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute(
-                  fullscreenDialog: true,
-                  builder: (_) => const EmailPasswordSignInScreen(
-                    formType: EmailPasswordSignInFormType.signIn,
-                  ),
-                ),
-              ),
-            )
+          ]
         ],
       );
     }
