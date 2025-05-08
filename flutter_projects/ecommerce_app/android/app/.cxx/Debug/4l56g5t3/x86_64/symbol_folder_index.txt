@@ -1,0 +1,1 @@
+/home/solo/Documents/Dart_projects/flutter_projects/ecommerce_app/build/app/intermediates/cxx/Debug/4l56g5t3/obj/x86_64
