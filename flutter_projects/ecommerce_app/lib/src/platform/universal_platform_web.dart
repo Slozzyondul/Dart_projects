@@ -1,12 +1,12 @@
 // ignore: avoid_web_libraries_in_flutter
-import 'dart:html' as html;
+import 'package:web/web.dart' as web;
 
 // NOTE:
-// Never import this library directly in the application. The PlatformIs
+// Never import this library directly in the application. The UniversalPlatform
 // class and library uses conditional imports to only import this file on
 // Web platform builds.
 
-final html.Navigator _nav = html.window.navigator;
+final web.Navigator _nav = web.window.navigator;
 
 // UniversalPlatform for Flutter WEB build.
 //
@@ -19,6 +19,7 @@ final html.Navigator _nav = html.window.navigator;
 class UniversalPlatform {
   UniversalPlatform._();
   static bool get web => true;
+  // If _nav.appVersion is already a Dart String, .toDart is not needed.
   static bool get macOS => _nav.appVersion.contains('Mac OS') && !iOS;
   static bool get windows => _nav.appVersion.contains('Win');
   static bool get linux =>
@@ -28,8 +29,11 @@ class UniversalPlatform {
   static bool get android => _nav.appVersion.contains('Android ');
   static bool get iOS {
     // maxTouchPoints is needed to separate iPad iOS13 vs new MacOS
+    // If _nav.platform is already a Dart String, .toDart is not needed.
     return _hasMatch(_nav.platform, '/iPad|iPhone|iPod/') ||
-        (_nav.platform == 'MacIntel' && _nav.maxTouchPoints! > 1);
+        (_nav.platform == 'MacIntel' &&
+            // If _nav.maxTouchPoints is already a Dart int/num, .toDartInt is not needed.
+            _nav.maxTouchPoints > 1);
   }
 
   // Theoretically we could be in a Web browser on Fuchsia too, but
@@ -39,5 +43,5 @@ class UniversalPlatform {
 
 bool _hasMatch(String? value, String pattern) {
   // ignore: avoid_bool_literals_in_conditional_expressions
-  return (value == null) ? false : RegExp(pattern).hasMatch(value);
+  return value != null && RegExp(pattern).hasMatch(value);
 }
