@@ -2,12 +2,15 @@ import 'dart:async';
 
 import 'package:ecommerce_app/src/app.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+import 'package:go_router/go_router.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  // https://docs.flutter.dev/testing/errors
-
   await runZonedGuarded(() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    // https://docs.flutter.dev/testing/errors
+
+    usePathUrlStrategy();
     runApp(const MyApp());
 
     FlutterError.onError = (FlutterErrorDetails details) {
