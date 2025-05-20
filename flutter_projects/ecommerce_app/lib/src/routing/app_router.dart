@@ -7,16 +7,26 @@ import 'package:ecommerce_app/src/features/sign_in/email_password_sign_in_state.
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+enum AppRoute {
+  home,
+  cart,
+  orders,
+  account,
+  signIn,
+}
+
 final goRouter = GoRouter(
   initialLocation: '/',
   debugLogDiagnostics: true,
   routes: [
     GoRoute(
       path: '/',
+      name: AppRoute.home.name,
       builder: (context, state) => const ProductsListScreen(),
       routes: [
         GoRoute(
           path: 'cart',
+          name: AppRoute.cart.name,
           pageBuilder: (context, state) => MaterialPage(
               child: const ShoppingCartScreen(),
               key: state.pageKey,
@@ -24,6 +34,7 @@ final goRouter = GoRouter(
         ),
         GoRoute(
           path: 'orders',
+          name: AppRoute.orders.name,
           pageBuilder: (context, state) => MaterialPage(
               child: const OrdersListScreen(),
               key: state.pageKey,
@@ -31,6 +42,7 @@ final goRouter = GoRouter(
         ),
         GoRoute(
           path: 'account',
+          name: AppRoute.account.name,
           pageBuilder: (context, state) => MaterialPage(
               child: const AccountScreen(),
               key: state.pageKey,
@@ -38,6 +50,7 @@ final goRouter = GoRouter(
         ),
         GoRoute(
           path: 'signIn',
+          name: AppRoute.signIn.name,
           pageBuilder: (context, state) => MaterialPage(
               child: const EmailPasswordSignInScreen(
                   formType: EmailPasswordSignInFormType.signIn),
