@@ -7,12 +7,13 @@ final goRouter = GoRouter(
   debugLogDiagnostics: true,
   routes: [
     GoRoute(
-      path: '/',
-      builder: (context, state) => const ProductsListScreen(),
-    ),
-    GoRoute(
-      path: '/cart',
-      builder: (context, state) => const ShoppingCartScreen(),
-    ),
+        path: '/',
+        builder: (context, state) => const ProductsListScreen(),
+        routes: [
+          GoRoute(
+            path: 'cart',
+            builder: (context, state) => const ShoppingCartScreen(),
+          ),
+        ]),
   ],
 );
