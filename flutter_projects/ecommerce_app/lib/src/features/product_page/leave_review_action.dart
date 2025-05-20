@@ -1,4 +1,3 @@
-import 'package:ecommerce_app/src/features/leave_review_page/leave_review_screen.dart';
 import 'package:ecommerce_app/src/localization/string_hardcoded.dart';
 import 'package:ecommerce_app/src/models/purchase.dart';
 import 'package:ecommerce_app/src/routing/app_router.dart';
