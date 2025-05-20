@@ -1,5 +1,3 @@
-import 'package:ecommerce_app/src/features/account/account_screen.dart';
-import 'package:ecommerce_app/src/features/orders_list/orders_list_screen.dart';
 import 'package:ecommerce_app/src/localization/string_hardcoded.dart';
 import 'package:ecommerce_app/src/models/app_user.dart';
 import 'package:flutter/material.dart';
