@@ -1,11 +1,11 @@
 import 'package:ecommerce_app/src/localization/string_hardcoded.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce_app/src/common_widgets/cart_total_with_cta.dart';
+import 'package:ecommerce_app/src/features/cart/presentation/cart_total/cart_total_with_cta.dart';
 import 'package:ecommerce_app/src/common_widgets/decorated_box_with_shadow.dart';
 import 'package:ecommerce_app/src/common_widgets/responsive_center.dart';
 import 'package:ecommerce_app/src/constants/app_sizes.dart';
 import 'package:ecommerce_app/src/features/not_found/empty_placeholder_widget.dart';
-import 'package:ecommerce_app/src/models/item.dart';
+import 'package:ecommerce_app/src/features/cart/domain/item.dart';
 
 /// Responsive widget showing the cart items and the checkout button
 class ShoppingCartItemsBuilder extends StatelessWidget {
