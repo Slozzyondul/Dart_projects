@@ -1,7 +1,7 @@
 import 'package:ecommerce_app/src/features/authentication/presentation/account/account_screen.dart';
 import 'package:ecommerce_app/src/features/checkout/presentation/checkout_screen/checkout_screen.dart';
-import 'package:ecommerce_app/src/features/leave_review_page/leave_review_screen.dart';
-import 'package:ecommerce_app/src/features/not_found/not_found_screen.dart';
+import 'package:ecommerce_app/src/features/reviews/presentation/leave_review_page/leave_review_screen.dart';
+import 'package:ecommerce_app/src/routing/not_found_screen.dart';
 import 'package:ecommerce_app/src/features/orders/presentation/orders_list/orders_list_screen.dart';
 import 'package:ecommerce_app/src/features/products/presentation/product_page/product_screen.dart';
 import 'package:ecommerce_app/src/features/products/presentation/products_list/products_list_screen.dart';

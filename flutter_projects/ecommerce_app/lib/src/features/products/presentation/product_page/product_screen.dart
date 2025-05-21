@@ -7,7 +7,7 @@ import 'package:ecommerce_app/src/common_widgets/responsive_center.dart';
 import 'package:ecommerce_app/src/common_widgets/responsive_two_column_layout.dart';
 import 'package:ecommerce_app/src/constants/app_sizes.dart';
 import 'package:ecommerce_app/src/features/products/presentation/home_app_bar/home_app_bar.dart';
-import 'package:ecommerce_app/src/features/not_found/empty_placeholder_widget.dart';
+import 'package:ecommerce_app/src/common_widgets/empty_placeholder_widget.dart';
 import 'package:ecommerce_app/src/features/cart/presentation/add_to_cart/add_to_cart_widget.dart';
 import 'package:ecommerce_app/src/features/products/presentation/product_page/leave_review_action.dart';
 import 'package:ecommerce_app/src/features/products/presentation/product_page/product_average_rating.dart';
