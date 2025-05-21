@@ -8,7 +8,7 @@ import 'package:ecommerce_app/src/common_widgets/item_quantity_selector.dart';
 import 'package:ecommerce_app/src/common_widgets/responsive_two_column_layout.dart';
 import 'package:ecommerce_app/src/constants/app_sizes.dart';
 import 'package:ecommerce_app/src/models/item.dart';
-import 'package:ecommerce_app/src/models/product.dart';
+import 'package:ecommerce_app/src/features/products/domain/product.dart';
 import 'package:intl/intl.dart';
 
 /// Shows a shopping cart item (or loading/error UI if needed)

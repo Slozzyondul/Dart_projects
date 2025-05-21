@@ -1,5 +1,5 @@
 import 'package:ecommerce_app/src/models/item.dart';
-import 'package:ecommerce_app/src/models/product.dart';
+import 'package:ecommerce_app/src/features/products/domain/product.dart';
 
 /// Model class representing the shopping cart contents.
 class Cart {
