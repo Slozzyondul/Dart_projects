@@ -21,7 +21,6 @@ class ProductScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Read from data source
     final product = FakeProductsRepository.instance.getProduct(productId);
 
     return Scaffold(
