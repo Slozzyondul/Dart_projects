@@ -1,52 +1,52 @@
 import 'package:ecommerce_app/src/localization/string_hardcoded.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce_app/src/platform/platform_is.dart';
+import 'package:go_router/go_router.dart';
 
 /// Generic function to show a platform-aware Material or Cupertino dialog
 Future<bool?> showAlertDialog({
   required BuildContext context,
   required String title,
-  required String content,
+  String? content,
   String? cancelActionText,
-  required String defaultActionText,
+  String defaultActionText = 'OK',
 }) async {
-  if (!PlatformIs.iOS) {
-    return showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text(title),
-        content: Text(content),
-        actions: <Widget>[
-          if (cancelActionText != null)
-            TextButton(
-              child: Text(cancelActionText),
-              onPressed: () => Navigator.of(context).pop(false),
-            ),
-          TextButton(
-            child: Text(defaultActionText),
-            onPressed: () => Navigator.of(context).pop(true),
-          ),
-        ],
-      ),
-    );
-  }
-  return showCupertinoDialog(
+  return showDialog(
     context: context,
-    builder: (context) => CupertinoAlertDialog(
+    // * Only make the dialog dismissible if there is a cancel button
+    barrierDismissible: cancelActionText != null,
+    // * AlertDialog.adaptive was added in Flutter 3.13
+    builder: (context) => AlertDialog.adaptive(
       title: Text(title),
-      content: Text(content),
-      actions: <Widget>[
-        if (cancelActionText != null)
-          CupertinoDialogAction(
-            child: Text(cancelActionText),
-            onPressed: () => Navigator.of(context).pop(false),
-          ),
-        CupertinoDialogAction(
-          child: Text(defaultActionText),
-          onPressed: () => Navigator.of(context).pop(true),
-        ),
-      ],
+      content: content != null ? Text(content) : null,
+      // * Use [TextButton] or [CupertinoDialogAction] depending on the platform
+      // https://codewithandrea.com/tips/default-target-platform/
+      actions: kIsWeb ||
+              !(defaultTargetPlatform == TargetPlatform.iOS ||
+                  defaultTargetPlatform == TargetPlatform.macOS)
+          ? <Widget>[
+              if (cancelActionText != null)
+                TextButton(
+                  child: Text(cancelActionText),
+                  onPressed: () => context.pop(false),
+                ),
+              TextButton(
+                child: Text(defaultActionText),
+                onPressed: () => context.pop(true),
+              ),
+            ]
+          : <Widget>[
+              if (cancelActionText != null)
+                CupertinoDialogAction(
+                  child: Text(cancelActionText),
+                  onPressed: () => context.pop(false),
+                ),
+              CupertinoDialogAction(
+                child: Text(defaultActionText),
+                onPressed: () => context.pop(true),
+              ),
+            ],
     ),
   );
 }
@@ -62,4 +62,10 @@ Future<void> showExceptionAlertDialog({
       title: title,
       content: exception.toString(),
       defaultActionText: 'OK'.hardcoded,
+    );
+
+Future<void> showNotImplementedAlertDialog({required BuildContext context}) =>
+    showAlertDialog(
+      context: context,
+      title: 'Not implemented'.hardcoded,
     );

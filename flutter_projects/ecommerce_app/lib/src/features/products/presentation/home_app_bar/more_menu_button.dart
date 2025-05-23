@@ -14,6 +14,7 @@ class MoreMenuButton extends StatelessWidget {
   const MoreMenuButton({super.key, this.user});
   final AppUser? user;
 
+  // * Keys for testing using find.byKey()
   static const signInKey = Key('menuSignIn');
   static const ordersKey = Key('menuOrders');
   static const accountKey = Key('menuAccount');
@@ -50,13 +51,13 @@ class MoreMenuButton extends StatelessWidget {
         // push to different routes based on selected option
         switch (option) {
           case PopupMenuOption.signIn:
-            context.pushNamed(AppRoute.signIn.name);
+            context.goNamed(AppRoute.signIn.name);
             break;
           case PopupMenuOption.orders:
-            context.pushNamed(AppRoute.orders.name);
+            context.goNamed(AppRoute.orders.name);
             break;
           case PopupMenuOption.account:
-            context.pushNamed(AppRoute.account.name);
+            context.goNamed(AppRoute.account.name);
             break;
         }
       },

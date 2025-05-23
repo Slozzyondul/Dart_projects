@@ -1,6 +1,7 @@
+import 'package:ecommerce_app/src/common_widgets/alert_dialogs.dart';
+import 'package:ecommerce_app/src/features/reviews/presentation/product_reviews/product_rating_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/src/constants/app_sizes.dart';
-import 'package:ecommerce_app/src/features/reviews/presentation/product_reviews/product_rating_bar.dart';
 import 'package:ecommerce_app/src/features/reviews/domain/review.dart';
 import 'package:ecommerce_app/src/utils/date_formatter.dart';
 
@@ -27,13 +28,10 @@ class ProductReviewCard extends StatelessWidget {
                   itemSize: 20,
                   // TODO: Implement onRatingUpdate
                   onRatingUpdate: (value) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Not implemented')),
-                    );
+                    showNotImplementedAlertDialog(context: context);
                   },
                 ),
-                Text(dateFormatted,
-                    style: Theme.of(context).textTheme.bodySmall),
+                Text(dateFormatted, style: Theme.of(context).textTheme.bodySmall),
               ],
             ),
             if (review.comment.isNotEmpty) ...[
