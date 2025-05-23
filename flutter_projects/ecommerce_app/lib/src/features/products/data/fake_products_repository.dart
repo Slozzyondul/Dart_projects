@@ -9,4 +9,8 @@ class FakeProductsRepository {
   List<Product> getProductsList() {
     return kTestProducts;
   }
+
+  Product? getProduct(String id) {
+    return kTestProducts.firstWhere((product) => product.id == id);
+  }
 }
