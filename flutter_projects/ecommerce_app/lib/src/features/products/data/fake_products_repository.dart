@@ -23,4 +23,9 @@ class FakeProductsRepository {
   Stream<List<Product>> watchProductsList() {
     return Stream.value(_products);
   }
+
+  Stream<Product?> watchProduct(String id) {
+    return watchProductsList()
+        .map((products) => products.firstWhere((product) => product.id == id));
+  }
 }
