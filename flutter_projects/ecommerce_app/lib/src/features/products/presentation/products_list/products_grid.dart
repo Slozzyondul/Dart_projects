@@ -16,7 +16,8 @@ class ProductsGrid extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final products = FakeProductsRepository.instance.getProductsList();
+    final productsRepository = ref.watch(productsRepositoryProvider);
+    final products = productsRepository.getProductsList();
     return products.isEmpty
         ? Center(
             child: Text(
