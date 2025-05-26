@@ -18,8 +18,9 @@ class FakeProductsRepository {
     return Future.value(_products);
   }
 
-  Stream<List<Product>> watchProductsList() {
-    return Stream.value(_products);
+  Stream<List<Product>> watchProductsList() async* {
+    await Future.delayed(Duration(seconds: 3));
+    yield _products;
   }
 
   Stream<Product?> watchProduct(String id) {
