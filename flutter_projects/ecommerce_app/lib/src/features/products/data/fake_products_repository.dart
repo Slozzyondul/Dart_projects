@@ -13,7 +13,8 @@ class FakeProductsRepository {
     return _products.firstWhere((product) => product.id == id);
   }
 
-  Future<List<Product>> fetchProductsList() {
+  Future<List<Product>> fetchProductsList() async {
+    await Future.delayed(Duration(seconds: 3));
     return Future.value(_products);
   }
 
