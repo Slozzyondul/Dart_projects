@@ -35,3 +35,8 @@ final productsListStreamProvider = StreamProvider<List<Product>>((ref) {
   final productsRepository = ref.watch(productsRepositoryProvider);
   return productsRepository.watchProductsList();
 });
+
+final productsListFutureProvider = FutureProvider<List<Product>>((ref) {
+  final productsRepository = ref.watch(productsRepositoryProvider);
+  return productsRepository.fetchProductsList();
+});
