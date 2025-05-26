@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/src/constants/test_products.dart';
 import 'package:ecommerce_app/src/features/products/domain/product.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class FakeProductsRepository {
   //private constructor
@@ -29,3 +30,7 @@ class FakeProductsRepository {
         .map((products) => products.firstWhere((product) => product.id == id));
   }
 }
+
+final productsRepositoryProvider = Provider<FakeProductsRepository>((ref) {
+  return FakeProductsRepository.instance;
+});
