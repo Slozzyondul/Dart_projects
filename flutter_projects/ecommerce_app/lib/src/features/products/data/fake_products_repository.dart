@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/src/constants/test_products.dart';
 import 'package:ecommerce_app/src/features/products/domain/product.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class FakeProductsRepository {
@@ -34,16 +35,19 @@ final productsRepositoryProvider = Provider<FakeProductsRepository>((ref) {
 });
 
 final productsListStreamProvider = StreamProvider<List<Product>>((ref) {
+  debugPrint('created productsListStreamProvider');
   final productsRepository = ref.watch(productsRepositoryProvider);
   return productsRepository.watchProductsList();
 });
 
 final productsListFutureProvider = FutureProvider<List<Product>>((ref) {
+  debugPrint('created productsListFutureProvider');
   final productsRepository = ref.watch(productsRepositoryProvider);
   return productsRepository.fetchProductsList();
 });
 
 final productProvider = StreamProvider.family<Product?, String>((ref, id) {
+  debugPrint('created productProvider with id: $id');
   final productsRepository = ref.watch(productsRepositoryProvider);
   return productsRepository.watchProduct(id);
 });
