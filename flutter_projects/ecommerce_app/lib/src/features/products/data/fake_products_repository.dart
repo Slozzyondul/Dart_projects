@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:ecommerce_app/src/constants/test_products.dart';
 import 'package:ecommerce_app/src/features/products/domain/product.dart';
 import 'package:flutter/material.dart';
@@ -52,6 +54,10 @@ final productProvider =
     StreamProvider.autoDispose.family<Product?, String>((ref, id) {
   debugPrint('created productProvider with id: $id');
   ref.onDispose(() => debugPrint('disposed productProvider with id: $id'));
+  final link = ref.keepAlive();
+  Timer(const Duration(seconds: 10), () {
+    link.close();
+  });
   final productsRepository = ref.watch(productsRepositoryProvider);
   return productsRepository.watchProduct(id);
 });
