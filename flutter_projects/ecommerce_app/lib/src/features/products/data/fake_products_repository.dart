@@ -51,6 +51,7 @@ final productsListFutureProvider =
 final productProvider =
     StreamProvider.autoDispose.family<Product?, String>((ref, id) {
   debugPrint('created productProvider with id: $id');
+  ref.onDispose(() => debugPrint('disposed productProvider with id: $id'));
   final productsRepository = ref.watch(productsRepositoryProvider);
   return productsRepository.watchProduct(id);
 });
