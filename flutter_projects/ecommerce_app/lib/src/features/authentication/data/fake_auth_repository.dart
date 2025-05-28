@@ -53,8 +53,9 @@ class FakeAuthRepository implements AuthRepository {
   }
 }
 
-final authRepositoryProvider = Provider<FakeAuthRepository>((ref) {
-  return FakeAuthRepository();
+final authRepositoryProvider = Provider<AuthRepository>((ref) {
+  final isFake = String.fromEnvironment('useFakeRepos') == 'true';
+  return isFake ? FakeAuthRepository() : FirebaseAuthRepository();
 });
 
 final authStateChangesProvider = StreamProvider.autoDispose<AppUser?>((ref) {
