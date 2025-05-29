@@ -18,11 +18,19 @@ class FakeAuthRepository {
 
   Future<void> createUserWithEmailAndPassword(
       String email, String password) async {
-    //TODO: Implement
+    if (currentUser == null) {
+      _authState.value = AppUser(
+        uid: email.split('').reversed.join(),
+        email: email,
+      );
+    }
   }
+
   Future<void> signOut() async {
-    //TODO: Implement
+    _authState.value = null;
   }
+
+  void dispose() => _authState.close();
 }
 
 final authRepositoryProvider = Provider<FakeAuthRepository>((ref) {
