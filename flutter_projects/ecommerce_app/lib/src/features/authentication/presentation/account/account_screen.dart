@@ -15,29 +15,36 @@ class AccountScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(accountScreenControllerProvider);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Account'.hardcoded),
+        title: state.isLoading
+            ? const CircularProgressIndicator()
+            : Text('Account'.hardcoded),
         actions: [
           ActionTextButton(
             text: 'Logout'.hardcoded,
-            onPressed: () async {
-              // * Get the navigator beforehand to prevent this warning:
-              // * Don't use 'BuildContext's across async gaps.
-              // * More info here: https://youtu.be/bzWaMpD1LHY
-              final goRouter = GoRouter.of(context);
-              final logout = await showAlertDialog(
-                context: context,
-                title: 'Are you sure?'.hardcoded,
-                cancelActionText: 'Cancel'.hardcoded,
-                defaultActionText: 'Logout'.hardcoded,
-              );
-              if (logout == true) {
-                ref.read(accountScreenControllerProvider.notifier).signOut();
-                // TODO: only pop on success
-                goRouter.pop();
-              }
-            },
+            onPressed: state.isLoading
+                ? null
+                : () async {
+                    // * Get the navigator beforehand to prevent this warning:
+                    // * Don't use 'BuildContext's across async gaps.
+                    // * More info here: https://youtu.be/bzWaMpD1LHY
+                    final goRouter = GoRouter.of(context);
+                    final logout = await showAlertDialog(
+                      context: context,
+                      title: 'Are you sure?'.hardcoded,
+                      cancelActionText: 'Cancel'.hardcoded,
+                      defaultActionText: 'Logout'.hardcoded,
+                    );
+                    if (logout == true) {
+                      ref
+                          .read(accountScreenControllerProvider.notifier)
+                          .signOut();
+                      // TODO: only pop on success
+                      goRouter.pop();
+                    }
+                  },
           ),
         ],
       ),
