@@ -11,15 +11,20 @@ class AccountScreenController extends StateNotifier<AsyncValue<void>> {
     // sign out using auth repository
     // if success, set state to data
     // if error,set state to error
-    try {
-      state = const AsyncValue<void>.loading();
-      await authRepository.signOut();
-      state = const AsyncValue<void>.data(null);
-      return true;
-    } catch (e, st) {
-      state = AsyncValue<void>.error(e, st);
-      return false;
-    }
+    // try {
+    //   state = const AsyncValue<void>.loading();
+    //   await authRepository.signOut();
+    //   state = const AsyncValue<void>.data(null);
+    //   return true;
+    // } catch (e, st) {
+    //   state = AsyncValue<void>.error(e, st);
+    //   return false;
+    // }
+
+    //using guard
+    state = const AsyncValue<void>.loading();
+    state = await AsyncValue.guard(() => authRepository.signOut());
+    return state.hasError == false;
   }
 }
 
