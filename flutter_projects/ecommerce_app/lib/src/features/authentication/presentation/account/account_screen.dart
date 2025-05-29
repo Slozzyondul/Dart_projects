@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/src/common_widgets/alert_dialogs.dart';
+import 'package:ecommerce_app/src/features/authentication/data/fake_auth_repository.dart';
 import 'package:ecommerce_app/src/localization/string_hardcoded.dart';
 import 'package:ecommerce_app/src/features/authentication/domain/app_user.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,8 @@ class AccountScreen extends ConsumerWidget {
                 defaultActionText: 'Logout'.hardcoded,
               );
               if (logout == true) {
-                // TODO: Sign out the user.
+                ref.read(authRepositoryProvider).signOut();
+                // TODO: only pop on success
                 goRouter.pop();
               }
             },
