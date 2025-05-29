@@ -52,7 +52,7 @@ class AccountScreen extends ConsumerWidget {
                           .read(accountScreenControllerProvider.notifier)
                           .signOut();
                       // TODO: only pop on success
-                      goRouter.pop();
+                      //goRouter.pop();
                     }
                   },
           ),
