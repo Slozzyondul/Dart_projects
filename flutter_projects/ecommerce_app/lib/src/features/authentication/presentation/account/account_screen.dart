@@ -17,7 +17,7 @@ class AccountScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     ref.listen<AsyncValue<void>>(accountScreenControllerProvider,
         (previousState, state) {
-      if (state.hasError) {
+      if (!state.isLoading && state.hasError) {
         showExceptionAlertDialog(
           context: context,
           title: 'Error'.hardcoded,
