@@ -10,4 +10,20 @@ class EmailPasswordSignInController
       : super(EmailPasswordSignInState(formType: formType));
 
   final FakeAuthRepository authRepository;
+
+  Future<bool> submit(String email, String password) async {
+    state = state.copyWith(value: const AsyncValue.loading());
+    final value = await AsyncValue.guard(() => _authenticate(email, password));
+    state = state.copyWith(value: value);
+    return value.hasError == false;
+  }
+
+  Future<void> _authenticate(String email, String password) async {
+    switch (state.formType) {
+      case EmailPasswordSignInFormType.signIn:
+        return authRepository.signInWithEmailAndPassword(email, password);
+      case EmailPasswordSignInFormType.register:
+        return authRepository.createUserWithEmailAndPassword(email, password);
+    }
+  }
 }
