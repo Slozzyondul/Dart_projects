@@ -26,4 +26,8 @@ class EmailPasswordSignInController
         return authRepository.createUserWithEmailAndPassword(email, password);
     }
   }
+
+  void updateFormType(EmailPasswordSignInFormType formType) {
+    state = state.copyWith(formType: formType);
+  }
 }
