@@ -68,7 +68,7 @@ class _EmailPasswordSignInContentsState
   // https://codewithandrea.com/articles/flutter-text-field-form-validation/
   var _submitted = false;
   // local variable representing the form type and loading state
-  //late var _state = EmailPasswordSignInState(formType: widget.formType);
+  //late var state = EmailPasswordSignInState(formType: widget.formType);
 
   @override
   void dispose() {
@@ -117,6 +117,8 @@ class _EmailPasswordSignInContentsState
 
   @override
   Widget build(BuildContext context) {
+    final state =
+        ref.watch(emailPasswordSignInControllerProvider(widget.formType));
     return ResponsiveScrollableCard(
       child: FocusScope(
         node: _node,
@@ -133,16 +135,16 @@ class _EmailPasswordSignInContentsState
                 decoration: InputDecoration(
                   labelText: 'Email'.hardcoded,
                   hintText: 'test@test.com'.hardcoded,
-                  enabled: !_state.isLoading,
+                  enabled: !state.isLoading,
                 ),
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 validator: (email) =>
-                    !_submitted ? null : _state.emailErrorText(email ?? ''),
+                    !_submitted ? null : state.emailErrorText(email ?? ''),
                 autocorrect: false,
                 textInputAction: TextInputAction.next,
                 keyboardType: TextInputType.emailAddress,
                 keyboardAppearance: Brightness.light,
-                onEditingComplete: () => _emailEditingComplete(_state),
+                onEditingComplete: () => _emailEditingComplete(state),
                 inputFormatters: <TextInputFormatter>[
                   ValidatorInputFormatter(
                       editingValidator: EmailEditingRegexValidator()),
@@ -154,31 +156,31 @@ class _EmailPasswordSignInContentsState
                 key: EmailPasswordSignInScreen.passwordKey,
                 controller: _passwordController,
                 decoration: InputDecoration(
-                  labelText: _state.passwordLabelText,
-                  enabled: !_state.isLoading,
+                  labelText: state.passwordLabelText,
+                  enabled: !state.isLoading,
                 ),
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 validator: (password) => !_submitted
                     ? null
-                    : _state.passwordErrorText(password ?? ''),
+                    : state.passwordErrorText(password ?? ''),
                 obscureText: true,
                 autocorrect: false,
                 textInputAction: TextInputAction.done,
                 keyboardAppearance: Brightness.light,
-                onEditingComplete: () => _passwordEditingComplete(_state),
+                onEditingComplete: () => _passwordEditingComplete(state),
               ),
               gapH8,
               PrimaryButton(
-                text: _state.primaryButtonText,
-                isLoading: _state.isLoading,
-                onPressed: _state.isLoading ? null : () => _submit(_state),
+                text: state.primaryButtonText,
+                isLoading: state.isLoading,
+                onPressed: state.isLoading ? null : () => _submit(state),
               ),
               gapH8,
               CustomTextButton(
-                text: _state.secondaryButtonText,
-                onPressed: _state.isLoading
+                text: state.secondaryButtonText,
+                onPressed: state.isLoading
                     ? null
-                    : () => _updateFormType(_state.secondaryActionFormType),
+                    : () => _updateFormType(state.secondaryActionFormType),
               ),
             ],
           ),
