@@ -8,6 +8,8 @@ class FakeAuthRepository {
   AppUser? get currentUser => _authState.value;
 
   Future<void> signInWithEmailAndPassword(String email, String password) async {
+    // await Future.delayed(const Duration(seconds: 3));
+    // throw Exception('something went wrong');
     if (currentUser == null) {
       _authState.value = AppUser(
         uid: email.split('').reversed.join(),
