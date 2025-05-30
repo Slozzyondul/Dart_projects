@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/src/features/authentication/presentation/sign_in/email_password_sign_in_controller.dart';
 import 'package:ecommerce_app/src/features/authentication/presentation/sign_in/email_password_sign_in_state.dart';
 import 'package:ecommerce_app/src/features/authentication/presentation/sign_in/string_validators.dart';
 import 'package:ecommerce_app/src/localization/string_hardcoded.dart';
@@ -82,8 +83,12 @@ class _EmailPasswordSignInContentsState
     setState(() => _submitted = true);
     // only submit the form if validation passes
     if (_formKey.currentState!.validate()) {
-      // TODO: Authentication logic
-      widget.onSignedIn?.call();
+      final controller = ref.read(
+          emailPasswordSignInControllerProvider(widget.formType).notifier);
+      final success = await controller.submit(email, password);
+      if (success) {
+        widget.onSignedIn?.call();
+      }
     }
   }
 
