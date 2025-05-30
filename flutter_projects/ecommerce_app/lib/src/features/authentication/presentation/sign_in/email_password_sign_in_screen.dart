@@ -68,7 +68,7 @@ class _EmailPasswordSignInContentsState
   // https://codewithandrea.com/articles/flutter-text-field-form-validation/
   var _submitted = false;
   // local variable representing the form type and loading state
-  late var _state = EmailPasswordSignInState(formType: widget.formType);
+  //late var _state = EmailPasswordSignInState(formType: widget.formType);
 
   @override
   void dispose() {
