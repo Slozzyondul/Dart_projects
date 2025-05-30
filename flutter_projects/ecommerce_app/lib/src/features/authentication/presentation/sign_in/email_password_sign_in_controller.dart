@@ -29,7 +29,7 @@ class EmailPasswordSignInController
 
   void updateFormType(EmailPasswordSignInFormType formType) {
     state = state.copyWith(
-      value: const AsyncValue.data(null),
+      // value: const AsyncValue.data(null),
       formType: formType,
     );
   }
