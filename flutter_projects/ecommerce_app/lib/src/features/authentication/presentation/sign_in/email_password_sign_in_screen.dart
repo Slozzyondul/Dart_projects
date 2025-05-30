@@ -108,7 +108,9 @@ class _EmailPasswordSignInContentsState
 
   void _updateFormType(EmailPasswordSignInFormType formType) {
     // * Toggle between register and sign in form
-    setState(() => _state = _state.copyWith(formType: formType));
+    ref
+        .read(emailPasswordSignInControllerProvider(widget.formType).notifier)
+        .updateFormType(formType);
     // * Clear the password field when doing so
     _passwordController.clear();
   }
