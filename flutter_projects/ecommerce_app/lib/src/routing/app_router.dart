@@ -83,7 +83,8 @@ final goRouterProvider = Provider<GoRouter>((ref) {
               GoRoute(
                 path: 'checkout',
                 name: AppRoute.checkout.name,
-                pageBuilder: (context, state) => const MaterialPage(
+                pageBuilder: (context, state) => MaterialPage(
+                  key: ValueKey(state.uri.toString()),
                   fullscreenDialog: true,
                   child: CheckoutScreen(),
                 ),
