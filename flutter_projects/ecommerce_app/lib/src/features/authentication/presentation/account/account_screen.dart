@@ -35,7 +35,7 @@ class AccountScreen extends ConsumerWidget {
                     // * Get the navigator beforehand to prevent this warning:
                     // * Don't use 'BuildContext's across async gaps.
                     // * More info here: https://youtu.be/bzWaMpD1LHY
-                    final goRouter = GoRouter.of(context);
+                    // final goRouter = GoRouter.of(context);
                     final logout = await showAlertDialog(
                       context: context,
                       title: 'Are you sure?'.hardcoded,
