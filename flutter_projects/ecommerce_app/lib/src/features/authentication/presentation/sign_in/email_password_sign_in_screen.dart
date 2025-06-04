@@ -10,7 +10,6 @@ import 'package:ecommerce_app/src/common_widgets/primary_button.dart';
 import 'package:ecommerce_app/src/common_widgets/responsive_scrollable_card.dart';
 import 'package:ecommerce_app/src/constants/app_sizes.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 
 /// Email & password sign in screen.
 /// Wraps the [EmailPasswordSignInContents] widget below with a [Scaffold] and
@@ -29,7 +28,7 @@ class EmailPasswordSignInScreen extends StatelessWidget {
       appBar: AppBar(title: Text('Sign In'.hardcoded)),
       body: EmailPasswordSignInContents(
         formType: formType,
-        onSignedIn: () => context.pop(),
+        //onSignedIn: () => context.pop(),
       ),
     );
   }
