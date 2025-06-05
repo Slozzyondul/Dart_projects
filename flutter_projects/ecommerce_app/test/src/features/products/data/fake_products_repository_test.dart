@@ -37,4 +37,12 @@ void main() {
       kTestProducts,
     );
   });
+
+  test('watchProductsList emits global list', () {
+    final productsRepository = FakeProductsRepository();
+    expect(
+      productsRepository.watchProductsList(),
+      emits(kTestProducts),
+    );
+  });
 }
