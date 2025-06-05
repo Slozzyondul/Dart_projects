@@ -15,4 +15,14 @@ void main() {
     final product = productsRepository.getProduct('1');
     expect(product, kTestProducts[0]);
   });
+
+  // return a null test an id that is not in the product list
+  test('getProduct(99) returns null', () {
+    final productsRepository = FakeProductsRepository();
+    expect(
+      () => productsRepository.getProduct('99'),
+      throwsStateError,
+      reason: 'getProduct(99) should throw a StateError',
+    );
+  });
 }
