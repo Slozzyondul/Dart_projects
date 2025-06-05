@@ -29,4 +29,12 @@ void main() {
       );
     });
   });
+
+  test('fetchProductsList returns a global list of products', () async {
+    final productsRepository = FakeProductsRepository();
+    expect(
+      await productsRepository.fetchProductsList(),
+      kTestProducts,
+    );
+  });
 }
