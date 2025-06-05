@@ -53,4 +53,12 @@ void main() {
       emits(kTestProducts[0]),
     );
   });
+
+  test('watchProduct(99) emits null', () {
+    final productsRepository = FakeProductsRepository();
+    expect(
+      productsRepository.watchProduct('99'),
+      emits(null),
+    );
+  });
 }
