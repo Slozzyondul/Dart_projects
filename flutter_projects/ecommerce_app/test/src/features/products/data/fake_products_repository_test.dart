@@ -45,4 +45,12 @@ void main() {
       emits(kTestProducts),
     );
   });
+
+  test('watchProduct(1) emits the first product', () {
+    final productsRepository = FakeProductsRepository();
+    expect(
+      productsRepository.watchProduct('1'),
+      emits(kTestProducts[0]),
+    );
+  });
 }
