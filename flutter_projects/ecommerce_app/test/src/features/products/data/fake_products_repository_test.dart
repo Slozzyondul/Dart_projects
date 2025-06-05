@@ -19,10 +19,12 @@ void main() {
   // return a null test an id that is not in the product list
   test('getProduct(99) returns null', () {
     final productsRepository = FakeProductsRepository();
+    final product = productsRepository.getProduct('99');
     expect(
-      () => productsRepository.getProduct('99'),
-      throwsStateError,
-      reason: 'getProduct(99) should throw a StateError',
+      product,
+      null,
+      reason:
+          'getProduct(99) should return null because the id is not in the list',
     );
   });
 }
