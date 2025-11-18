@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_supabase/google_sign_in/google_signi_in.dart';
-import 'package:flutter_supabase/home.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {

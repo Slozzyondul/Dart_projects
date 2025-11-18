@@ -22,7 +22,9 @@ class GoogleSigniIn extends StatelessWidget {
               _googleSignIn();
             }
             } catch (e) {
-              print(e);
+              if (kDebugMode) {
+                print(e);
+              }
             }
           },
           child: Text('Sign in'),
@@ -56,7 +58,7 @@ class GoogleSigniIn extends StatelessWidget {
     final googleAccount = await signIn.authenticate();
     final googleAuthorization = await googleAccount.authorizationClient
         .authorizationForScopes([]);
-    final googleAuthentication = googleAccount!.authentication;
+    final googleAuthentication = googleAccount.authentication;
     final idToken = googleAuthentication.idToken;
     final accessToken = googleAuthorization?.accessToken;
 
