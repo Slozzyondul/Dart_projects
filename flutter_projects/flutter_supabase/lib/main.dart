@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_supabase/email_password_sign_up/email_password_sign_in.dart';
 import 'package:flutter_supabase/insert_data/todo_home.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
