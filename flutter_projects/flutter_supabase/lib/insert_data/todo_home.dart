@@ -29,9 +29,44 @@ class _TodoHomeState extends State<TodoHome> {
 
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: ListTile(
-                    title: Text('${todo['title']}'),
-                    subtitle: Text('${todo['description']}'),
+                  child: Card(
+                    elevation: 5,
+                    child: ListTile(
+                      title: Text('${todo['title']}'),
+                      subtitle: Text('${todo['description']}'),
+                      trailing: SizedBox(
+                        width: 100,
+                        child: Row(
+                          mainAxisAlignment: .end,
+                          children: [
+                            IconButton(
+                              onPressed: () async {
+                                final result = await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => AddTodo(todo: todo),
+                                  ),
+                                );
+ 
+                                if (result ?? false) {
+                                  setState(() {});
+                                }
+                              },
+                              icon: Icon(Icons.edit, color: Colors.blue),
+                            ),
+                            IconButton(
+                              onPressed: () async {
+                                await supabase.from('Todo').delete().match({
+                                  'id': todo['id'],
+                                });
+                                setState(() {});
+                              },
+                              icon: Icon(Icons.delete, color: Colors.red),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ),
                 );
               },
@@ -41,17 +76,15 @@ class _TodoHomeState extends State<TodoHome> {
           }
         },
       ),
-      floatingActionButton: Center(
-        child: FloatingActionButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => AddTodo()),
-            );
-          },
-          shape: CircleBorder(),
-          child: Icon(Icons.add),
-        ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AddTodo()),
+          );
+        },
+        shape: CircleBorder(),
+        child: Icon(Icons.add),
       ),
     );
   }
