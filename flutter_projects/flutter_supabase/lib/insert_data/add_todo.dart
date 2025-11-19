@@ -37,6 +37,8 @@ class _AddTodoState extends State<AddTodo> {
                 'title': _titleController.text,
                 'description': _descriptionController.text
               });
+              _titleController.clear();
+              _descriptionController.clear();
             }, child: Text('Add Todo')),
           ],
         ),
