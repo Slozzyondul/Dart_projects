@@ -10,12 +10,13 @@ class TodoHome extends StatefulWidget {
 }
 
 class _TodoHomeState extends State<TodoHome> {
+  final _stream = supabase.from('Todo').stream(primaryKey: ['id']);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Todo Home'), centerTitle: true),
-      body: FutureBuilder<List<Map<String, dynamic>>>(
-        future: supabase.from('Todo').select(),
+      body: StreamBuilder<List<Map<String, dynamic>>>(
+        stream: _stream,
         builder: (context, snap) {
           if (snap.connectionState == ConnectionState.waiting) {
             return Center(child: CircularProgressIndicator());
@@ -47,10 +48,10 @@ class _TodoHomeState extends State<TodoHome> {
                                     builder: (context) => AddTodo(todo: todo),
                                   ),
                                 );
- 
-                                if (result ?? false) {
-                                  setState(() {});
-                                }
+                                //update the UI when the todo is edited and submitted successfully
+                                // if (result ?? false) {
+                                //   setState(() {});
+                                // }
                               },
                               icon: Icon(Icons.edit, color: Colors.blue),
                             ),
@@ -59,7 +60,7 @@ class _TodoHomeState extends State<TodoHome> {
                                 await supabase.from('Todo').delete().match({
                                   'id': todo['id'],
                                 });
-                                setState(() {});
+                                //setState(() {});
                               },
                               icon: Icon(Icons.delete, color: Colors.red),
                             ),
