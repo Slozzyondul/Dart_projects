@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_supabase/main.dart';
 
 class AddTodo extends StatefulWidget {
   const AddTodo({super.key});
@@ -31,6 +32,12 @@ class _AddTodoState extends State<AddTodo> {
               decoration: InputDecoration(hintText: 'Enter Todo Description'),
             ),
             SizedBox(height: 8),
+            ElevatedButton(onPressed: () async {
+              await supabase.from('Todo').insert({
+                'title': _titleController.text,
+                'description': _descriptionController.text
+              });
+            }, child: Text('Add Todo')),
           ],
         ),
       ),
