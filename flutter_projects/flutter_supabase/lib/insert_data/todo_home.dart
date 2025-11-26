@@ -42,7 +42,7 @@ class _TodoHomeState extends State<TodoHome> {
                           children: [
                             IconButton(
                               onPressed: () async {
-                                final result = await Navigator.push(
+                                await Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => AddTodo(todo: todo),
