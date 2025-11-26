@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_supabase/insert_data/todo_home.dart';
+import 'package:flutter_supabase/storage_images/upload_images.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: const TodoHome(),
+      home: const UploadImages(),
     );
   }
 }
