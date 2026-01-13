@@ -12,27 +12,29 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.softBeige,
-      body: Column(
-        children: [
-          _buildHeader(),
-          Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  _buildHeroSection(),
-                  _buildQuoteSection(),
-                  _buildProjectsSection(),
-                  _buildMotivationalQuotesSection(),
-                  _buildImpactSection(),
-                  _buildNewsletterSection(),
-                  _buildFooter(),
-                ],
+    return SelectionArea(
+      child: Scaffold(
+        backgroundColor: AppColors.softBeige,
+        body: Column(
+          children: [
+            _buildHeader(),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    _buildHeroSection(),
+                    _buildQuoteSection(),
+                    _buildProjectsSection(),
+                    _buildMotivationalQuotesSection(),
+                    _buildImpactSection(),
+                    _buildNewsletterSection(),
+                    _buildFooter(),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -319,7 +321,7 @@ class _HomePageState extends State<HomePage> {
         border: Border.all(color: AppColors.stone100),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -450,7 +452,7 @@ class _HomePageState extends State<HomePage> {
           borderRadius: BorderRadius.circular(8),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withValues(alpha: 0.05),
               blurRadius: 4,
               offset: const Offset(0, 2),
             ),
