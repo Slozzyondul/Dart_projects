@@ -21,7 +21,7 @@ To create a digital space where believers can encounter Jesus through authentici
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/devotional.git
+   git clone https://github.com/Slozzyondul/Dart_projects.git
 Navigate to the project directory:
 cd devotional
 Get packages:
