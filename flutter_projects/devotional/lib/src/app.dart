@@ -1,4 +1,4 @@
-import 'package:devotional/src/features/home/home_page.dart';
+import 'package:devotional/src/routing/app_router.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -7,11 +7,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRouter.routerConfig,
       debugShowCheckedModeBanner: false,
+      restorationScopeId: 'app',
       title: 'Lilly Bossek',
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: HomePage(),
+      theme: ThemeData(colorScheme: .fromSeed(seedColor: Color(0xFFF5F2ED))),
     );
   }
 }

@@ -1,5 +1,5 @@
-import 'package:devotional/src/constants/app_colors.dart';
-import 'package:devotional/src/constants/app_styles.dart';
+import 'package:devotional/src/common_widgets/constants/app_colors.dart';
+import 'package:devotional/src/common_widgets/constants/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
