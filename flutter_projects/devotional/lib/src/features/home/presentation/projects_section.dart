@@ -101,7 +101,7 @@ class ProjectsSection extends StatelessWidget {
                     physics: const NeverScrollableScrollPhysics(),
                     crossAxisCount: isLargeDesktop
                         ? 3
-                        : (screenWidth > AppSizes.mobileBreakpoint ? 2 : 1),
+                        : (screenWidth > AppSizes.mobileBreakpoint ? 1 : 1),
                     crossAxisSpacing: 24,
                     mainAxisSpacing: 16,
                     childAspectRatio: 3.5,
@@ -122,42 +122,6 @@ class ProjectsSection extends StatelessWidget {
                         subtitle: 'Short stories for difficult seasons.',
                       ),
                     ],
-                  ),
-
-                  const SizedBox(height: 64),
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 24,
-                      vertical: 20,
-                    ),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: AppColors.stone300,
-                        style: BorderStyle.solid,
-                      ),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const Icon(
-                          Icons.queue_music,
-                          color: AppColors.stone400,
-                        ),
-                        const SizedBox(width: 16),
-                        Flexible(
-                          child: Text(
-                            'Collaborations and more projects arriving soon',
-                            style: AppStyles.sansDisplay.copyWith(
-                              color: AppColors.stone500,
-                              fontStyle: FontStyle.italic,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
                   ),
                 ],
               ),
