@@ -60,7 +60,7 @@ class HomeFooter extends StatelessWidget {
           Container(height: 1, color: AppColors.stone200),
           const SizedBox(height: 32),
           Text(
-            '© 2024 Lilly Bosek. All rights reserved.',
+            '© 2026 Lilly Bosek. All rights reserved.',
             style: AppStyles.sansDisplay.copyWith(
               fontSize: 12,
               color: AppColors.stone400,

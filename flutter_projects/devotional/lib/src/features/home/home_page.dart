@@ -8,6 +8,7 @@ import 'package:devotional/src/features/home/presentation/motivational_quotes_se
 import 'package:devotional/src/features/home/presentation/newsletter_section.dart';
 import 'package:devotional/src/features/home/presentation/projects_section.dart';
 import 'package:devotional/src/features/home/presentation/quote_section.dart';
+import 'package:devotional/src/features/home/presentation/daily_quotes_feature_section.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -30,10 +31,11 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
-                  children: const [
+                  children: [
                     HeroSection(),
                     QuoteSection(),
                     ProjectsSection(),
+                    DailyQuotesFeatureSection(),
                     MotivationalQuotesSection(),
                     ImpactSection(),
                     NewsletterSection(),

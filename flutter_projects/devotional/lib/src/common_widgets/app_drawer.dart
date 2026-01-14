@@ -1,5 +1,6 @@
 import 'package:devotional/src/common_widgets/constants/app_colors.dart';
 import 'package:devotional/src/common_widgets/constants/app_styles.dart';
+import 'package:devotional/src/common_widgets/constants/app_sizes.dart';
 import 'package:devotional/src/routing/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -9,7 +10,13 @@ class AppDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final drawerWidth = screenWidth > AppSizes.mobileBreakpoint
+        ? AppSizes.drawerWidthTablet
+        : AppSizes.drawerWidthMobile;
+
     return Drawer(
+      width: drawerWidth,
       backgroundColor: AppColors.softBeige,
       child: SafeArea(
         child: Column(
@@ -75,7 +82,7 @@ class AppDrawer extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.charcoalGrey,
+                    backgroundColor: AppColors.galleryTaupe,
                     foregroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(vertical: 16),
                     shape: RoundedRectangleBorder(
