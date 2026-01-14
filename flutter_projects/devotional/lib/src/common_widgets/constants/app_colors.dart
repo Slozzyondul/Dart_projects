@@ -16,4 +16,12 @@ class AppColors {
   static const Color stone600 = Color(0xFF57534E);
   static const Color stone700 = Color(0xFF44403C);
   static const Color stone800 = Color(0xFF292524);
+
+  // Gallery Colors
+  static const Color galleryPrimary = Color(0xFF54A0E3);
+  static const Color galleryTaupe = Color(0xFFB8A79E);
+
+  // Quotes Colors
+  static const Color quotesPrimary = Color(0xFF6E6259);
+  static const Color skyBlue = Color(0xFFA0C4E2);
 }
