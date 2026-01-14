@@ -3,6 +3,9 @@ import 'package:devotional/src/common_widgets/constants/app_styles.dart';
 import 'package:devotional/src/features/home/components/project_card.dart';
 import 'package:devotional/src/features/home/components/small_project_card.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import 'package:devotional/src/features/home/components/worship_calendar_dialog.dart';
 
 class ProjectsSection extends StatelessWidget {
   const ProjectsSection({super.key});
@@ -24,20 +27,34 @@ class ProjectsSection extends StatelessWidget {
           const SizedBox(height: 16),
           Container(width: 80, height: 4, color: AppColors.warmTaupe),
           const SizedBox(height: 48),
-          const ProjectCard(
+          ProjectCard(
             title: 'Weekly Worship Sessions',
             description:
                 'A digital sanctuary for corporate praise and intimate worship moments.',
             imageUrl: 'assets/images/Daily_PRAYER.png',
             actionText: 'Explore',
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (context) => const WorshipCalendarDialog(),
+              );
+            },
           ),
           const SizedBox(height: 32),
-          const ProjectCard(
+          ProjectCard(
             title: 'Bible Study Videos',
             description:
                 'Deep dives into Scripture to find daily relevance and spiritual growth.',
             imageUrl: 'assets/images/Prayer_For.png',
             actionText: 'Watch',
+            onTap: () async {
+              final Uri url = Uri.parse(
+                'https://www.youtube.com/watch?v=bMKWkskEvm4&list=PL8fAnEOS5d_pqWYGXyXFNTfTM6eLD0YPh&index=1',
+              );
+              if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+                debugPrint('Could not launch \$url');
+              }
+            },
           ),
           const SizedBox(height: 32),
           const ProjectCard(
