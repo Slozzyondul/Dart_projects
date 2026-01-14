@@ -30,17 +30,22 @@ class _HomePageState extends State<HomePage> {
             const HomeHeader(),
             Expanded(
               child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    HeroSection(),
-                    QuoteSection(),
-                    ProjectsSection(),
-                    DailyQuotesFeatureSection(),
-                    MotivationalQuotesSection(),
-                    ImpactSection(),
-                    NewsletterSection(),
-                    HomeFooter(),
-                  ],
+                child: Center(
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(maxWidth: 1600),
+                    child: Column(
+                      children: const [
+                        HeroSection(),
+                        QuoteSection(),
+                        ProjectsSection(),
+                        DailyQuotesFeatureSection(),
+                        MotivationalQuotesSection(),
+                        ImpactSection(),
+                        NewsletterSection(),
+                        HomeFooter(),
+                      ],
+                    ),
+                  ),
                 ),
               ),
             ),
