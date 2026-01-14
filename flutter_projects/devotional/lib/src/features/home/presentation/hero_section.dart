@@ -3,9 +3,20 @@ import 'package:devotional/src/common_widgets/constants/app_styles.dart';
 import 'package:flutter/material.dart';
 
 import 'package:devotional/src/common_widgets/constants/app_sizes.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HeroSection extends StatelessWidget {
   const HeroSection({super.key});
+
+  Future<void> _launchYouTube() async {
+    final Uri url = Uri.parse(
+      'https://www.youtube.com/@LavingtonVineyardChurch',
+    );
+    if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+      // Fallback or error handling if needed, but for now silent failure or log is standard
+      debugPrint('Could not launch \$url');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +79,7 @@ class HeroSection extends StatelessWidget {
                   Row(
                     children: [
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: _launchYouTube,
                         style: ElevatedButton.styleFrom(
                           backgroundColor: AppColors.warmTaupe,
                           foregroundColor: Colors.white,
@@ -187,7 +198,7 @@ class HeroSection extends StatelessWidget {
               runSpacing: 16,
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: _launchYouTube,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.warmTaupe,
                     foregroundColor: Colors.white,
