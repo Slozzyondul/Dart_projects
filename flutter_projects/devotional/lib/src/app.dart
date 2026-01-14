@@ -13,7 +13,7 @@ class MyApp extends ConsumerWidget {
       routerConfig: router,
       debugShowCheckedModeBanner: false,
       restorationScopeId: 'app',
-      title: 'Lilly Bossek',
+      title: 'Lilly Bosek',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Color(0xFFF5F2ED))),
     );
   }

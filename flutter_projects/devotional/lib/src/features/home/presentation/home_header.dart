@@ -16,7 +16,7 @@ class HomeHeader extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Lilly Boskek',
+              'Lilly Bosek',
               style: AppStyles.serifDisplay.copyWith(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -33,7 +33,9 @@ class HomeHeader extends StatelessWidget {
                 // We'll just show the button for now or a menu icon.
                 IconButton(
                   icon: const Icon(Icons.menu, color: AppColors.charcoalGrey),
-                  onPressed: () {},
+                  onPressed: () {
+                    Scaffold.of(context).openEndDrawer();
+                  },
                 ),
               ],
             ),

@@ -1,4 +1,5 @@
 import 'package:devotional/src/common_widgets/constants/app_colors.dart';
+import 'package:devotional/src/common_widgets/app_drawer.dart';
 import 'package:devotional/src/features/home/presentation/hero_section.dart';
 import 'package:devotional/src/features/home/presentation/home_footer.dart';
 import 'package:devotional/src/features/home/presentation/home_header.dart';
@@ -22,6 +23,7 @@ class _HomePageState extends State<HomePage> {
     return SelectionArea(
       child: Scaffold(
         backgroundColor: AppColors.softBeige,
+        endDrawer: const AppDrawer(),
         body: Column(
           children: [
             const HomeHeader(),

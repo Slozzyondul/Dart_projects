@@ -16,7 +16,7 @@ class HomeFooter extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Lilly Boskek',
+            'Lilly Bosek',
             style: AppStyles.serifDisplay.copyWith(
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -60,7 +60,7 @@ class HomeFooter extends StatelessWidget {
           Container(height: 1, color: AppColors.stone200),
           const SizedBox(height: 32),
           Text(
-            '© 2024 Lilly Boskek. All rights reserved.',
+            '© 2024 Lilly Bosek. All rights reserved.',
             style: AppStyles.sansDisplay.copyWith(
               fontSize: 12,
               color: AppColors.stone400,
