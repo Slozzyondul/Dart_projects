@@ -29,153 +29,172 @@ class HeroSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
-      child: LayoutBuilder(
-        builder: (context, constraints) {
-          if (constraints.maxWidth > AppSizes.tabletBreakpoint) {
-            return _buildDesktopLayout(context);
-          }
-          return _buildMobileLayout(context);
-        },
-      ),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final screenWidth = constraints.maxWidth;
+        final isDesktop = screenWidth > AppSizes.tabletBreakpoint;
+
+        return Container(
+          color: Colors.white,
+          padding: EdgeInsets.symmetric(
+            horizontal: isDesktop ? 40 : 16,
+            vertical: isDesktop ? 96 : 48,
+          ),
+          child: Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(
+                maxWidth: AppSizes.maxContentWidth,
+              ),
+              child: isDesktop
+                  ? _buildDesktopLayout(context)
+                  : _buildMobileLayout(context, screenWidth),
+            ),
+          ),
+        );
+      },
     );
   }
 
   Widget _buildDesktopLayout(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 64),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Expanded(
-            flex: 1,
-            child: Padding(
-              padding: const EdgeInsets.only(right: 64),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'WORSHIP MINISTER & STORYTELLER',
-                    style: AppStyles.sansDisplay.copyWith(
-                      color: AppColors.warmTaupe,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14,
-                      letterSpacing: 2.5,
-                    ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Expanded(
+          flex: 1,
+          child: Padding(
+            padding: const EdgeInsets.only(right: 64),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'WORSHIP MINISTER & STORYTELLER',
+                  style: AppStyles.sansDisplay.copyWith(
+                    color: AppColors.warmTaupe,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                    letterSpacing: 2.5,
                   ),
-                  const SizedBox(height: 24),
-                  Text(
-                    'I use music and stories to bring people hope, healing and encouragement through Christ.',
-                    style: AppStyles.serifDisplay.copyWith(
-                      fontSize: 56, // Larger for desktop
-                      height: 1.1,
-                      color: AppColors.charcoalGrey,
-                    ),
-                  ),
-                  const SizedBox(height: 24),
-                  Text(
-                    'Christian content creator, worship leader, singer-songwriter, and digital ministry entrepreneur dedicated to building faith-based communities.',
-                    style: AppStyles.sansDisplay.copyWith(
-                      fontSize: 20,
-                      color: AppColors.stone600,
-                      height: 1.6,
-                    ),
-                  ),
-                  const SizedBox(height: 48),
-                  Row(
-                    children: [
-                      ElevatedButton(
-                        onPressed: _launchYouTube,
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.warmTaupe,
-                          foregroundColor: Colors.white,
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 40,
-                            vertical: 24,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                        ),
-                        child: Text(
-                          'Watch Latest Worship',
-                          style: AppStyles.sansDisplay.copyWith(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 24),
-                      OutlinedButton(
-                        onPressed: _launchWhatsApp,
-                        style: OutlinedButton.styleFrom(
-                          foregroundColor: AppColors.warmTaupe,
-                          side: const BorderSide(
-                            color: AppColors.warmTaupe,
-                            width: 2,
-                          ),
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 40,
-                            vertical: 24,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                        ),
-                        child: Text(
-                          'Join Community',
-                          style: AppStyles.sansDisplay.copyWith(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              constraints: const BoxConstraints(maxHeight: 600),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(24),
-                child: Image.asset(
-                  'assets/images/17th_of_december.png',
-                  fit: BoxFit.cover,
                 ),
+                const SizedBox(height: 24),
+                Text(
+                  'I use music and stories to bring people hope, healing and encouragement through Christ.',
+                  style: AppStyles.serifDisplay.copyWith(
+                    fontSize: 56,
+                    height: 1.1,
+                    color: AppColors.charcoalGrey,
+                  ),
+                ),
+                const SizedBox(height: 32),
+                Text(
+                  'Christian content creator, worship leader, singer-songwriter, and digital ministry entrepreneur dedicated to building faith-based communities.',
+                  style: AppStyles.sansDisplay.copyWith(
+                    fontSize: 20,
+                    color: AppColors.stone600,
+                    height: 1.6,
+                  ),
+                ),
+                const SizedBox(height: 48),
+                Row(
+                  children: [
+                    ElevatedButton(
+                      onPressed: _launchYouTube,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.warmTaupe,
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 40,
+                          vertical: 24,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      child: Text(
+                        'Watch Latest Worship',
+                        style: AppStyles.sansDisplay.copyWith(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 24),
+                    OutlinedButton(
+                      onPressed: _launchWhatsApp,
+                      style: OutlinedButton.styleFrom(
+                        foregroundColor: AppColors.warmTaupe,
+                        side: const BorderSide(
+                          color: AppColors.warmTaupe,
+                          width: 2,
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 40,
+                          vertical: 24,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      child: Text(
+                        'Join Community',
+                        style: AppStyles.sansDisplay.copyWith(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+        Expanded(
+          flex: 1,
+          child: Container(
+            constraints: const BoxConstraints(maxHeight: 600),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(32),
+              child: Image.asset(
+                'assets/images/17th_of_december.png',
+                fit: BoxFit.cover,
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
-  Widget _buildMobileLayout(BuildContext context) {
+  Widget _buildMobileLayout(BuildContext context, double screenWidth) {
+    final isTablet = screenWidth > AppSizes.mobileBreakpoint;
+
     return Column(
       children: [
         Container(
-          constraints: const BoxConstraints(maxWidth: 600),
+          constraints: BoxConstraints(
+            maxWidth: isTablet ? 600 : double.infinity,
+            maxHeight: isTablet ? 450 : 400,
+          ),
+          width: double.infinity,
           child: ClipRRect(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(24),
             child: Image.asset(
               'assets/images/17th_of_december.png',
               fit: BoxFit.cover,
             ),
           ),
         ),
-        const SizedBox(height: 24),
+        const SizedBox(height: 48),
         Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: isTablet
+              ? CrossAxisAlignment.center
+              : CrossAxisAlignment.start,
           children: [
             Text(
               'WORSHIP MINISTER & STORYTELLER',
+              textAlign: isTablet ? TextAlign.center : TextAlign.start,
               style: AppStyles.sansDisplay.copyWith(
                 color: AppColors.warmTaupe,
                 fontWeight: FontWeight.bold,
@@ -186,70 +205,75 @@ class HeroSection extends StatelessWidget {
             const SizedBox(height: 16),
             Text(
               'I use music and stories to bring people hope, healing and encouragement through Christ.',
+              textAlign: isTablet ? TextAlign.center : TextAlign.start,
               style: AppStyles.serifDisplay.copyWith(
-                fontSize: 32,
+                fontSize: isTablet ? 48 : 36,
                 height: 1.2,
                 color: AppColors.charcoalGrey,
               ),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 24),
             Text(
               'Christian content creator, worship leader, singer-songwriter, and digital ministry entrepreneur dedicated to building faith-based communities.',
+              textAlign: isTablet ? TextAlign.center : TextAlign.start,
               style: AppStyles.sansDisplay.copyWith(
                 fontSize: 18,
                 color: AppColors.stone600,
-                height: 1.5,
+                height: 1.6,
               ),
             ),
-            const SizedBox(height: 24),
-            Wrap(
-              spacing: 16,
-              runSpacing: 16,
-              children: [
-                ElevatedButton(
-                  onPressed: _launchYouTube,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.warmTaupe,
-                    foregroundColor: Colors.white,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 32,
-                      vertical: 16,
+            const SizedBox(height: 40),
+            Center(
+              child: Wrap(
+                spacing: 16,
+                runSpacing: 16,
+                alignment: WrapAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: _launchYouTube,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.warmTaupe,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 32,
+                        vertical: 20,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
                     ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                  ),
-                  child: Text(
-                    'Watch Latest Worship',
-                    style: AppStyles.sansDisplay.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                OutlinedButton(
-                  onPressed: _launchWhatsApp,
-                  style: OutlinedButton.styleFrom(
-                    foregroundColor: AppColors.warmTaupe,
-                    side: const BorderSide(
-                      color: AppColors.warmTaupe,
-                      width: 2,
-                    ),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 32,
-                      vertical: 16,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
+                    child: Text(
+                      'Watch Latest Worship',
+                      style: AppStyles.sansDisplay.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                  child: Text(
-                    'Join Community',
-                    style: AppStyles.sansDisplay.copyWith(
-                      fontWeight: FontWeight.bold,
+                  OutlinedButton(
+                    onPressed: _launchWhatsApp,
+                    style: OutlinedButton.styleFrom(
+                      foregroundColor: AppColors.warmTaupe,
+                      side: const BorderSide(
+                        color: AppColors.warmTaupe,
+                        width: 2,
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 32,
+                        vertical: 20,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    child: Text(
+                      'Join Community',
+                      style: AppStyles.sansDisplay.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ],
         ),
