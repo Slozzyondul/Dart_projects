@@ -52,16 +52,16 @@ class ImpactSection extends StatelessWidget {
           const SizedBox(height: 48),
           const TestimonialCard(
             quote:
-                '"Her weekly worship sessions have become the anchor of my week. Through the most difficult season of my life, Lilly\'s music reminded me that God is still near."',
-            name: 'Sarah Jenkins',
-            role: 'Community Member',
+                '"These weekly worship sessions are truly my anchor. Through a very difficult season, Lilly\'s music reminded me that God is always near. Baraka tele!"',
+            name: 'Wanjiku Mwangi',
+            role: 'Community Member, Nairobi',
           ),
           const SizedBox(height: 32),
           const TestimonialCard(
             quote:
-                '"The Bible study series is so accessible. As a busy entrepreneur, I finally found a way to stay grounded in the Word through her digital ministry."',
-            name: 'Mark Thompson',
-            role: 'Podcast Listener',
+                '"The Bible study series is so accessible. As a busy entrepreneur in CBD, I finally found a way to stay grounded in the Word. Highly recommended."',
+            name: 'David Otieno',
+            role: 'Entrepreneur',
           ),
         ],
       ),
