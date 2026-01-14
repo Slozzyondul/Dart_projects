@@ -18,6 +18,15 @@ class HeroSection extends StatelessWidget {
     }
   }
 
+  Future<void> _launchWhatsApp() async {
+    final Uri url = Uri.parse(
+      'https://wa.me/2547704173734?text=Hello%2C%20I%20would%20like%20to%20request%20to%20join%20the%20community.',
+    );
+    if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+      debugPrint('Could not launch \$url');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -101,7 +110,7 @@ class HeroSection extends StatelessWidget {
                       ),
                       const SizedBox(width: 24),
                       OutlinedButton(
-                        onPressed: () {},
+                        onPressed: _launchWhatsApp,
                         style: OutlinedButton.styleFrom(
                           foregroundColor: AppColors.warmTaupe,
                           side: const BorderSide(
@@ -218,7 +227,7 @@ class HeroSection extends StatelessWidget {
                   ),
                 ),
                 OutlinedButton(
-                  onPressed: () {},
+                  onPressed: _launchWhatsApp,
                   style: OutlinedButton.styleFrom(
                     foregroundColor: AppColors.warmTaupe,
                     side: const BorderSide(
