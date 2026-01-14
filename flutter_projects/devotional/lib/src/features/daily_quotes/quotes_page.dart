@@ -230,8 +230,8 @@ class _QuotesPageState extends State<QuotesPage> {
             children: [
               AspectRatio(
                 aspectRatio: 4 / 5,
-                child: Image.network(
-                  'https://lh3.googleusercontent.com/aida-public/AB6AXuA9sxoty3smYV33wab4J6wwj8iCtDs4zT8bk8gapxcWXg4DmDRGG3vUCm7MguUAbnQNBoGInPjqOxkjC_cNhXzB7ksy1xEkS_bFI9JLeLB5eVa2qVy6Pt_DttmBDf1G8jwsP9DuAzq7EmPa3ceSbxbsdi8Ogx-aFkR9WHO4VEp_A-LIeXjBtw81dgZE2eJr5C-hdyrzymUg-K7haJWl7xRpTDr9Eoe672zJeGIYxplCnWExh_khpyEVRyBqzaexJXjqkq6sqyayLRs',
+                child: Image.asset(
+                  'assets/images/Daily_PRAYER.png',
                   fit: BoxFit.cover,
                 ),
               ),

@@ -27,8 +27,8 @@ class HeroSection extends StatelessWidget {
             constraints: const BoxConstraints(maxWidth: 600),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(16),
-              child: Image.network(
-                'https://lh3.googleusercontent.com/aida-public/AB6AXuBAmE5y_1QlZYR3vAtB61bBx5ogNxOdIHjCPzziMYV48QIYUHtZ3wg8RXBZ3ZNLnZ-oKhHAveHp1LkjyoRA4NOUP87hOAvQa9x5CnKDK_qhlU5eJJlx3TfoAcNF5x3SKXazn8qGXWq-GGyjvXw7dNuKlW5MNj3D0WTXlnLJM6GI-cmwOnWZPXu8oonEAJfXU6uGCDNOBj1aYtHy08yssV8Q4m1yX8P9SBHObo94FtZocm_bkFDhkwQJtaBrZz18PVd55mww5SkmZmA',
+              child: Image.asset(
+                'assets/images/17th_of_december.png',
                 fit: BoxFit.cover,
               ),
             ),

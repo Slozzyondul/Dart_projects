@@ -37,7 +37,7 @@ class ProjectCard extends StatelessWidget {
         children: [
           AspectRatio(
             aspectRatio: 16 / 9,
-            child: Image.network(imageUrl, fit: BoxFit.cover),
+            child: Image.asset(imageUrl, fit: BoxFit.cover),
           ),
           Padding(
             padding: const EdgeInsets.all(24),

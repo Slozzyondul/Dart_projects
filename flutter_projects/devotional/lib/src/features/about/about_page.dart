@@ -71,8 +71,8 @@ class _AboutPageState extends State<AboutPage> {
                   borderRadius: BorderRadius.circular(16),
                   child: AspectRatio(
                     aspectRatio: 4 / 5,
-                    child: Image.network(
-                      'https://lh3.googleusercontent.com/aida-public/AB6AXuDoTWvMv70hdnLtaC2OgwQM9lx07L5WlKvhI_fP-nsHWgLHqUY8BAWnaiyrChe6A2_VYuh6cEjJVNnFzT_rIfKbnKDLPb0cQ_Sto3TmMrYFfAXW65QSvqGGsG-Aqoeo0bg9Ca1g1soUzj6WzLZuutPjjEJT_9vX541TcMIykHbdAj_GoYwKGcOBy48zxzMUMrsAUJFE2jwM7ESB4sf50ffV-sJOiaVBa_AENTM5nVjuEM-V11W57-h1kESVsqmYw3M72IU0Xk5Kj7c',
+                    child: Image.asset(
+                      'assets/images/Add_a_heading.png',
                       fit: BoxFit.cover,
                     ),
                   ),

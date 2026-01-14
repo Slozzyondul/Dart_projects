@@ -76,7 +76,7 @@ class GalleryCard extends StatelessWidget {
             children: [
               AspectRatio(
                 aspectRatio: aspectRatio,
-                child: Image.network(
+                child: Image.asset(
                   imageUrl,
                   fit: BoxFit.cover,
                   errorBuilder: (context, error, stackTrace) {

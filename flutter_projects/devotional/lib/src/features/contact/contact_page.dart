@@ -60,9 +60,7 @@ class _ContactPageState extends State<ContactPage> {
                 decoration: BoxDecoration(
                   color: AppColors.stone200,
                   image: const DecorationImage(
-                    image: NetworkImage(
-                      'https://lh3.googleusercontent.com/aida-public/AB6AXuAs9lj6j8eume22sxQCK-oy_34zELSkFkSnpUTSr5cH0woiH6RQIfkmXc_WsF9FYHoX0_jZS0r7DhksGcqtb7YKIlrG2IMaGcCrrzQ0KyW_MfLiiv7EfvVrBCRz-K3bn4saVeNVdUKQdJ-Ukt2LMXTp8goRULq1yt-cuqbjpu-H0MrO6ZoBjiON3D6pHVwoxmLMcT-Tyc0iNEhvKrKI2lZNZzjJJtN6IvBeQ9H8YQQSbh6ZPR5F3yT_ILi8gCopG7hcBpQbvi5qLZY',
-                    ),
+                    image: AssetImage('assets/images/Neutral_Beige.png'),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -237,8 +235,8 @@ class _ContactPageState extends State<ContactPage> {
                           decoration: const BoxDecoration(
                             color: AppColors.stone200,
                             image: DecorationImage(
-                              image: NetworkImage(
-                                'https://lh3.googleusercontent.com/aida-public/AB6AXuA4y32WeT5VWyOg5EAlKV4QYx6MDFfJk1S_U1F6sg4SMKPKNmOwjZ96H7H5Uyvf7ac6s2w2uSu1o13GFOajtTIkK6tlReUUZ7l_J4KhJOavK8wxNwjdLedZh-01Xl-NiTN7Ko4KJ6ZJFbpKUV6UcJCJsSyn-CKZFWp3XhSBTUJi21y_ogNS34vPHQ4TG7vzPBSRyqBlHAo_ihMTmeF6UQeOeHWzVmU5drMCPz9qp96aDNjF4_KIMljfOCHJzjr0dCYGbNRF-Xim76w',
+                              image: AssetImage(
+                                'assets/images/Black Modern Minimalist Reminder Instagram Post.png',
                               ),
                               fit: BoxFit.cover,
                             ),

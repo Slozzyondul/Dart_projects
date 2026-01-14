@@ -134,8 +134,7 @@ class _GalleryPageState extends State<GalleryPage> {
             child: Column(
               children: const [
                 GalleryCard(
-                  imageUrl:
-                      'https://lh3.googleusercontent.com/aida-public/AB6AXuDxdsYhQtJJAM1l8Z-k3cpoa7hociNSLJzJ-LLUAXQiht6_0hwxv8aMWrwFn6oqh52m347yglKnBJZPDtpTpBiDpQDH-kGl5khz3ynWlizOmemksYadJy7S7t9jFwcpZJck5oCfh22N3v-hfF8BbSsewMfCiRxUrMmyVwAhHgLpCiM8hWDDMY4SthxDNjNKHQqznLNURGSvMPr6BxtPZ4R06w-WHa7BPa45J2WCKhLDtyDdlowJZ9rJ2lXn_65TP91i8WPRFsMzADo',
+                  imageUrl: 'assets/images/Why_Your.png',
                   title: 'Psalm 46:1',
                   subtitle: 'Sky Blue Series',
                   isTall: true,
@@ -144,8 +143,7 @@ class _GalleryPageState extends State<GalleryPage> {
                 SizedBox(height: 24),
                 // Card 3
                 GalleryCard(
-                  imageUrl:
-                      'https://lh3.googleusercontent.com/aida-public/AB6AXuDkBiBpaNx4ZBXf8whoBnlKch6w9Nb8XZxiC3g2kjJKWJ0Py5CX7xzWapd302xrce6r_b6PG65TlVmzA9CqPMODWhQwztmGv4xmkzESS4CubNi4WVVWAl49w6sxM-fff5aQVN3tuIjYHkcCf1Za8fHj3xbSMufkj732E5aYZ55lHLNEoJSBvdYkBz0AsDOxLWb2BHSqNolnRBO9nTbbm-BqjUCQ22tEcJUNz2ce0KHAkX60cIrGcgEFSHDFmADM39wI-DMZoi_g29c',
+                  imageUrl: 'assets/images/Don\'t_Focus.png',
                   title: 'Psalm 139:14',
                   subtitle: 'Textured Collection',
                   overlayText: 'Fearfully and Wonderfully Made',
@@ -179,8 +177,7 @@ class _GalleryPageState extends State<GalleryPage> {
                 SizedBox(height: 24),
                 // Card 4
                 GalleryCard(
-                  imageUrl:
-                      'https://lh3.googleusercontent.com/aida-public/AB6AXuDhdaWeO9KLn94rdNNQqJHdSt42DVPHJOqlXXyNvplx5GKEdRbjg5Ukn6kb_scdMbk2jBfqVVFHBFrn5E2CviEBt43cB84_q_ccFLTf5gkR-YAojKtGq_lw3l-_eMmwjZP6XPuCtScTOKI1GDVTy5dpf_-tB6HiU6J1kgWJubz2CUq6aTOwG4Zqh6jNAjPUjlvV7wk4TqAfuqmB-IycJCiDI4sIgJVHuSj3Las6gE6K4vFkWjMWhUc_Z40aktrq3cLpiUwJvLbuZUA',
+                  imageUrl: 'assets/images/Thank_God.png',
                   title: 'Sunrise Series',
                   subtitle: '',
                   isTall: true,
