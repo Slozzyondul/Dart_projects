@@ -114,8 +114,8 @@ class _ContactPageState extends State<ContactPage> {
                   children: [
                     _buildContactItem(
                       Icons.mail_outline,
-                      'Bosekfavour@gmail.com',
-                      'mailto:Bosekfavour@gmail.com',
+                      'bosekfavour@gmail.com',
+                      'mailto:bosekfavour@gmail.com',
                     ),
                     const SizedBox(height: 16),
                     _buildContactItem(
