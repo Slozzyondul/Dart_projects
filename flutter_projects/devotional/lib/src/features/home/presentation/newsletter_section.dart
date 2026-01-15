@@ -36,7 +36,7 @@ class _NewsletterSectionState extends State<NewsletterSection> {
 
     final Uri emailLaunchUri = Uri(
       scheme: 'mailto',
-      path: 'bosekfavour@gmail.com',
+      path: 'solomonondula@gmail.com',
       queryParameters: {
         'subject': 'Newsletter Subscription Request',
         'body': body,
@@ -48,7 +48,44 @@ class _NewsletterSectionState extends State<NewsletterSection> {
         emailLaunchUri,
         mode: LaunchMode.externalApplication,
       );
-      if (!launched && mounted) {
+      if (launched) {
+        if (mounted) {
+          _emailController.clear();
+          showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+              title: Text(
+                'Subscribed!',
+                style: AppStyles.serifDisplay.copyWith(
+                  fontSize: 24,
+                  color: AppColors.charcoalGrey,
+                ),
+              ),
+              content: Text(
+                'Thank you for joining our community. We will reach back to you shortly!',
+                style: AppStyles.sansDisplay.copyWith(
+                  color: AppColors.stone600,
+                ),
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Text(
+                    'Close',
+                    style: AppStyles.sansDisplay.copyWith(
+                      color: AppColors.warmTaupe,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        }
+      } else if (mounted) {
         throw 'Could not launch email client';
       }
     } catch (e) {
