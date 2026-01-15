@@ -1,7 +1,8 @@
 import 'package:devotional/src/common_widgets/app_drawer.dart';
-import 'package:devotional/src/common_widgets/constants/app_colors.dart';
-import 'package:devotional/src/common_widgets/constants/app_styles.dart';
-import 'package:devotional/src/features/gallery/components/gallery_card.dart';
+import 'package:devotional/src/features/gallery/components/gallery_filter_bar.dart';
+import 'package:devotional/src/features/gallery/components/gallery_header.dart';
+import 'package:devotional/src/features/gallery/components/gallery_load_more.dart';
+import 'package:devotional/src/features/gallery/components/gallery_masonry_grid.dart';
 import 'package:devotional/src/features/home/presentation/home_footer.dart';
 import 'package:devotional/src/features/home/presentation/home_header.dart';
 import 'package:flutter/material.dart';
@@ -14,223 +15,44 @@ class GalleryPage extends StatefulWidget {
 }
 
 class _GalleryPageState extends State<GalleryPage> {
-  final List<String> _filters = [
-    'All Collections',
-    'Daily Devotion',
-    'Scripture Art',
-    'Minimalist Hope',
-    'Gratitude',
-  ];
+  bool _showLoadMore = false;
 
   @override
   Widget build(BuildContext context) {
     return SelectionArea(
       child: Scaffold(
-        backgroundColor: const Color(
-          0xFFFDFBF7,
-        ), // background-light #fffbf5 ~ish
+        backgroundColor: const Color(0xFFFDFBF7),
         endDrawer: const AppDrawer(),
         body: Column(
           children: [
             const HomeHeader(),
             Expanded(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    _buildHeadlineSection(),
-                    _buildFilterSection(),
-                    _buildMasonryGrid(),
-                    _buildLoadMoreButton(),
-                    const HomeFooter(),
-                  ],
+              child: NotificationListener<ScrollMetricsNotification>(
+                onNotification: (notification) {
+                  // Only show "Load More" if content overflows viewport (maxScrollExtent > 0)
+                  final hasOverflow = notification.metrics.maxScrollExtent > 0;
+                  if (_showLoadMore != hasOverflow) {
+                    setState(() {
+                      _showLoadMore = hasOverflow;
+                    });
+                  }
+                  return true;
+                },
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      const GalleryHeader(),
+                      const GalleryFilterBar(),
+                      const GalleryMasonryGrid(),
+                      if (_showLoadMore) const GalleryLoadMore(),
+                      const HomeFooter(),
+                    ],
+                  ),
                 ),
               ),
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _buildHeadlineSection() {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 48),
-      child: Column(
-        children: [
-          Text(
-            'Digital Sanctuary',
-            style: AppStyles.serifDisplay.copyWith(
-              fontSize: 36,
-              fontWeight: FontWeight.bold,
-              color: AppColors.charcoalGrey,
-            ),
-          ),
-          const SizedBox(height: 16),
-          Text(
-            '"But those who hope in the Lord will renew their strength. They will soar on wings like eagles." — Isaiah 40:31',
-            textAlign: TextAlign.center,
-            style: AppStyles.sansDisplay.copyWith(
-              fontSize: 16,
-              fontStyle: FontStyle.italic,
-              color: AppColors.galleryTaupe,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildFilterSection() {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      padding: const EdgeInsets.only(left: 16, right: 16, bottom: 40),
-      child: Row(
-        children: _filters.map((filter) {
-          final isSelected = filter == 'All Collections';
-          return Padding(
-            padding: const EdgeInsets.only(right: 12),
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              decoration: BoxDecoration(
-                color: isSelected
-                    ? AppColors.galleryPrimary
-                    : AppColors.galleryTaupe.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(100),
-                boxShadow: isSelected
-                    ? [
-                        BoxShadow(
-                          color: AppColors.galleryPrimary.withValues(
-                            alpha: 0.2,
-                          ),
-                          blurRadius: 8,
-                          offset: const Offset(0, 4),
-                        ),
-                      ]
-                    : null,
-              ),
-              child: Text(
-                filter,
-                style: AppStyles.sansDisplay.copyWith(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: isSelected ? Colors.white : AppColors.galleryTaupe,
-                ),
-              ),
-            ),
-          );
-        }).toList(),
-      ),
-    );
-  }
-
-  Widget _buildMasonryGrid() {
-    // Manually split data into two columns for masonry effect
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: Column(
-              children: const [
-                GalleryCard(
-                  imageUrl: 'assets/images/Why_Your.png',
-                  title: 'Psalm 46:1',
-                  subtitle: 'Sky Blue Series',
-                  isTall: true,
-                  overlayText: 'God is our refuge and strength.',
-                ),
-                SizedBox(height: 24),
-                // Card 3
-                GalleryCard(
-                  imageUrl: 'assets/images/Don\'t_Focus.png',
-                  title: 'Psalm 139:14',
-                  subtitle: 'Textured Collection',
-                  overlayText: 'Fearfully and Wonderfully Made',
-                ),
-                SizedBox(height: 24),
-                // Card 5 (Quote)
-                GalleryCard(
-                  imageUrl: '', // Quote card
-                  title: '',
-                  subtitle: '',
-                  isShort: true,
-                  overlayText: 'Faith can move mountains.',
-                  overlayReference: 'Matthew 17:20',
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(width: 24),
-          Expanded(
-            child: Column(
-              children: const [
-                // Card 2
-                GalleryCard(
-                  imageUrl:
-                      '', // Quote card, pretending to include icon logic in GalleryCard for now or just text
-                  title: 'Modern Hope',
-                  subtitle: '',
-                  isShort: true,
-                  overlayText: 'Choose joy today.',
-                ),
-                SizedBox(height: 24),
-                // Card 4
-                GalleryCard(
-                  imageUrl: 'assets/images/Thank_God.png',
-                  title: 'Sunrise Series',
-                  subtitle: '',
-                  isTall: true,
-                  overlayText: '"His mercies are new every morning."',
-                  overlayReference: '— Lamentations 3:23',
-                ),
-                SizedBox(height: 24),
-                // Card 6
-                GalleryCard(
-                  imageUrl:
-                      '', // Gradient card? Using quote fallback for now or we could add gradient support.
-                  // The design had a linear gradient. Let's just use a placeholder text as it's a quote anyway.
-                  title: 'Psalm 46:10',
-                  subtitle: 'Stillness Collection',
-                  overlayText: 'Be still, and know that I am God.',
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildLoadMoreButton() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 48),
-      child: Column(
-        children: [
-          Text(
-            'Seeking more inspiration?',
-            style: AppStyles.sansDisplay.copyWith(
-              fontWeight: FontWeight.bold,
-              color: AppColors.galleryTaupe,
-            ),
-          ),
-          const SizedBox(height: 24),
-          OutlinedButton(
-            onPressed: () {},
-            style: OutlinedButton.styleFrom(
-              side: const BorderSide(color: AppColors.galleryTaupe, width: 2),
-              padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-              foregroundColor: AppColors.galleryTaupe,
-            ),
-            child: Text(
-              'LOAD MORE QUOTES',
-              style: AppStyles.sansDisplay.copyWith(
-                fontWeight: FontWeight.bold,
-                letterSpacing: 1.0,
-              ),
-            ),
-          ),
-        ],
       ),
     );
   }
