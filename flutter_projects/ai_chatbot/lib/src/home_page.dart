@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
       );
 
       if (response.statusCode == 200) {
-        final jsonData = jsonDecode(response.body);
+        final jsonData = jsonDecode(utf8.decode(response.bodyBytes));
         final aiResponse = jsonData['choices'][0]['message']['content'];
 
         setState(() {
