@@ -25,14 +25,24 @@ class _HomePageState extends State<HomePage> {
         "model": "deepseek-chat",
         "messages": [
           {"role": "system", "content": "You are a helpful assistant."},
-          {"role": "user", "content": "Hello"},
+          {"role": "user", "content": textEditingController.text},
         ],
       }),
     );
-    if (kDebugMode) {
-      print(response.body);
+    if (response.statusCode == 200) {
+      final jsonData = jsonDecode(response.body);
+      final result = jsonData['choices'][0]['message']['content'];
+      if (kDebugMode) {
+        print(result);
+      }
+    } else {
+      if (kDebugMode) {
+        print(response.body);
+      }
     }
   }
+
+  TextEditingController textEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +57,7 @@ class _HomePageState extends State<HomePage> {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextField(
+                    controller: textEditingController,
                     decoration: InputDecoration(hintText: 'Enter your message'),
                   ),
                 ),
