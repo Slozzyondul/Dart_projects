@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -8,6 +11,26 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  void askAiModel() async {
+    final response = await post(
+      Uri.parse('https://api.deepseek.com/v1/chat/completions'),
+
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer sk-f0f1ced93f764698a0330aa0dd48990d',
+        'Accept': 'application/json',
+      },
+      body: jsonEncode({
+        "model": "deepseek-chat",
+        "messages": [
+          {"role": "system", "content": "You are a helpful assistant."},
+          {"role": "user", "content": "Hello"},
+        ],
+      }),
+    );
+    print(response.body);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +48,12 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              IconButton(icon: Icon(Icons.send), onPressed: () {}),
+              IconButton(
+                icon: Icon(Icons.send),
+                onPressed: () {
+                  askAiModel();
+                },
+              ),
             ],
           ),
         ],
