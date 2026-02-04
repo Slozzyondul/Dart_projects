@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 
@@ -28,7 +29,9 @@ class _HomePageState extends State<HomePage> {
         ],
       }),
     );
-    print(response.body);
+    if (kDebugMode) {
+      print(response.body);
+    }
   }
 
   @override
