@@ -31,18 +31,15 @@ class _HomePageState extends State<HomePage> {
     );
     if (response.statusCode == 200) {
       final jsonData = jsonDecode(response.body);
-      final result = jsonData['choices'][0]['message']['content'];
-      if (kDebugMode) {
-        print(result);
-      }
-    } else {
-      if (kDebugMode) {
-        print(response.body);
-      }
+      final results = jsonData['choices'][0]['message']['content'];
+      setState(() {
+        results;
+      });
     }
   }
 
   TextEditingController textEditingController = TextEditingController();
+  var results = "return from model based on input";
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +47,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(backgroundColor: Colors.yellow, elevation: 16),
       body: Column(
         children: [
-          Expanded(child: Center(child: Text('Results from ai chatbot'))),
+          Expanded(child: Center(child: Text(results))),
           Row(
             children: [
               Flexible(
