@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:ai_chatbot/src/dash_chat.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -15,6 +16,7 @@ class _HomePageState extends State<HomePage> {
   final ScrollController _scrollController = ScrollController();
   final List<Map<String, String>> _messages = [];
   bool _isLoading = false;
+  bool _useDashChat = false;
 
   final String _apiUrl = 'https://api.groq.com/openai/v1/chat/completions';
   final String _modelName = 'llama-3.3-70b-versatile';
@@ -134,17 +136,30 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    if (_useDashChat) {
+      return DashChatOption(
+        onSwitchUI: () => setState(() => _useDashChat = false),
+      );
+    }
+
     return SelectionArea(
       child: Scaffold(
         backgroundColor: const Color(0xFF121212),
         appBar: AppBar(
           title: const Text(
-            'AI Chatbot (Llama 3 Online)',
+            'Custom AI Chat',
             style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
           ),
           backgroundColor: Colors.transparent,
           elevation: 0,
           centerTitle: true,
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.chat_bubble_outline),
+              tooltip: 'Switch to Dash Chat UI',
+              onPressed: () => setState(() => _useDashChat = true),
+            ),
+          ],
         ),
         body: Container(
           decoration: const BoxDecoration(

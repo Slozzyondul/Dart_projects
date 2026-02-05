@@ -5,7 +5,8 @@ import 'package:http/http.dart' as http;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class DashChatOption extends StatefulWidget {
-  const DashChatOption({super.key});
+  final VoidCallback onSwitchUI;
+  const DashChatOption({super.key, required this.onSwitchUI});
 
   @override
   State<DashChatOption> createState() => _DashChatState();
@@ -112,6 +113,13 @@ class _DashChatState extends State<DashChatOption> {
         title: const Text('Dash Chat AI'),
         backgroundColor: Colors.indigo,
         foregroundColor: Colors.white,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.dashboard_customize),
+            tooltip: 'Switch to Custom UI',
+            onPressed: widget.onSwitchUI,
+          ),
+        ],
       ),
       body: DashChat(
         currentUser: _user,
